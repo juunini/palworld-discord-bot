@@ -9,10 +9,10 @@ import (
 )
 
 func Response(message string, username string) string {
-	command, _ := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
 	isAdmin := utils.IsAdmin(username)
 
-	if command == "help" {
+	command, found := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
+	if command == "help" || !found {
 		return i18n.Help(config.DISCORD_COMMAND_PREFIX, isAdmin)
 	}
 
