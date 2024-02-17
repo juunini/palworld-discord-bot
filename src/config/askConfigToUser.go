@@ -17,20 +17,7 @@ func askConfigToUser() {
 	scanPalworldRconPort()
 	scanPalworldRconPassword()
 
-	env := fmt.Sprintf(
-		`DISCORD_BOT_TOKEN=%s
-DISCORD_ADMIN_USERNAMES=%s
-DISCORD_COMMAND_PREFIX=%s
-PALWORLD_RCON_HOST=%s
-PALWORLD_RCON_PORT=%s
-PALWORLD_RCON_PASSWORD=%s`,
-		DISCORD_BOT_TOKEN,
-		DISCORD_ADMIN_USERNAMES_STRING,
-		DISCORD_COMMAND_PREFIX,
-		PALWORLD_RCON_HOST,
-		PALWORLD_RCON_PORT,
-		PALWORLD_RCON_PASSWORD,
-	)
+	env := envString()
 	fmt.Printf(
 		"Created .env file with the following content:\n\n%s%s%s\n\n",
 		console_decoration.BOLD,
