@@ -18,6 +18,20 @@ func scanDiscordAdminUsernames() {
 	fmt.Print(console_decoration.RESET)
 }
 
+func scanDiscordCommandPrefix() {
+	fmt.Printf("Discord Command Prefix(default: %s): %s", DISCORD_COMMAND_PREFIX, console_decoration.BOLD)
+
+	var prefix string
+	fmt.Scanf("%s", &prefix)
+	fmt.Print(console_decoration.RESET)
+
+	if prefix == "" {
+		return
+	}
+
+	DISCORD_COMMAND_PREFIX = prefix
+}
+
 func scanPalworldRconHost() {
 	fmt.Printf("Palworld RCON Host: %s", console_decoration.BOLD)
 	fmt.Scanf("%s", &PALWORLD_RCON_HOST)

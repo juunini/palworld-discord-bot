@@ -12,6 +12,7 @@ func askConfigToUser() {
 
 	scanDiscordBotToken()
 	scanDiscordAdminUsernames()
+	scanDiscordCommandPrefix()
 	scanPalworldRconHost()
 	scanPalworldRconPort()
 	scanPalworldRconPassword()
@@ -19,11 +20,13 @@ func askConfigToUser() {
 	env := fmt.Sprintf(
 		`DISCORD_BOT_TOKEN=%s
 DISCORD_ADMIN_USERNAMES=%s
+DISCORD_COMMAND_PREFIX=%s
 PALWORLD_RCON_HOST=%s
 PALWORLD_RCON_PORT=%s
 PALWORLD_RCON_PASSWORD=%s`,
 		DISCORD_BOT_TOKEN,
 		DISCORD_ADMIN_USERNAMES_STRING,
+		DISCORD_COMMAND_PREFIX,
 		PALWORLD_RCON_HOST,
 		PALWORLD_RCON_PORT,
 		PALWORLD_RCON_PASSWORD,
