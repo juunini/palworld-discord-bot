@@ -11,27 +11,31 @@ func askConfigToUser() {
 	fmt.Printf("%s.env file not found. Please provide the following information:%s\n\n", console_decoration.RED, console_decoration.RESET)
 
 	scanDiscordBotToken()
-	scanDiscordAdminUsers()
+	scanDiscordAdminUsernames()
+	scanPalworldRconHost()
+	scanPalworldRconPort()
+	scanPalworldRconPassword()
 
-	createdEnv := fmt.Sprintf(`DISCORD_BOT_TOKEN=%s
-DISCORD_ADMIN_USERS=%s`,
+	env := fmt.Sprintf(
+		`DISCORD_BOT_TOKEN=%s
+DISCORD_ADMIN_USERNAMES=%s
+PALWORLD_RCON_HOST=%s
+PALWORLD_RCON_PORT=%s
+PALWORLD_RCON_PASSWORD=%s`,
 		DISCORD_BOT_TOKEN,
-		DISCORD_ADMIN_USERS_STRING)
-	fmt.Printf("Created .env file with the following content:\n\n%s\n\n", createdEnv)
+		DISCORD_ADMIN_USERNAMES_STRING,
+		PALWORLD_RCON_HOST,
+		PALWORLD_RCON_PORT,
+		PALWORLD_RCON_PASSWORD,
+	)
+	fmt.Printf(
+		"Created .env file with the following content:\n\n%s%s%s\n\n",
+		console_decoration.BOLD,
+		env,
+		console_decoration.RESET,
+	)
 
-	os.WriteFile(".env", []byte(createdEnv), 0644)
+	os.WriteFile(".env", []byte(env), 0644)
 
 	Init()
-}
-
-func scanDiscordBotToken() {
-	fmt.Printf("Discord Bot Token: %s", console_decoration.BOLD)
-	fmt.Scanf("%s", &DISCORD_BOT_TOKEN)
-	fmt.Print(console_decoration.RESET)
-}
-
-func scanDiscordAdminUsers() {
-	fmt.Printf("Discord Admin Users (comma separated): %s", console_decoration.BOLD)
-	fmt.Scanf("%s", &DISCORD_ADMIN_USERS_STRING)
-	fmt.Print(console_decoration.RESET)
 }
