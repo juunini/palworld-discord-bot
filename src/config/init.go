@@ -62,7 +62,14 @@ func loadEnv() {
 	DISCORD_COMMAND_PREFIX = os.Getenv("DISCORD_COMMAND_PREFIX")
 	PALWORLD_RCON_HOST = os.Getenv("PALWORLD_RCON_HOST")
 	PALWORLD_RCON_PORT_STRING = os.Getenv("PALWORLD_RCON_PORT")
-	PALWORLD_RCON_PORT, _ = strconv.ParseUint(PALWORLD_RCON_PORT_STRING, 10, 64)
+
+	var err error
+	PALWORLD_RCON_PORT, err = strconv.ParseUint(PALWORLD_RCON_PORT_STRING, 10, 64)
+	if err != nil {
+		fmt.Printf("%sError parsing PALWORLD_RCON_PORT: %s%s\n", console_decoration.RED, err, console_decoration.RESET)
+		os.Exit(1)
+	}
+
 	PALWORLD_RCON_PASSWORD = os.Getenv("PALWORLD_RCON_PASSWORD")
 	DISCORD_DASHBOARD_CHANNEL_ID = os.Getenv("DISCORD_DASHBOARD_CHANNEL_ID")
 	DISCORD_LOG_CHANNEL_ID = os.Getenv("DISCORD_LOG_CHANNEL_ID")
