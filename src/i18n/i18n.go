@@ -1,13 +1,12 @@
 package i18n
 
 func SetLanguage(language string) {
+	en()
+
 	switch language {
 	case "ko":
 		ko()
 		return
-
-	default:
-		en()
 	}
 }
 
