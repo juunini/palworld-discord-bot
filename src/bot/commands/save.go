@@ -7,7 +7,7 @@ import (
 
 func save() string {
 	client, err := rconClient()
-	if err := client.Connect(); err != nil {
+	if err != nil {
 		return i18n.FailedToConnectRconServer
 	}
 
