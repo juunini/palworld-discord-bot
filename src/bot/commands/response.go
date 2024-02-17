@@ -18,7 +18,7 @@ func Response(message string) string {
 	} else if strings.HasPrefix(command, "broadcast") {
 
 	} else if strings.HasPrefix(command, "shutdown") {
-
+		return shutdown(command)
 	} else if command == "doExit" {
 		return doExit()
 	} else if command == "save" {

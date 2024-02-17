@@ -11,6 +11,8 @@ func en() {
 	FailedToConnectRconServer = "Failed to connect RCON server"
 	FailedToSaveCommand = "Failed to Save command"
 	FailedToDoExitCommand = "Failed to DoExit command"
+	FailedToShutdownCommand = "Failed to Shutdown command"
+	WrongParameters = "Wrong parameters"
 	Help = fmt.Sprintf(`%s help - Display help message.`, config.DISCORD_COMMAND_PREFIX)
 	UnknownCommand = "Unknown command"
 }
