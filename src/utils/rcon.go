@@ -1,4 +1,4 @@
-package commands
+package utils
 
 import (
 	"github.com/juunini/palworld-discord-bot/src/config"
@@ -7,7 +7,7 @@ import (
 	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func rconClient() (palworldrcon.Client, error) {
+func RconClient() (palworldrcon.Client, error) {
 	client := palworldrcon.Client{
 		Host:          config.PALWORLD_RCON_HOST,
 		Port:          uint(config.PALWORLD_RCON_PORT),
