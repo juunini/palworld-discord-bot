@@ -12,5 +12,7 @@ func SetLanguage(language string) {
 }
 
 var BotRunningStart string
+var FailedToConnectRconServer string
+var FailedToSaveCommand string
 var Help string
 var UnknownCommand string
