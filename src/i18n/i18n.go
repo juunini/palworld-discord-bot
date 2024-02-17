@@ -1,16 +1,23 @@
 package i18n
 
 func SetLanguage(language string) {
+	en()
+
 	switch language {
 	case "ko":
 		ko()
 		return
-
-	default:
-		en()
 	}
 }
 
 var BotRunningStart string
-var Help string
+var FailedToConnectRconServer string
+var FailedToSaveCommand string
+var FailedToDoExitCommand string
+var FailedToShutdownCommand string
+var FailedToBroadcastCommand string
+var FailedToKickCommand string
+var FailedToBanCommand string
+var WrongParameters string
+var Help func(commandPrefix string, isAdmin bool) string
 var UnknownCommand string
