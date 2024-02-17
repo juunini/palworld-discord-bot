@@ -65,3 +65,11 @@ const BACKGROUND_INTENSITY_BLUE = "\033[0;104m"
 const BACKGROUND_INTENSITY_PURPLE = "\033[0;105m"
 const BACKGROUND_INTENSITY_CYAN = "\033[0;106m"
 const BACKGROUND_INTENSITY_WHITE = "\033[0;107m"
+
+func PrintError(message string) {
+	println(BOLD_RED + message + RESET)
+}
+
+func PrintSuccess(message string) {
+	println(BOLD_GREEN + message + RESET)
+}
