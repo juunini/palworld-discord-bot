@@ -1,23 +1,28 @@
 package bot
 
-import "github.com/bwmarrin/discordgo"
+import (
+	"strings"
+
+	"github.com/bwmarrin/discordgo"
+	"github.com/juunini/palworld-discord-bot/src/bot/commands"
+	"github.com/juunini/palworld-discord-bot/src/config"
+)
 
 func Handler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if isBotMessage(s, m) {
 		return
 	}
 
-	// If the message is "ping" reply with "Pong!"
-	if m.Content == "ping" {
-		s.ChannelMessageSend(m.ChannelID, "Pong!")
-	}
-
-	// If the message is "pong" reply with "Ping!"
-	if m.Content == "pong" {
-		s.ChannelMessageSend(m.ChannelID, "Ping!")
+	if isCommand(m) {
+		s.ChannelMessageSend(m.ChannelID, commands.Response(m.Content))
+		return
 	}
 }
 
 func isBotMessage(s *discordgo.Session, m *discordgo.MessageCreate) bool {
 	return m.Author.ID == s.State.User.ID
+}
+
+func isCommand(m *discordgo.MessageCreate) bool {
+	return strings.HasPrefix(m.Content, config.DISCORD_COMMAND_PREFIX)
 }
