@@ -10,7 +10,7 @@ func Response(message string) string {
 	command, _ := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
 
 	if command == "help" {
-		return Help()
+		return help()
 	} else if command == "kick" {
 
 	} else if command == "ban" {
@@ -22,7 +22,7 @@ func Response(message string) string {
 	} else if command == "force-shutdown" {
 
 	} else if command == "save" {
-
+		return save()
 	}
 
 	return "Unknown command"
