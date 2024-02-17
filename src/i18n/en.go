@@ -10,6 +10,9 @@ func en() {
 	FailedToSaveCommand = "Failed to Save command"
 	FailedToDoExitCommand = "Failed to DoExit command"
 	FailedToShutdownCommand = "Failed to Shutdown command"
+	FailedToBroadcastCommand = "Failed to Broadcast command"
+	FailedToKickCommand = "Failed to Kick command"
+	FailedToBanCommand = "Failed to Ban command"
 	WrongParameters = "Wrong parameters"
 	Help = func(commandPrefix string) string {
 		return fmt.Sprintf(`%s help - Show help`, commandPrefix)

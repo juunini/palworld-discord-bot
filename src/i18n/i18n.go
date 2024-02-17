@@ -15,6 +15,9 @@ var FailedToConnectRconServer string
 var FailedToSaveCommand string
 var FailedToDoExitCommand string
 var FailedToShutdownCommand string
+var FailedToBroadcastCommand string
+var FailedToKickCommand string
+var FailedToBanCommand string
 var WrongParameters string
 var Help func(string) string
 var UnknownCommand string

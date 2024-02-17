@@ -12,11 +12,11 @@ func Response(message string) string {
 	if command == "help" {
 		return help()
 	} else if command == "kick" {
-
+		return kick(command)
 	} else if command == "ban" {
-
+		return ban(command)
 	} else if strings.HasPrefix(command, "broadcast") {
-
+		return broadcast(command)
 	} else if strings.HasPrefix(command, "shutdown") {
 		return shutdown(command)
 	} else if command == "doExit" {
