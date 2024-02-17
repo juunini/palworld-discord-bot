@@ -11,5 +11,6 @@ func SetLanguage(language string) {
 	}
 }
 
+var BotRunningStart string
 var Help string
 var UnknownCommand string
