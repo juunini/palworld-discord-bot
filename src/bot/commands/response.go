@@ -11,6 +11,18 @@ func Response(message string) string {
 
 	if command == "help" {
 		return Help()
+	} else if command == "kick" {
+
+	} else if command == "ban" {
+
+	} else if strings.HasPrefix(command, "broadcast") {
+
+	} else if strings.HasPrefix(command, "shutdown") {
+
+	} else if command == "force-shutdown" {
+
+	} else if command == "save" {
+
 	}
 
 	return "Unknown command"
