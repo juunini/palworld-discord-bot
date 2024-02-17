@@ -1,16 +1,15 @@
 package i18n
 
-func SetLanguage(language string) TranslateMap {
+func SetLanguage(language string) {
 	switch language {
 	case "ko":
-		return ko
+		ko()
+		return
 
 	default:
-		return en
+		en()
 	}
 }
 
-type TranslateMap struct {
-	Help           string
-	UnknownCommand string
-}
+var Help string
+var UnknownCommand string
