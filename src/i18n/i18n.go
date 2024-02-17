@@ -16,5 +16,5 @@ var FailedToSaveCommand string
 var FailedToDoExitCommand string
 var FailedToShutdownCommand string
 var WrongParameters string
-var Help string
+var Help func(string) string
 var UnknownCommand string
