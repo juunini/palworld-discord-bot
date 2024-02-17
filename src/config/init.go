@@ -28,6 +28,7 @@ func askConfigToUser() {
 	scanEnvWithDefaultValue("Palworld RCON Host", &PALWORLD_RCON_HOST, PALWORLD_RCON_HOST)
 	scanEnvWithDefaultValue("Palworld RCON Port", &PALWORLD_RCON_PORT, PALWORLD_RCON_PORT)
 	scanEnv("Palworld RCON Password", &PALWORLD_RCON_PASSWORD)
+	scanEnvWithDefaultValue("Language", &LANGUAGE, LANGUAGE)
 
 	saveEnv()
 	printEnv()
@@ -63,6 +64,7 @@ func loadEnv() {
 	PALWORLD_RCON_PASSWORD = os.Getenv("PALWORLD_RCON_PASSWORD")
 	DISCORD_DASHBOARD_CHANNEL_ID = os.Getenv("DISCORD_DASHBOARD_CHANNEL_ID")
 	DISCORD_LOG_CHANNEL_ID = os.Getenv("DISCORD_LOG_CHANNEL_ID")
+	LANGUAGE = os.Getenv("LANGUAGE")
 }
 
 func envMap() map[string]string {
@@ -75,6 +77,7 @@ func envMap() map[string]string {
 		"PALWORLD_RCON_PASSWORD":       PALWORLD_RCON_PASSWORD,
 		"DISCORD_DASHBOARD_CHANNEL_ID": DISCORD_DASHBOARD_CHANNEL_ID,
 		"DISCORD_LOG_CHANNEL_ID":       DISCORD_LOG_CHANNEL_ID,
+		"LANGUAGE":                     LANGUAGE,
 	}
 }
 
