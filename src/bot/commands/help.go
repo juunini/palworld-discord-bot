@@ -5,6 +5,6 @@ import (
 	"github.com/juunini/palworld-discord-bot/src/i18n"
 )
 
-func help() string {
-	return i18n.Help(config.DISCORD_COMMAND_PREFIX)
+func help(isAdmin bool) string {
+	return i18n.Help(config.DISCORD_COMMAND_PREFIX, isAdmin)
 }

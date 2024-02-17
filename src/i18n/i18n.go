@@ -19,5 +19,5 @@ var FailedToBroadcastCommand string
 var FailedToKickCommand string
 var FailedToBanCommand string
 var WrongParameters string
-var Help func(string) string
+var Help func(commandPrefix string, isAdmin bool) string
 var UnknownCommand string

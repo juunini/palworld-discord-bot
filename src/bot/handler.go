@@ -14,7 +14,7 @@ func Handler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if isCommand(m) {
-		s.ChannelMessageSend(m.ChannelID, commands.Response(m.Content))
+		s.ChannelMessageSend(m.ChannelID, commands.Response(m.Content, m.Author.Username))
 		return
 	}
 }

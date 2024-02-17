@@ -4,14 +4,24 @@ import (
 	"strings"
 
 	"github.com/juunini/palworld-discord-bot/src/config"
+	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/utils"
 )
 
-func Response(message string) string {
+func Response(message string, username string) string {
 	command, _ := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
+	isAdmin := utils.IsAdmin(username)
 
 	if command == "help" {
-		return help()
-	} else if command == "kick" {
+		return help(isAdmin)
+	}
+
+	// Under commands, only admins can execute
+	if !isAdmin {
+		return i18n.UnknownCommand
+	}
+
+	if command == "kick" {
 		return kick(command)
 	} else if command == "ban" {
 		return ban(command)
@@ -25,5 +35,5 @@ func Response(message string) string {
 		return save()
 	}
 
-	return "Unknown command"
+	return i18n.UnknownCommand
 }
