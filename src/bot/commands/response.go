@@ -13,7 +13,7 @@ func Response(message string, username string) string {
 	isAdmin := utils.IsAdmin(username)
 
 	if command == "help" {
-		return help(isAdmin)
+		return i18n.Help(config.DISCORD_COMMAND_PREFIX, isAdmin)
 	}
 
 	// Under commands, only admins can execute
