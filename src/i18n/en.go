@@ -13,6 +13,7 @@ func en() {
 	FailedToBroadcastCommand = "Failed to Broadcast command"
 	FailedToKickCommand = "Failed to Kick command"
 	FailedToBanCommand = "Failed to Ban command"
+	FailedToShowPlayerCommand = "Failed to ShowPlayer command"
 	WrongParameters = "Wrong parameters"
 	Help = func(commandPrefix string, isAdmin bool) string {
 		message := fmt.Sprintf("`%s help` - Show help\n", commandPrefix)

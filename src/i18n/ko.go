@@ -13,6 +13,7 @@ func ko() {
 	FailedToBroadcastCommand = "Broadcast 커맨드를 실패했습니다."
 	FailedToKickCommand = "Kick 커맨드를 실패했습니다."
 	FailedToBanCommand = "Ban 커맨드를 실패했습니다."
+	FailedToShowPlayerCommand = "ShowPlayer 커맨드를 실패했습니다."
 	WrongParameters = "잘못된 파라미터를 입력하셨습니다. 다시 확인해주세요."
 	Help = func(commandPrefix string, isAdmin bool) string {
 		message := fmt.Sprintf("`%s help` - 도움말을 표시합니다.\n", commandPrefix)
