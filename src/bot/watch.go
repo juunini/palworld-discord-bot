@@ -20,7 +20,6 @@ func Watch(session *discordgo.Session) {
 
 func sendNewPlayers(session *discordgo.Session) {
 	for _, player := range watchers.NewPlayers {
-		fmt.Println(player.Username)
 		session.ChannelMessageSend(config.DISCORD_LOG_CHANNEL_ID, player.Username+" joined the server")
 	}
 }
