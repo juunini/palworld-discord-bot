@@ -39,6 +39,7 @@ func Players() error {
 
 	LeftPlayers = OnlinePlayers
 	OnlinePlayers = map[string]Player{}
+	NewPlayers = []Player{}
 
 	for _, row := range rows[1:] {
 		player := Player{
