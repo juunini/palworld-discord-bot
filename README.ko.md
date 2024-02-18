@@ -27,15 +27,17 @@
 
 | 기능 | 설명 | 이미지 |
 |------|-------------|---------|
+| 국제화 | 한국어(ko), 영어(en) 를 지원합니다. | |
 | 접속중인 유저 대시보드 | 서버에 접속한 유저의 리스트를 보여줍니다. 유저의 변동이 생기면 자동으로 업데이트 됩니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/8a003361-28bc-41fd-9332-6939eea44053) |
 | 유저 접속 알림 | 서버에 유저가 접속하거나, 떠나면 로그 채널에 메시지를 보냅니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/80b31996-0770-4276-8d5c-259feb43c70f) |
 | 커맨드 | 관리자는 커맨드를 이용하여 서버를 관리할 수 있습니다. `!palbot` 또는 `!palbot help` 라고 쓰면 사용법을 출력합니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5b5887e4-20f6-4d61-b623-441368305b34) |
 | kick(관리자 전용) | 유저를 추방합니다. 다시 접속이 가능합니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f) |
 | ban(관리자 전용) | 유저를 차단합니다. 다시 접속이 불가능합니다. | |
-| broadcast(관리자 전용) | 서버에 메시지를 전송합니다. 현재 영어만 사용이 가능합니다. [참고](https://github.com/juunini/palworld-rcon/issues/1) | |
-| shutdown(관리자 전용) | 서버를 종료합니다. | |
-| doExit(관리자 전용) | 서버를 강제 종료합니다. | |
+| broadcast(관리자 전용) | 서버에 메시지를 전송합니다. 현재 영어만 사용이 가능합니다. [참고](https://github.com/juunini/palworld-rcon/issues/1) | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/6912d32b-0458-4336-8afc-6b1bb85f417c) |
+| shutdown(관리자 전용) | 서버를 종료합니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/29a0caca-803e-4ba0-ad6c-e2b296736b7e) |
+| doExit(관리자 전용) | 서버를 강제 종료합니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/299174d4-a749-4f14-a7c5-ceb5bc6cdccb) |
 | save(관리자 전용) | 서버를 저장합니다. | |
+| startServer(관리자 전용) | 서버를 실행합니다. (윈도우: `C:\Program Files (x86)\Steam\steamapps\common\PalServer\PalServer.exe`, 리눅스: `~/Steam/steamapps/common/PalServer/PalServer.sh`) | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/1a7ebb68-eb78-41ac-86a0-1cc89c404ce1) |
 
 ## 주의사항
 
