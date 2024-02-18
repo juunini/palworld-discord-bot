@@ -33,6 +33,11 @@
     - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5b5887e4-20f6-4d61-b623-441368305b34)
     - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f)
 
+## 주의사항
+
+- 현재 Palworld는 RCON으로 메시지를 전송 시 Non-ASCII 문자를 지원하지 않습니다. 영어 말고 다른 언어를 사용할 수 없다고 보시면 됩니다. [참고](https://github.com/juunini/palworld-rcon/issues/1)
+- Palworld의 RCON은 메시지를 보낼 때 띄어쓰기가 존재하면 메시지를 잘라버리는 현상이 발생합니다. 따라서, 띄어쓰기 부분은 `_`로 대체되어 전송됩니다. (broadcast, shutdown 커맨드)
+
 ## 환경 변수
 
 | 이름 | 설명 | 기본값 |

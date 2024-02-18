@@ -33,6 +33,11 @@
     - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/93c77216-cd17-43f9-a44a-3b4b4d553914)
     - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f)
 
+## Caution
+
+- Currently, Palworld does not support Non-ASCII characters when sending messages via RCON. You can only use languages other than English. [Reference](https://github.com/juunini/palworld-rcon/issues/1)
+- When sending messages with spaces, Palworld's RCON cuts off the message. Therefore, spaces are replaced with underscores when transmitted. (broadcast, shutdown commands)
+
 ## Environment Variables
 
 | Name | Description | Default |
