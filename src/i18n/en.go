@@ -14,6 +14,8 @@ func en() {
 	FailedToKickCommand = "Failed to Kick command"
 	FailedToBanCommand = "Failed to Ban command"
 	FailedToShowPlayerCommand = "Failed to ShowPlayer command"
+	FailedToStartServerCommand = "Failed to start server"
+	SuccessToStartServerCommand = "Server started"
 	WrongParameters = "Wrong parameters"
 	Help = func(commandPrefix string, isAdmin bool) string {
 		message := fmt.Sprintf("`%s help` - Show help\n", commandPrefix)
@@ -28,6 +30,7 @@ func en() {
 		message += fmt.Sprintf("`%s shutdown <seconds> <message>` - Shutdown server after <seconds> with <message>.\n", commandPrefix)
 		message += fmt.Sprintf("`%s doExit` - Force exit server.\n", commandPrefix)
 		message += fmt.Sprintf("`%s save` - Save server.", commandPrefix)
+		message += fmt.Sprintf("`%s startServer` - Start server.", commandPrefix)
 		return message
 	}
 	UnknownCommand = "Unknown command"
