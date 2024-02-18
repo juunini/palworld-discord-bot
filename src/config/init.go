@@ -26,6 +26,8 @@ func askConfigToUser() {
 	scanEnv("Discord Bot Token", &DISCORD_BOT_TOKEN)
 	scanEnv("Discord Admin Usernames (comma separated)", &DISCORD_ADMIN_USERNAMES_STRING)
 	scanEnvWithDefaultValue("Discord Command Prefix", &DISCORD_COMMAND_PREFIX, DISCORD_COMMAND_PREFIX)
+	scanEnv("Discord Dashboard Channel ID", &DISCORD_DASHBOARD_CHANNEL_ID)
+	scanEnv("Discord Log Channel ID", &DISCORD_LOG_CHANNEL_ID)
 	scanEnvWithDefaultValue("Palworld RCON Host", &PALWORLD_RCON_HOST, PALWORLD_RCON_HOST)
 	scanEnvWithDefaultValue("Palworld RCON Port", &PALWORLD_RCON_PORT_STRING, PALWORLD_RCON_PORT_STRING)
 	scanEnv("Palworld RCON Password", &PALWORLD_RCON_PASSWORD)

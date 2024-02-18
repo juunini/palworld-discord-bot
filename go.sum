@@ -1,13 +1,11 @@
 github.com/bwmarrin/discordgo v0.27.1 h1:ib9AIc/dom1E/fSIulrBwnez0CToJE113ZGt4HoliGY=
 github.com/bwmarrin/discordgo v0.27.1/go.mod h1:NJZpH+1AfhIcyQsPeuBKsUtYrRnjkyu0kIVMCHkZtRY=
-github.com/gorcon/rcon v1.3.5 h1:YE/Vrw6R99uEP08wp0EjdPAP3Jwz/ys3J8qxI1nYoeU=
-github.com/gorcon/rcon v1.3.5/go.mod h1:zR1qfKZttF8vAgH1NsP6CdpachOvLDq8jE64NboTpIM=
 github.com/gorilla/websocket v1.4.2 h1:+/TMaTYc4QFitKJxsQ7Yye35DkWvkdLcvGKqM+x0Ufc=
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
-github.com/juunini/palworld-rcon v1.0.0 h1:H5R6ZW216xepxwQa+EVMexR+5pvchIUa2sQJx6Pa93o=
-github.com/juunini/palworld-rcon v1.0.0/go.mod h1:hN2aABVdCDpOjea6aPynO6nEM64CKSss+60evi2jQhY=
+github.com/juunini/palworld-rcon v1.1.1 h1:AgQW5E9Ky+z7TUCEP7hfab82j28jhykg7q6peSJqfqw=
+github.com/juunini/palworld-rcon v1.1.1/go.mod h1:W4SPtcjBCqNsTFQKjuObHAavhOUaQFN3nSqIcMiaOwI=
 golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b h1:7mWr3k41Qtv8XlltBkDkl8LoP3mpSgBW8BUoxtEdbXg=
 golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=
 golang.org/x/net v0.0.0-20210226172049-e18ecbb05110/go.mod h1:m0MpNAwzfU5UDzcl9v0D8zg8gWTRqZa9RBIspLL5mdg=
