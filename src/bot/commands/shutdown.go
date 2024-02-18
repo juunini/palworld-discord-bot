@@ -45,6 +45,6 @@ func shutdownParameters(command string) (uint, string, string) {
 		return 0, "", i18n.WrongParameters
 	}
 
-	message := params[1]
+	message := strings.Join(params[1:], "_")
 	return seconds, message, ""
 }
