@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	github.com/bwmarrin/discordgo v0.27.1
 	github.com/joho/godotenv v1.5.1
-	github.com/juunini/palworld-rcon v1.0.0
+	github.com/juunini/palworld-rcon v1.1.1
 )
 
 require (
