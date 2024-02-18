@@ -31,12 +31,12 @@ func askConfigToUser() {
 	scanEnv("Palworld RCON Password", &PALWORLD_RCON_PASSWORD)
 	scanEnvWithDefaultValue("Language", &LANGUAGE, LANGUAGE)
 
-	saveEnv()
+	SaveEnv()
 	printEnv()
 	loadEnv()
 }
 
-func saveEnv() {
+func SaveEnv() {
 	if err := godotenv.Write(envMap(), ".env"); err != nil {
 		fmt.Printf("%sError writing .env file: %s%s\n", console_decoration.RED, err, console_decoration.RESET)
 		os.Exit(1)
@@ -72,21 +72,23 @@ func loadEnv() {
 
 	PALWORLD_RCON_PASSWORD = os.Getenv("PALWORLD_RCON_PASSWORD")
 	DISCORD_DASHBOARD_CHANNEL_ID = os.Getenv("DISCORD_DASHBOARD_CHANNEL_ID")
+	DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID = os.Getenv("DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID")
 	DISCORD_LOG_CHANNEL_ID = os.Getenv("DISCORD_LOG_CHANNEL_ID")
 	LANGUAGE = os.Getenv("LANGUAGE")
 }
 
 func envMap() map[string]string {
 	return map[string]string{
-		"DISCORD_BOT_TOKEN":            DISCORD_BOT_TOKEN,
-		"DISCORD_ADMIN_USERNAMES":      DISCORD_ADMIN_USERNAMES_STRING,
-		"DISCORD_COMMAND_PREFIX":       DISCORD_COMMAND_PREFIX,
-		"PALWORLD_RCON_HOST":           PALWORLD_RCON_HOST,
-		"PALWORLD_RCON_PORT":           PALWORLD_RCON_PORT_STRING,
-		"PALWORLD_RCON_PASSWORD":       PALWORLD_RCON_PASSWORD,
-		"DISCORD_DASHBOARD_CHANNEL_ID": DISCORD_DASHBOARD_CHANNEL_ID,
-		"DISCORD_LOG_CHANNEL_ID":       DISCORD_LOG_CHANNEL_ID,
-		"LANGUAGE":                     LANGUAGE,
+		"DISCORD_BOT_TOKEN":                           DISCORD_BOT_TOKEN,
+		"DISCORD_ADMIN_USERNAMES":                     DISCORD_ADMIN_USERNAMES_STRING,
+		"DISCORD_COMMAND_PREFIX":                      DISCORD_COMMAND_PREFIX,
+		"PALWORLD_RCON_HOST":                          PALWORLD_RCON_HOST,
+		"PALWORLD_RCON_PORT":                          PALWORLD_RCON_PORT_STRING,
+		"PALWORLD_RCON_PASSWORD":                      PALWORLD_RCON_PASSWORD,
+		"DISCORD_DASHBOARD_CHANNEL_ID":                DISCORD_DASHBOARD_CHANNEL_ID,
+		"DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID": DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID,
+		"DISCORD_LOG_CHANNEL_ID":                      DISCORD_LOG_CHANNEL_ID,
+		"LANGUAGE":                                    LANGUAGE,
 	}
 }
 
