@@ -21,9 +21,9 @@ func Response(message string, username string) string {
 		return i18n.UnknownCommand
 	}
 
-	if command == "kick" {
+	if strings.HasPrefix(command, "kick") {
 		return kick(command)
-	} else if command == "ban" {
+	} else if strings.HasPrefix(command, "ban") {
 		return ban(command)
 	} else if strings.HasPrefix(command, "broadcast") {
 		return broadcast(command)
