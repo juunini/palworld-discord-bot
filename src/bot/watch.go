@@ -13,9 +13,14 @@ func Watch(session *discordgo.Session) {
 		return
 	}
 
-	sendNewPlayers(session)
-	sendLeftPlayers(session)
-	sendOnlinePlayerDashboard(session)
+	if config.DISCORD_LOG_CHANNEL_ID != "" {
+		sendNewPlayers(session)
+		sendLeftPlayers(session)
+	}
+
+	if config.DISCORD_DASHBOARD_CHANNEL_ID == "" {
+		sendOnlinePlayerDashboard(session)
+	}
 }
 
 func sendNewPlayers(session *discordgo.Session) {
