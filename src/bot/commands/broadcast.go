@@ -21,7 +21,7 @@ func broadcast(command string) string {
 
 	defer client.Disconnect()
 
-	response, err := client.Broadcast(message)
+	response, err := client.Broadcast(strings.ReplaceAll(message, " ", "_"))
 	if err != nil {
 		return i18n.FailedToBroadcastCommand
 	}
