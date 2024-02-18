@@ -33,6 +33,8 @@ func Response(message string, username string) string {
 		return doExit()
 	} else if command == "save" {
 		return save()
+	} else if command == "startServer" {
+		return startServer()
 	}
 
 	return i18n.UnknownCommand

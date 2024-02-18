@@ -27,15 +27,17 @@
 
 | Feature | Description | Image |
 |------|-------------|---------|
+| Internationalization | Supports Korean (ko) and English (en). | |
 | Connected User Dashboard | Displays a list of users connected to the server. It automatically updates when there are changes in the user list. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/8a003361-28bc-41fd-9332-6939eea44053) |
 | User Connection Notification | Sends a message to the log channel when a user connects or disconnects from the server. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/80b31996-0770-4276-8d5c-259feb43c70f) |
 | Commands | Administrators can manage the server using commands. Typing `!palbot` or `!palbot help` will display the usage. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5b5887e4-20f6-4d61-b623-441368305b34) |
 | kick (Admin Only) | Kicks a user from the server. They can reconnect afterwards. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f) |
 | ban (Admin Only) | Bans a user from the server. They cannot reconnect. | |
-| broadcast (Admin Only) | Sends a message to the server. Currently, only English is supported. [Reference](https://github.com/juunini/palworld-rcon/issues/1) | |
-| shutdown (Admin Only) | Shuts down the server. | |
-| doExit (Admin Only) | Forces the server to exit. | |
+| broadcast (Admin Only) | Sends a message to the server. Currently, only English is supported. [Reference](https://github.com/juunini/palworld-rcon/issues/1) | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/6912d32b-0458-4336-8afc-6b1bb85f417c) |
+| shutdown (Admin Only) | Shuts down the server. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/29a0caca-803e-4ba0-ad6c-e2b296736b7e) |
+| doExit (Admin Only) | Forces the server to exit. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/299174d4-a749-4f14-a7c5-ceb5bc6cdccb) |
 | save (Admin Only) | Saves the server. | |
+| startServer (Admin Only) | Starts the server. (Windows: `C:\Program Files (x86)\Steam\steamapps\common\PalServer\PalServer.exe`, Linux: `~/Steam/steamapps/common/PalServer/PalServer.sh`) | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/1a7ebb68-eb78-41ac-86a0-1cc89c404ce1) |
 
 ## Caution
 
