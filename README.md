@@ -25,13 +25,17 @@
 
 ## Features
 
-- Displays a list of users connected to the server. It automatically updates when there are changes in the user list.
-    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/8a003361-28bc-41fd-9332-6939eea44053)
-- Sends a message to the log channel when a user connects or disconnects from the server.
-    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/80b31996-0770-4276-8d5c-259feb43c70f)
-- Administrators can manage the server using commands. Typing `!palbot` or `!palbot help` will display the usage. [Reference](https://tech.palworldgame.com/settings-and-operation/commands)
-    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/93c77216-cd17-43f9-a44a-3b4b4d553914)
-    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f)
+| Feature | Description | Image |
+|------|-------------|---------|
+| Connected User Dashboard | Displays a list of users connected to the server. It automatically updates when there are changes in the user list. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/8a003361-28bc-41fd-9332-6939eea44053) |
+| User Connection Notification | Sends a message to the log channel when a user connects or disconnects from the server. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/80b31996-0770-4276-8d5c-259feb43c70f) |
+| Commands | Administrators can manage the server using commands. Typing `!palbot` or `!palbot help` will display the usage. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5b5887e4-20f6-4d61-b623-441368305b34) |
+| kick (Admin Only) | Kicks a user from the server. They can reconnect afterwards. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f) |
+| ban (Admin Only) | Bans a user from the server. They cannot reconnect. | |
+| broadcast (Admin Only) | Sends a message to the server. Currently, only English is supported. [Reference](https://github.com/juunini/palworld-rcon/issues/1) | |
+| shutdown (Admin Only) | Shuts down the server. | |
+| doExit (Admin Only) | Forces the server to exit. | |
+| save (Admin Only) | Saves the server. | |
 
 ## Caution
 
