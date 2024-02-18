@@ -18,7 +18,7 @@ func Watch(session *discordgo.Session) {
 		sendLeftPlayers(session)
 	}
 
-	if config.DISCORD_DASHBOARD_CHANNEL_ID == "" {
+	if config.DISCORD_DASHBOARD_CHANNEL_ID != "" {
 		sendOnlinePlayerDashboard(session)
 	}
 }
