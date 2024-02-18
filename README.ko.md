@@ -21,7 +21,17 @@
 2. 다운로드 받은 파일을 실행하세요.
     - 실행하면 필요한 값들을 터미널에서 입력받습니다.
     - 터미널에서 입력하는게 아닌 직접 설정하고 싶다면, `.env.sample` 파일을 복사하여 `.env` 파일을 만들고, 필요한 값들을 채워넣으세요.
-    - 필요한 값들은 아래의 환경 변수를 참고하세요.
+    - 필요한 값들은 아래의 [환경 변수](#환경-변수)를 참고하세요.
+
+## 기능
+
+- 서버에 접속한 유저의 리스트를 보여줍니다. 유저의 변동이 생기면 자동으로 업데이트 됩니다.
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/8a003361-28bc-41fd-9332-6939eea44053)
+- 서버에 유저가 접속하거나, 떠나면 로그 채널에 메시지를 보냅니다.
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/80b31996-0770-4276-8d5c-259feb43c70f)
+- 관리자는 커맨드를 이용하여 서버를 관리할 수 있습니다. `!palbot` 또는 `!palbot help` 라고 쓰면 사용법을 출력합니다. [참고](https://tech.palworldgame.com/settings-and-operation/commands)
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5b5887e4-20f6-4d61-b623-441368305b34)
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f)
 
 ## 환경 변수
 

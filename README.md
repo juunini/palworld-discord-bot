@@ -17,9 +17,21 @@
 
 ## Install
 
-1. Go to the [releases](https://github.com/juunini/palworld-discord-bot/releases) page and download.
-2. Execute the file
-    - If you want to setting manually, copy `.env.sample` to `.env` and fill the values.
+1. Go to the [Release](https://github.com/juunini/palworld-discord-bot/releases) page and download the file that matches your operating system.
+2. Run the downloaded file.
+    - When you run it, you will be prompted to enter the required values in the terminal.
+    - If you prefer to set the values directly instead of entering them in the terminal, copy the `.env.sample` file and create a `.env` file, then fill in the necessary values.
+    - Refer to the [Environment Variables](#environment-variables) section below for the required values.
+
+## Features
+
+- Displays a list of users connected to the server. It automatically updates when there are changes in the user list.
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/8a003361-28bc-41fd-9332-6939eea44053)
+- Sends a message to the log channel when a user connects or disconnects from the server.
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/80b31996-0770-4276-8d5c-259feb43c70f)
+- Administrators can manage the server using commands. Typing `!palbot` or `!palbot help` will display the usage. [Reference](https://tech.palworldgame.com/settings-and-operation/commands)
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/93c77216-cd17-43f9-a44a-3b4b4d553914)
+    - ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/ab25b40c-3bd9-4a98-973b-5f0b0553786f)
 
 ## Environment Variables
 
