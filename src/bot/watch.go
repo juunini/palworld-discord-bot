@@ -56,18 +56,18 @@ func sendOnlinePlayerDashboard(session *discordgo.Session) {
 		},
 	}
 
-	if config.DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID == "" {
+	if config.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID == "" {
 		message, err := session.ChannelMessageSendEmbed(config.DISCORD_DASHBOARD_CHANNEL_ID, embed)
 		if err != nil {
 			return
 		}
 
-		config.DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID = message.ID
-		config.SaveEnv()
+		config.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID = message.ID
+		config.Save()
 		return
 	}
 
-	_, err := session.ChannelMessageEditEmbed(config.DISCORD_DASHBOARD_CHANNEL_ID, config.DISCORD_DASHBAORD_ONLINE_PLAYERS_MESSAGE_ID, embed)
+	_, err := session.ChannelMessageEditEmbed(config.DISCORD_DASHBOARD_CHANNEL_ID, config.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID, embed)
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -9,7 +9,7 @@ import (
 )
 
 func init() {
-	config.Init()
+	config.Load()
 	i18n.SetLanguage(config.LANGUAGE)
 }
 
