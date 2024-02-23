@@ -5,5 +5,5 @@ func Shutdown() error {
 		return nil
 	}
 
-	return app.Shutdown()
+	return app.ShutdownWithTimeout(1)
 }
