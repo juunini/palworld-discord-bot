@@ -8,6 +8,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/web"
 )
 
 func Connect(session *discordgo.Session) {
@@ -22,4 +23,6 @@ func Connect(session *discordgo.Session) {
 	<-sc
 
 	session.Close()
+	// FIXME: move upper code and under line code to main.go
+	web.Shutdown()
 }
