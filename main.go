@@ -6,6 +6,7 @@ import (
 	"github.com/juunini/palworld-discord-bot/src/bot"
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/web"
 )
 
 func init() {
@@ -14,6 +15,10 @@ func init() {
 }
 
 func main() {
+	if config.WEB_SERVER_ENABLED {
+		go web.Listen(config.WEB_SERVER_PORT)
+	}
+
 	session := bot.New(config.DISCORD_BOT_TOKEN)
 
 	session.AddHandler(bot.Handler)
