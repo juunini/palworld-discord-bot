@@ -9,6 +9,7 @@ var (
 	WEB_SERVER_ENABLED = true
 	WEB_SERVER_PORT    = 60000
 
+	DISCORD_BOT_ENABLED     = false
 	DISCORD_BOT_TOKEN       = ""
 	DISCORD_ADMIN_USERNAMES = []string{}
 	DISCORD_COMMAND_PREFIX  = "!palbot"
