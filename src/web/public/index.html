@@ -11,12 +11,13 @@
     />
     <title>Palworld Discord Bot</title>
   </head>
+
   <body class="container py-5">
-    <form class="card">
+    <form class="card mb-4">
       <div class="card-header">Discord Bot Config</div>
       <div class="card-body">
         <custom-switch
-          id="enableDiscordBot"
+          id="discordBotEnabled"
           label="Enable Discord bot"
           class="mb-2"
         ></custom-switch>
@@ -49,7 +50,53 @@
         ></custom-input>
       </div>
     </form>
+
+    <form class="card">
+      <div class="card-header">Palworld config</div>
+      <div class="card-body">
+        <custom-switch
+          id="palworldRconEnabled"
+          label="Enable RCON"
+          class="mb-2"
+        ></custom-switch>
+        <custom-input
+          id="palworldRconHost"
+          type="text"
+          label="RCON Host"
+          tooltip="The IP address or hostname of the RCON server."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="palworldRconPort"
+          type="number"
+          label="RCON Port"
+          tooltip="The port that the RCON server is running on."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="palworldAdminPassword"
+          type="text"
+          label="Admin Password"
+          tooltip="The password for the RCON server."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="palworldServerFilePath"
+          type="text"
+          label="Server File Path"
+          tooltip="The file path to the Palworld server executable."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="palworldServerExecuteFlags"
+          type="text"
+          label="Server Execute Flags"
+          tooltip="The flags to pass to the server executable."
+        ></custom-input>
+      </div>
+    </form>
   </body>
+
   <script
     async
     src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
@@ -79,13 +126,7 @@
   </script>
 
   <script>
-    let enableDiscordBot = {{.DISCORD_BOT_ENABLED}};
-    let discordBotToken = "{{.DISCORD_BOT_TOKEN}}";
-    let discordAdminUsernames = "{{.DISCORD_ADMIN_USERNAMES}}";
-    let discordCommandIgnoreCase = {{.DISCORD_COMMAND_IGNORE_CASE}};
-    let discordCommandPrefix = "{{.DISCORD_COMMAND_PREFIX}}";
-
-    const enableDiscordBotEl = document.getElementById("enableDiscordBot");
+    const discordBotEnabledEl = document.getElementById("discordBotEnabled");
     const discordBotTokenEl = document.getElementById("discordBotToken");
     const discordAdminUsernamesEl = document.getElementById(
       "discordAdminUsernames"
@@ -97,13 +138,24 @@
       "discordCommandPrefix"
     );
 
-    enableDiscordBotEl.setAttribute("checked", enableDiscordBot);
-    discordBotTokenEl.setAttribute("value", discordBotToken);
-    discordAdminUsernamesEl.setAttribute("value", discordAdminUsernames);
-    discordCommandIgnoreCaseEl.setAttribute(
-      "checked",
-      discordCommandIgnoreCase
-    );
-    discordCommandPrefixEl.setAttribute("value", discordCommandPrefix);
+    discordBotEnabledEl.setAttribute("checked", {{.DISCORD_BOT_ENABLED}});
+    discordBotTokenEl.setAttribute("value", "{{.DISCORD_BOT_TOKEN}}");
+    discordAdminUsernamesEl.setAttribute("value", "{{.DISCORD_ADMIN_USERNAMES}}");
+    discordCommandIgnoreCaseEl.setAttribute("checked", {{.DISCORD_COMMAND_IGNORE_CASE}});
+    discordCommandPrefixEl.setAttribute("value", "{{.DISCORD_COMMAND_PREFIX}}");
+
+    const palworldRconEnabledEl = document.getElementById("palworldRconEnabled");
+    const palworldRconHostEl = document.getElementById("palworldRconHost");
+    const palworldRconPortEl = document.getElementById("palworldRconPort");
+    const palworldAdminPasswordEl = document.getElementById("palworldAdminPassword");
+    const palworldServerFilePathEl = document.getElementById("palworldServerFilePath");
+    const palworldServerExecuteFlagsEl = document.getElementById("palworldServerExecuteFlags");
+
+    palworldRconEnabledEl.setAttribute("checked", {{.PALWORLD_RCON_ENABLED}});
+    palworldRconHostEl.setAttribute("value", "{{.PALWORLD_RCON_HOST}}");
+    palworldRconPortEl.setAttribute("value", {{.PALWORLD_RCON_PORT}});
+    palworldAdminPasswordEl.setAttribute("value", "{{.PALWORLD_ADMIN_PASSWORD}}");
+    palworldServerFilePathEl.setAttribute("value", "{{.PALWORLD_SERVER_FILE_PATH}}");
+    palworldServerExecuteFlagsEl.setAttribute("value", "{{.PALWORLD_SERVER_EXECUTE_FLAGS}}");
   </script>
 </html>
