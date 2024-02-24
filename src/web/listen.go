@@ -76,6 +76,7 @@ func Listen(port int) error {
 
 				"PalworldConfig":                    i18n.PalworldConfig,
 				"EnablePalworldRcon":                i18n.EnablePalworldRcon,
+				"EnablePalworldRconTooltip":         i18n.EnablePalworldRconTooltip,
 				"PalworldRconHost":                  i18n.PalworldRconHost,
 				"PalworldRconHostTooltip":           i18n.PalworldRconHostTooltip,
 				"PalworldRconPort":                  i18n.PalworldRconPort,
