@@ -58,7 +58,7 @@
   document.querySelectorAll(".patch-config").forEach((el) => {
     el.addEventListener("click", () => {
       const changedConfig = extractChangedConfig(configFromElements(), config);
-      patchConfig(changedConfig);
+      patchConfig(changedConfig, "{{.i18n.ConfigUpdateSuccess}}", "{{.i18n.ConfigUpdateFailed}}");
     })
   })
 </script>

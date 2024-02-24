@@ -1,4 +1,4 @@
-export async function patchConfig(changedConfig) {
+export async function patchConfig(changedConfig, successMessage, failedMessage) {
   return fetch('/config', {
     method: 'PATCH',
     headers: {
@@ -6,7 +6,14 @@ export async function patchConfig(changedConfig) {
     },
     body: JSON.stringify(changedConfig),
   })
-    .then(res => res.json())
+    .then(res => {
+      console.log(res.status)
+      if (res.status !== 202) {
+        throw new Error(failedMessage);
+      }
+
+      alert(successMessage)
+    })
     .catch((error) => alert(error))
     .finally(() => location.reload());
 }
