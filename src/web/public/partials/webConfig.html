@@ -1,0 +1,21 @@
+<form class="card mb-4">
+  <div class="card-header">Web Config</div>
+  <div class="card-body">
+    <custom-switch
+      id="webServerEnabled"
+      label="Enable Web Server"
+      turn-off-prompt="Are you sure you want to disable the web server?"
+      class="mb-2"
+    ></custom-switch>
+    <custom-input
+      id="webServerPort"
+      type="number"
+      label="Web Server Port"
+      tooltip="The port that the web server will listen on."
+    ></custom-input>
+  </div>
+</form>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary">Save</button>
+</div>

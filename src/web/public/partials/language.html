@@ -1,0 +1,15 @@
+<form class="card mb-4">
+  <div class="card-header">Language</div>
+
+  <div class="card-body">
+    <select class="form-select" aria-label="Select Language" id="language">
+      {{range .CONFIG.LANGUAGES}}
+      <option value="{{.CODE}}">{{.NAME}}</option>
+      {{end}}
+    </select>
+  </div>
+</form>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary">Save</button>
+</div>

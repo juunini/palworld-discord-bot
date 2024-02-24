@@ -1,0 +1,89 @@
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
+  crossorigin="anonymous"
+></script>
+<script type="importmap">
+  {
+    "imports": {
+      "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+      "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+    }
+  }
+</script>
+
+<script type="module">
+  import * as bootstrap from "bootstrap";
+
+  import "/components/switch.js";
+  import "/components/input.js";
+
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
+
+  const webServerEnabledEl = document.getElementById("webServerEnabled");
+  const webServerPortEl = document.getElementById("webServerPort");
+
+  webServerEnabledEl.setAttribute("checked", {{.CONFIG.WEB_SERVER_ENABLED}});
+  webServerPortEl.setAttribute("value", {{.CONFIG.WEB_SERVER_PORT}});
+
+  /** @type {HTMLSelectElement} */
+  const languageEl = document.getElementById("language");
+  languageEl.value = "{{.CONFIG.LANGUAGE}}";
+
+  const discordBotEnabledEl = document.getElementById("discordBotEnabled");
+  const discordBotTokenEl = document.getElementById("discordBotToken");
+  const discordAdminUsernamesEl = document.getElementById(
+    "discordAdminUsernames"
+  );
+  const discordCommandIgnoreCaseEl = document.getElementById(
+    "discordCommandIgnoreCase"
+  );
+  const discordCommandPrefixEl = document.getElementById(
+    "discordCommandPrefix"
+  );
+
+  discordBotEnabledEl.setAttribute("checked", {{.CONFIG.DISCORD_BOT_ENABLED}});
+  discordBotTokenEl.setAttribute("value", "{{.CONFIG.DISCORD_BOT_TOKEN}}");
+  discordAdminUsernamesEl.setAttribute("value", "{{.CONFIG.DISCORD_ADMIN_USERNAMES}}");
+  discordCommandIgnoreCaseEl.setAttribute("checked", {{.CONFIG.DISCORD_COMMAND_IGNORE_CASE}});
+  discordCommandPrefixEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_PREFIX}}");
+
+  const palworldRconEnabledEl = document.getElementById("palworldRconEnabled");
+  const palworldRconHostEl = document.getElementById("palworldRconHost");
+  const palworldRconPortEl = document.getElementById("palworldRconPort");
+  const palworldAdminPasswordEl = document.getElementById("palworldAdminPassword");
+  const palworldServerFilePathEl = document.getElementById("palworldServerFilePath");
+  const palworldServerExecuteFlagsEl = document.getElementById("palworldServerExecuteFlags");
+
+  palworldRconEnabledEl.setAttribute("checked", {{.CONFIG.PALWORLD_RCON_ENABLED}});
+  palworldRconHostEl.setAttribute("value", "{{.CONFIG.PALWORLD_RCON_HOST}}");
+  palworldRconPortEl.setAttribute("value", {{.CONFIG.PALWORLD_RCON_PORT}});
+  palworldAdminPasswordEl.setAttribute("value", "{{.CONFIG.PALWORLD_ADMIN_PASSWORD}}");
+  palworldServerFilePathEl.setAttribute("value", "{{.CONFIG.PALWORLD_SERVER_FILE_PATH}}");
+  palworldServerExecuteFlagsEl.setAttribute("value", "{{.CONFIG.PALWORLD_SERVER_EXECUTE_FLAGS}}");
+
+  const discordDashboardChannelIdEl = document.getElementById("discordDashboardChannelId");
+  const discordLogChannelIdEl = document.getElementById("discordLogChannelId");
+  const discordDashboardOnlinePlayersMessageIdEl = document.getElementById("discordDashboardOnlinePlayersMessageId");
+  const discordDashboardPalworldConfigMessageIdEl = document.getElementById("discordDashboardPalworldConfigMessageId");
+  const discordDashboardBotConfigMessageIdEl = document.getElementById("discordDashboardBotConfigMessageId");
+
+  discordDashboardChannelIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_CHANNEL_ID}}");
+  discordLogChannelIdEl.setAttribute("value", "{{.CONFIG.DISCORD_LOG_CHANNEL_ID}}");
+  discordDashboardOnlinePlayersMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID}}");
+  discordDashboardPalworldConfigMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID}}");
+  discordDashboardBotConfigMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID}}");
+
+  const discordCommandAliasKickEl = document.getElementById("discordCommandAliasKick");
+  const discordCommandAliasBanEl = document.getElementById("discordCommandAliasBan");
+  const discordCommandAliasBroadcastEl = document.getElementById("discordCommandAliasBroadcast");
+  const discordCommandAliasShutdownEl = document.getElementById("discordCommandAliasShutdown");
+  const discordCommandAliasDoExitEl = document.getElementById("discordCommandAliasDoExit");
+  const discordCommandAliasSaveEl = document.getElementById("discordCommandAliasSave");
+  const discordCommandAliasStartServerEl = document.getElementById("discordCommandAliasStartServer");
+</script>

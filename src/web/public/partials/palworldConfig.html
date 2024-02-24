@@ -1,0 +1,48 @@
+<form class="card mb-4">
+  <div class="card-header">Palworld config</div>
+  <div class="card-body">
+    <custom-switch
+      id="palworldRconEnabled"
+      label="Enable RCON"
+      class="mb-2"
+    ></custom-switch>
+    <custom-input
+      id="palworldRconHost"
+      type="text"
+      label="RCON Host"
+      tooltip="The IP address or hostname of the RCON server."
+      class="mb-2"
+    ></custom-input>
+    <custom-input
+      id="palworldRconPort"
+      type="number"
+      label="RCON Port"
+      tooltip="The port that the RCON server is running on."
+      class="mb-2"
+    ></custom-input>
+    <custom-input
+      id="palworldAdminPassword"
+      type="text"
+      label="Admin Password"
+      tooltip="The password for the RCON server."
+      class="mb-2"
+    ></custom-input>
+    <custom-input
+      id="palworldServerFilePath"
+      type="text"
+      label="Server File Path"
+      tooltip="The file path to the Palworld server executable."
+      class="mb-2"
+    ></custom-input>
+    <custom-input
+      id="palworldServerExecuteFlags"
+      type="text"
+      label="Server Execute Flags"
+      tooltip="The flags to pass to the server executable."
+    ></custom-input>
+  </div>
+</form>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary">Save</button>
+</div>
