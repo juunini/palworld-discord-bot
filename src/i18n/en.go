@@ -68,6 +68,18 @@ func en() {
 	PalworldServerExecuteFlags = "Palworld Server Execute Flags"
 	PalworldServerExecuteFlagsTooltip = "Enter the flags of the Palworld server."
 
+	DiscordChannelConfig = "Discord Channel Config"
+	DiscordDashboardChannelID = "Discord Dashboard Channel ID"
+	DiscordDashboardChannelIDTooltip = "Enter the channel ID for using the dashboard function. If not entered, the function is not used. You can find out how to check the channel ID by clicking the ? button you are currently hovering over."
+	DiscordLogChannelID = "Discord Log Channel ID"
+	DiscordLogChannelIDTooltip = "Enter the channel ID to check the user's connection/disconnection record. If not entered, the function is not used. You can find out how to check the channel ID by clicking the ? button you are currently hovering over."
+	DiscordDashboardOnlinePlayersMessageID = "Discord Dashboard Online Players Message ID"
+	DiscordDashboardOnlinePlayersMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
+	DiscordDashboardPalworldConfigMessageID = "Discord Dashboard Palworld Config Message ID"
+	DiscordDashboardPalworldConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
+	DiscordDashboardBotConfigMessageID = "Discord Dashboard Bot Config Message ID"
+	DiscordDashboardBotConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
+
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"

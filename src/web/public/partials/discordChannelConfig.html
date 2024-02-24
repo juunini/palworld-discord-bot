@@ -1,39 +1,41 @@
 <form class="card mb-4">
-  <div class="card-header">Discord Channel Config</div>
+  <div class="card-header">{{.i18n.DiscordChannelConfig}}</div>
   <div class="card-body">
     <custom-input
       id="discordDashboardChannelId"
       type="text"
-      label="Dashboard Channel ID"
-      tooltip="The channel ID for the dashboard."
+      label="{{.i18n.DiscordDashboardChannelID}}"
+      tooltip="{{.i18n.DiscordDashboardChannelIDTooltip}}"
+      tooltip-click-href="https://github.com/juunini/palworld-discord-bot/wiki"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="discordLogChannelId"
       type="text"
-      label="Log Channel ID"
-      tooltip="The channel ID for the bot logs."
+      label="{{.i18n.DiscordLogChannelID}}"
+      tooltip="{{.i18n.DiscordLogChannelIDTooltip}}"
+      tooltip-click-href="https://github.com/juunini/palworld-discord-bot/wiki"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="discordDashboardOnlinePlayersMessageId"
       type="text"
-      label="Online Players Message ID"
-      tooltip="The message ID for the online players message."
+      label="{{.i18n.DiscordDashboardOnlinePlayersMessageID}}"
+      tooltip="{{.i18n.DiscordDashboardOnlinePlayersMessageIDTooltip}}"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="discordDashboardPalworldConfigMessageId"
       type="text"
-      label="Palworld Config Message ID"
-      tooltip="The message ID for the Palworld config message."
+      label="{{.i18n.DiscordDashboardPalworldConfigMessageID}}"
+      tooltip="{{.i18n.DiscordDashboardPalworldConfigMessageIDTooltip}}"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="discordDashboardBotConfigMessageId"
       type="text"
-      label="Bot Config Message ID"
-      tooltip="The message ID for the bot config message."
+      label="{{.i18n.DiscordDashboardBotConfigMessageID}}"
+      tooltip="{{.i18n.DiscordDashboardBotConfigMessageIDTooltip}}"
     ></custom-input>
   </div>
 </form>

@@ -66,6 +66,18 @@ var (
 	PalworldServerExecuteFlags        string
 	PalworldServerExecuteFlagsTooltip string
 
+	DiscordChannelConfig                           string
+	DiscordDashboardChannelID                      string
+	DiscordDashboardChannelIDTooltip               string
+	DiscordLogChannelID                            string
+	DiscordLogChannelIDTooltip                     string
+	DiscordDashboardOnlinePlayersMessageID         string
+	DiscordDashboardOnlinePlayersMessageIDTooltip  string
+	DiscordDashboardPalworldConfigMessageID        string
+	DiscordDashboardPalworldConfigMessageIDTooltip string
+	DiscordDashboardBotConfigMessageID             string
+	DiscordDashboardBotConfigMessageIDTooltip      string
+
 	Close   string
 	Confirm string
 	Save    string

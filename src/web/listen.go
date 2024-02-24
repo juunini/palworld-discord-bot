@@ -85,6 +85,18 @@ func Listen(port int) error {
 				"PalworldServerExecuteFlags":        i18n.PalworldServerExecuteFlags,
 				"PalworldServerExecuteFlagsTooltip": i18n.PalworldServerExecuteFlagsTooltip,
 
+				"DiscordChannelConfig":                           i18n.DiscordChannelConfig,
+				"DiscordDashboardChannelID":                      i18n.DiscordDashboardChannelID,
+				"DiscordDashboardChannelIDTooltip":               i18n.DiscordDashboardChannelIDTooltip,
+				"DiscordLogChannelID":                            i18n.DiscordLogChannelID,
+				"DiscordLogChannelIDTooltip":                     i18n.DiscordLogChannelIDTooltip,
+				"DiscordDashboardOnlinePlayersMessageID":         i18n.DiscordDashboardOnlinePlayersMessageID,
+				"DiscordDashboardOnlinePlayersMessageIDTooltip":  i18n.DiscordDashboardOnlinePlayersMessageIDTooltip,
+				"DiscordDashboardPalworldConfigMessageID":        i18n.DiscordDashboardPalworldConfigMessageID,
+				"DiscordDashboardPalworldConfigMessageIDTooltip": i18n.DiscordDashboardPalworldConfigMessageIDTooltip,
+				"DiscordDashboardBotConfigMessageID":             i18n.DiscordDashboardBotConfigMessageID,
+				"DiscordDashboardBotConfigMessageIDTooltip":      i18n.DiscordDashboardBotConfigMessageIDTooltip,
+
 				"Close":   i18n.Close,
 				"Confirm": i18n.Confirm,
 				"Save":    i18n.Save,

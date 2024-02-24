@@ -68,6 +68,18 @@ func ko() {
 	PalworldServerExecuteFlags = "팰월드 서버 실행 플래그"
 	PalworldServerExecuteFlagsTooltip = "팰월드 서버가 실행될 때 사용할 플래그를 입력하세요."
 
+	DiscordChannelConfig = "디스코드 채널 설정"
+	DiscordDashboardChannelID = "대시보드 채널 ID"
+	DiscordDashboardChannelIDTooltip = "대시보드 기능을 이용하기 위한 채널 ID를 입력하세요. 입력하지 않으면 해당 기능을 사용하지 않습니다. 채널 ID를 확인하는 방법은 현재 마우스를 올리고 있는 ? 버튼을 클릭하시면 확인하실 수 있습니다."
+	DiscordLogChannelID = "로그 채널 ID"
+	DiscordLogChannelIDTooltip = "유저의 접속/종료 기록을 확인하기 위한 채널 ID를 입력하세요. 입력하지 않으면 해당 기능을 사용하지 않습니다. 채널 ID를 확인하는 방법은 현재 마우스를 올리고 있는 ? 버튼을 클릭하시면 확인하실 수 있습니다."
+	DiscordDashboardOnlinePlayersMessageID = "온라인 상태 대시보드 Message ID"
+	DiscordDashboardOnlinePlayersMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
+	DiscordDashboardPalworldConfigMessageID = "팰월드 설정 대시보드 Message ID"
+	DiscordDashboardPalworldConfigMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
+	DiscordDashboardBotConfigMessageID = "봇 설정 대시보드 Message ID"
+	DiscordDashboardBotConfigMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
+
 	Close = "닫기"
 	Confirm = "확인"
 	Save = "저장"
