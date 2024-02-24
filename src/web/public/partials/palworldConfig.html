@@ -1,48 +1,48 @@
 <form class="card mb-4">
-  <div class="card-header">Palworld config</div>
+  <div class="card-header">{{.i18n.PalworldConfig}}</div>
   <div class="card-body">
     <custom-switch
       id="palworldRconEnabled"
-      label="Enable RCON"
+      label="{{.i18n.EnablePalworldRcon}}"
       class="mb-2"
     ></custom-switch>
     <custom-input
       id="palworldRconHost"
       type="text"
-      label="RCON Host"
-      tooltip="The IP address or hostname of the RCON server."
+      label="{{.i18n.PalworldRconHost}}"
+      tooltip="{{.i18n.PalworldRconHostTooltip}}"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="palworldRconPort"
       type="number"
-      label="RCON Port"
-      tooltip="The port that the RCON server is running on."
+      label="{{.i18n.PalworldRconPort}}"
+      tooltip="{{.i18n.PalworldRconPortTooltip}}"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="palworldAdminPassword"
       type="text"
-      label="Admin Password"
-      tooltip="The password for the RCON server."
+      label="{{.i18n.PalworldAdminPassword}}"
+      tooltip="{{.i18n.PalworldAdminPasswordTooltip}}"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="palworldServerFilePath"
       type="text"
-      label="Server File Path"
-      tooltip="The file path to the Palworld server executable."
+      label="{{.i18n.PalworldServerFilePath}}"
+      tooltip="{{.i18n.PalworldServerFilePathTooltip}}"
       class="mb-2"
     ></custom-input>
     <custom-input
       id="palworldServerExecuteFlags"
       type="text"
-      label="Server Execute Flags"
-      tooltip="The flags to pass to the server executable."
+      label="{{.i18n.PalworldServerExecuteFlags}}"
+      tooltip="{{.i18n.PalworldServerExecuteFlagsTooltip}}"
     ></custom-input>
   </div>
 </form>
 
 <div class="mb-4">
-  <button type="button" class="btn btn-primary">Save</button>
+  <button type="button" class="btn btn-primary">{{.i18n.Save}}</button>
 </div>
