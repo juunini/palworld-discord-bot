@@ -36,7 +36,7 @@ func Listen(port int) error {
 				"DISCORD_BOT_ENABLED":         config.DISCORD_BOT_ENABLED,
 				"DISCORD_BOT_TOKEN":           config.DISCORD_BOT_TOKEN,
 				"DISCORD_ADMIN_USERNAMES":     strings.Join(config.DISCORD_ADMIN_USERNAMES, ", "),
-				"DISCORD_COMMAND_IGNORE_CASE": config.DISCORD_COMMAND_IGNORE_CASE,
+				"DISCORD_COMMAND_IGNORE_CASE": config.DISCORD_COMMAND_CASE_SENSITIVE,
 				"DISCORD_COMMAND_PREFIX":      config.DISCORD_COMMAND_PREFIX,
 
 				"PALWORLD_RCON_ENABLED":         config.PALWORLD_RCON_ENABLED,
@@ -51,6 +51,14 @@ func Listen(port int) error {
 				"DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID":  config.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID,
 				"DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID": config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID,
 				"DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID":      config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID,
+
+				"DISCORD_COMMAND_ALIAS_KICK":         config.DISCORD_COMMAND_ALIAS_KICK,
+				"DISCORD_COMMAND_ALIAS_BAN":          config.DISCORD_COMMAND_ALIAS_BAN,
+				"DISCORD_COMMAND_ALIAS_BROADCAST":    config.DISCORD_COMMAND_ALIAS_BROADCAST,
+				"DISCORD_COMMAND_ALIAS_SHUTDOWN":     config.DISCORD_COMMAND_ALIAS_SHUTDOWN,
+				"DISCORD_COMMAND_ALIAS_DO_EXIT":      config.DISCORD_COMMAND_ALIAS_DO_EXIT,
+				"DISCORD_COMMAND_ALIAS_SAVE":         config.DISCORD_COMMAND_ALIAS_SAVE,
+				"DISCORD_COMMAND_ALIAS_START_SERVER": config.DISCORD_COMMAND_ALIAS_START_SERVER,
 			},
 			"i18n": fiber.Map{
 				"WebConfig":                    i18n.WebConfig,
@@ -76,6 +84,7 @@ func Listen(port int) error {
 
 				"PalworldConfig":                    i18n.PalworldConfig,
 				"EnablePalworldRcon":                i18n.EnablePalworldRcon,
+				"EnablePalworldRconTooltip":         i18n.EnablePalworldRconTooltip,
 				"PalworldRconHost":                  i18n.PalworldRconHost,
 				"PalworldRconHostTooltip":           i18n.PalworldRconHostTooltip,
 				"PalworldRconPort":                  i18n.PalworldRconPort,
@@ -120,6 +129,8 @@ func Listen(port int) error {
 		PathPrefix: "public",
 		Browse:     true,
 	}))
+
+	console_decoration.PrintError(i18n.WebServerOpeningMessage + "\n")
 
 	privateIPs, err := utils.PrivateIPs()
 	if err != nil {

@@ -86,4 +86,12 @@
   const discordCommandAliasDoExitEl = document.getElementById("discordCommandAliasDoExit");
   const discordCommandAliasSaveEl = document.getElementById("discordCommandAliasSave");
   const discordCommandAliasStartServerEl = document.getElementById("discordCommandAliasStartServer");
+
+  discordCommandAliasKickEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_KICK}}");
+  discordCommandAliasBanEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_BAN}}");
+  discordCommandAliasBroadcastEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_BROADCAST}}");
+  discordCommandAliasShutdownEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_SHUTDOWN}}");
+  discordCommandAliasDoExitEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_DO_EXIT}}");
+  discordCommandAliasSaveEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_SAVE}}");
+  discordCommandAliasStartServerEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_ALIAS_START_SERVER}}");
 </script>

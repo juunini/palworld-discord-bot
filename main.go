@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/juunini/palworld-discord-bot/src/bot"
+	"github.com/juunini/palworld-discord-bot/src/cli"
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
@@ -14,7 +15,30 @@ import (
 )
 
 func init() {
-	config.Load()
+	if err := config.Load(); err != nil {
+		languages := make([]string, len(i18n.Languages))
+		for i, language := range i18n.Languages {
+			languages[i] = language["name"]
+		}
+		language, err := cli.Choose("Choose your language", languages)
+		if err != nil {
+			panic(err)
+		}
+
+		for _, l := range i18n.Languages {
+			if l["name"] == language {
+				config.LANGUAGE = l["code"]
+				break
+			}
+		}
+	}
+
+	i18n.SetLanguage(config.LANGUAGE)
+
+	if err := config.Save(); err != nil {
+		panic(err)
+	}
+
 	i18n.SetLanguage(config.LANGUAGE)
 }
 

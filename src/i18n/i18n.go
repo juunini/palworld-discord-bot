@@ -33,6 +33,8 @@ var (
 )
 
 var (
+	WebServerOpeningMessage string
+
 	WebConfig                    string
 	EnableWebServer              string
 	EnableWebServerDisablePrompt string
@@ -46,6 +48,7 @@ var (
 	EnableDiscordBot                   string
 	DiscordBotToken                    string
 	DiscordBotTokenTooltip             string
+	DiscordBotTokenDescription         string
 	DiscordAdminUsernames              string
 	DiscordAdminUsernamesTooltip       string
 	DiscordCommandCaseSensitive        string
@@ -55,6 +58,7 @@ var (
 
 	PalworldConfig                    string
 	EnablePalworldRcon                string
+	EnablePalworldRconTooltip         string
 	PalworldRconHost                  string
 	PalworldRconHostTooltip           string
 	PalworldRconPort                  string
@@ -69,8 +73,10 @@ var (
 	DiscordChannelConfig                           string
 	DiscordDashboardChannelID                      string
 	DiscordDashboardChannelIDTooltip               string
+	DiscordDashboardChannelIDDescription           string
 	DiscordLogChannelID                            string
 	DiscordLogChannelIDTooltip                     string
+	DiscordLogChannelIDDescription                 string
 	DiscordDashboardOnlinePlayersMessageID         string
 	DiscordDashboardOnlinePlayersMessageIDTooltip  string
 	DiscordDashboardPalworldConfigMessageID        string
