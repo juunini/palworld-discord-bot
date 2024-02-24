@@ -16,29 +16,34 @@
   import "/components/switch.js";
   import "/components/input.js";
   import '/lib/tooltip.js';
-  import { elements } from '/components/elements.js';
-  import { patchConfig } from '/lib/patch.js';
+  import { patchConfig, extractChangedConfig } from '/lib/patch.js';
+  import { elements, setValueInElements, configFromElements } from '/components/elements.js';
 
   const config = {
     WEB_SERVER_ENABLED: {{.CONFIG.WEB_SERVER_ENABLED}},
     WEB_SERVER_PORT: {{.CONFIG.WEB_SERVER_PORT}},
+
     LANGUAGE: "{{.CONFIG.LANGUAGE}}",
+
     DISCORD_BOT_ENABLED: {{.CONFIG.DISCORD_BOT_ENABLED}},
     DISCORD_BOT_TOKEN: "{{.CONFIG.DISCORD_BOT_TOKEN}}",
     DISCORD_ADMIN_USERNAMES: "{{.CONFIG.DISCORD_ADMIN_USERNAMES}}",
     DISCORD_COMMAND_CASE_SENSITIVE: {{.CONFIG.DISCORD_COMMAND_CASE_SENSITIVE}},
     DISCORD_COMMAND_PREFIX: "{{.CONFIG.DISCORD_COMMAND_PREFIX}}",
+
     PALWORLD_RCON_ENABLED: {{.CONFIG.PALWORLD_RCON_ENABLED}},
     PALWORLD_RCON_HOST: "{{.CONFIG.PALWORLD_RCON_HOST}}",
     PALWORLD_RCON_PORT: {{.CONFIG.PALWORLD_RCON_PORT}},
     PALWORLD_ADMIN_PASSWORD: "{{.CONFIG.PALWORLD_ADMIN_PASSWORD}}",
     PALWORLD_SERVER_FILE_PATH: "{{.CONFIG.PALWORLD_SERVER_FILE_PATH}}",
     PALWORLD_SERVER_EXECUTE_FLAGS: "{{.CONFIG.PALWORLD_SERVER_EXECUTE_FLAGS}}",
+
     DISCORD_DASHBOARD_CHANNEL_ID: "{{.CONFIG.DISCORD_DASHBOARD_CHANNEL_ID}}",
     DISCORD_LOG_CHANNEL_ID: "{{.CONFIG.DISCORD_LOG_CHANNEL_ID}}",
     DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID: "{{.CONFIG.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID}}",
     DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID: "{{.CONFIG.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID}}",
     DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID: "{{.CONFIG.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID}}",
+
     DISCORD_COMMAND_ALIAS_KICK: "{{.CONFIG.DISCORD_COMMAND_ALIAS_KICK}}",
     DISCORD_COMMAND_ALIAS_BAN: "{{.CONFIG.DISCORD_COMMAND_ALIAS_BAN}}",
     DISCORD_COMMAND_ALIAS_BROADCAST: "{{.CONFIG.DISCORD_COMMAND_ALIAS_BROADCAST}}",
@@ -48,35 +53,12 @@
     DISCORD_COMMAND_ALIAS_START_SERVER: "{{.CONFIG.DISCORD_COMMAND_ALIAS_START_SERVER}}",
   };
 
-  elements.webServerEnabled.setAttribute("checked", config.WEB_SERVER_ENABLED);
-  elements.webServerPort.setAttribute("value", config.WEB_SERVER_PORT);
+  setValueInElements(config);
 
-  elements.language.value = config.LANGUAGE;
-
-  elements.discordBotEnabled.setAttribute("checked", config.DISCORD_BOT_ENABLED);
-  elements.discordBotToken.setAttribute("value", config.DISCORD_BOT_TOKEN);
-  elements.discordAdminUsernames.setAttribute("value", config.DISCORD_ADMIN_USERNAMES);
-  elements.discordCommandCaseSensitive.setAttribute("checked", config.DISCORD_COMMAND_CASE_SENSITIVE);
-  elements.discordCommandPrefix.setAttribute("value", config.DISCORD_COMMAND_PREFIX);
-
-  elements.palworldRconEnabled.setAttribute("checked", config.PALWORLD_RCON_ENABLED);
-  elements.palworldRconHost.setAttribute("value", config.PALWORLD_RCON_HOST);
-  elements.palworldRconPort.setAttribute("value", config.PALWORLD_RCON_PORT);
-  elements.palworldAdminPassword.setAttribute("value", config.PALWORLD_ADMIN_PASSWORD);
-  elements.palworldServerFilePath.setAttribute("value", config.PALWORLD_SERVER_FILE_PATH);
-  elements.palworldServerExecuteFlags.setAttribute("value", config.PALWORLD_SERVER_EXECUTE_FLAGS);
-
-  elements.discordDashboardChannelId.setAttribute("value", config.DISCORD_DASHBOARD_CHANNEL_ID);
-  elements.discordLogChannelId.setAttribute("value", config.DISCORD_LOG_CHANNEL_ID);
-  elements.discordDashboardOnlinePlayersMessageId.setAttribute("value", config.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID);
-  elements.discordDashboardPalworldConfigMessageId.setAttribute("value", config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID);
-  elements.discordDashboardBotConfigMessageId.setAttribute("value", config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID);
-
-  elements.discordCommandAliasKick.setAttribute("value", config.DISCORD_COMMAND_ALIAS_KICK);
-  elements.discordCommandAliasBan.setAttribute("value", config.DISCORD_COMMAND_ALIAS_BAN);
-  elements.discordCommandAliasBroadcast.setAttribute("value", config.DISCORD_COMMAND_ALIAS_BROADCAST);
-  elements.discordCommandAliasShutdown.setAttribute("value", config.DISCORD_COMMAND_ALIAS_SHUTDOWN);
-  elements.discordCommandAliasDoExit.setAttribute("value", config.DISCORD_COMMAND_ALIAS_DO_EXIT);
-  elements.discordCommandAliasSave.setAttribute("value", config.DISCORD_COMMAND_ALIAS_SAVE);
-  elements.discordCommandAliasStartServer.setAttribute("value", config.DISCORD_COMMAND_ALIAS_START_SERVER);
+  document.querySelectorAll(".patch-config").forEach((el) => {
+    el.addEventListener("click", () => {
+      const changedConfig = extractChangedConfig(configFromElements(), config);
+      patchConfig(changedConfig);
+    })
+  })
 </script>

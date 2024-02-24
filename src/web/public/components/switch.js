@@ -48,7 +48,7 @@ class Switch extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'checked') {
-      this.checked = newValue === 'true';
+      this.checked = newValue === 'true' || newValue === true;
       this.checkbox.checked = this.checked;
     }
   }

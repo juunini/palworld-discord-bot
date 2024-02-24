@@ -1,12 +1,4 @@
-export async function patchConfig(newConfig, oldConfig) {
-  const changedConfig = Object.keys(oldConfig).reduce((acc, key) => {
-    if (newConfig[key] !== oldConfig[key]) {
-      acc[key] = newConfig[key]
-    }
-
-    return acc
-  }, {});
-
+export async function patchConfig(changedConfig) {
   return fetch('/config', {
     method: 'PATCH',
     headers: {
@@ -14,6 +6,17 @@ export async function patchConfig(newConfig, oldConfig) {
     },
     body: JSON.stringify(changedConfig),
   })
-    .catch(error => alert('Error:', error))
+    .then(res => res.json())
+    .catch((error) => alert(error))
     .finally(() => location.reload());
+}
+
+export function extractChangedConfig(newConfig, oldConfig) {
+  return Object.keys(oldConfig).reduce((acc, key) => {
+    if (newConfig[key] !== oldConfig[key]) {
+      acc[key] = newConfig[key]
+    }
+
+    return acc
+  }, {});
 }
