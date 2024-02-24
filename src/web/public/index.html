@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{.LANGUAGE}}" data-bs-theme="dark">
+<html lang="{{.CONFIG.LANGUAGE}}" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +13,17 @@
   </head>
 
   <body class="container py-5">
+    <form class="card mb-4">
+      <div class="card-header">Language</div>
+
+      <div class="card-body">
+        <select class="form-select" aria-label="Select Language" id="language">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </form>
+
     <form class="card mb-4">
       <div class="card-header">Discord Bot Config</div>
       <div class="card-body">
@@ -126,6 +137,10 @@
   </script>
 
   <script>
+    /** @type {HTMLSelectElement} */
+    const languageEl = document.getElementById("language");
+    languageEl.value = "{{.CONFIG.LANGUAGE}}";
+
     const discordBotEnabledEl = document.getElementById("discordBotEnabled");
     const discordBotTokenEl = document.getElementById("discordBotToken");
     const discordAdminUsernamesEl = document.getElementById(
@@ -138,11 +153,11 @@
       "discordCommandPrefix"
     );
 
-    discordBotEnabledEl.setAttribute("checked", {{.DISCORD_BOT_ENABLED}});
-    discordBotTokenEl.setAttribute("value", "{{.DISCORD_BOT_TOKEN}}");
-    discordAdminUsernamesEl.setAttribute("value", "{{.DISCORD_ADMIN_USERNAMES}}");
-    discordCommandIgnoreCaseEl.setAttribute("checked", {{.DISCORD_COMMAND_IGNORE_CASE}});
-    discordCommandPrefixEl.setAttribute("value", "{{.DISCORD_COMMAND_PREFIX}}");
+    discordBotEnabledEl.setAttribute("checked", {{.CONFIG.DISCORD_BOT_ENABLED}});
+    discordBotTokenEl.setAttribute("value", "{{.CONFIG.DISCORD_BOT_TOKEN}}");
+    discordAdminUsernamesEl.setAttribute("value", "{{.CONFIG.DISCORD_ADMIN_USERNAMES}}");
+    discordCommandIgnoreCaseEl.setAttribute("checked", {{.CONFIG.DISCORD_COMMAND_IGNORE_CASE}});
+    discordCommandPrefixEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_PREFIX}}");
 
     const palworldRconEnabledEl = document.getElementById("palworldRconEnabled");
     const palworldRconHostEl = document.getElementById("palworldRconHost");
@@ -151,11 +166,11 @@
     const palworldServerFilePathEl = document.getElementById("palworldServerFilePath");
     const palworldServerExecuteFlagsEl = document.getElementById("palworldServerExecuteFlags");
 
-    palworldRconEnabledEl.setAttribute("checked", {{.PALWORLD_RCON_ENABLED}});
-    palworldRconHostEl.setAttribute("value", "{{.PALWORLD_RCON_HOST}}");
-    palworldRconPortEl.setAttribute("value", {{.PALWORLD_RCON_PORT}});
-    palworldAdminPasswordEl.setAttribute("value", "{{.PALWORLD_ADMIN_PASSWORD}}");
-    palworldServerFilePathEl.setAttribute("value", "{{.PALWORLD_SERVER_FILE_PATH}}");
-    palworldServerExecuteFlagsEl.setAttribute("value", "{{.PALWORLD_SERVER_EXECUTE_FLAGS}}");
+    palworldRconEnabledEl.setAttribute("checked", {{.CONFIG.PALWORLD_RCON_ENABLED}});
+    palworldRconHostEl.setAttribute("value", "{{.CONFIG.PALWORLD_RCON_HOST}}");
+    palworldRconPortEl.setAttribute("value", {{.CONFIG.PALWORLD_RCON_PORT}});
+    palworldAdminPasswordEl.setAttribute("value", "{{.CONFIG.PALWORLD_ADMIN_PASSWORD}}");
+    palworldServerFilePathEl.setAttribute("value", "{{.CONFIG.PALWORLD_SERVER_FILE_PATH}}");
+    palworldServerExecuteFlagsEl.setAttribute("value", "{{.CONFIG.PALWORLD_SERVER_EXECUTE_FLAGS}}");
   </script>
 </html>
