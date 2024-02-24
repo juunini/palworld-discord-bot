@@ -41,6 +41,9 @@ func ko() {
 	WebServerPort = "웹 서버 포트"
 	WebServerPortTooltip = "웹 서버의 포트를 설정합니다. 되도록 60000 이상의 숫자를 사용하시길 권장합니다."
 
+	Language = "언어"
+	SelectLanguage = "언어 선택"
+
 	Close = "닫기"
 	Confirm = "확인"
 	Save = "저장"

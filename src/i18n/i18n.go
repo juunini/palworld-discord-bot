@@ -1,8 +1,8 @@
 package i18n
 
 var Languages = []map[string]string{
-	{"CODE": "ko", "NAME": "한국어"},
-	{"CODE": "en", "NAME": "English"},
+	{"code": "ko", "name": "한국어"},
+	{"code": "en", "name": "English"},
 }
 
 func SetLanguage(language string) {
@@ -38,6 +38,9 @@ var (
 	EnableWebServerDisablePrompt string
 	WebServerPort                string
 	WebServerPortTooltip         string
+
+	Language       string
+	SelectLanguage string
 
 	Close   string
 	Confirm string

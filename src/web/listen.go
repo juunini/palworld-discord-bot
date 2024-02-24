@@ -29,8 +29,7 @@ func Listen(port int) error {
 				"WEB_SERVER_ENABLED": config.WEB_SERVER_ENABLED,
 				"WEB_SERVER_PORT":    config.WEB_SERVER_PORT,
 
-				"LANGUAGE":  config.LANGUAGE,
-				"LANGUAGES": i18n.Languages,
+				"LANGUAGE": config.LANGUAGE,
 
 				"DISCORD_BOT_ENABLED":         config.DISCORD_BOT_ENABLED,
 				"DISCORD_BOT_TOKEN":           config.DISCORD_BOT_TOKEN,
@@ -57,6 +56,10 @@ func Listen(port int) error {
 				"EnableWebServerDisablePrompt": i18n.EnableWebServerDisablePrompt,
 				"WebServerPort":                i18n.WebServerPort,
 				"WebServerPortTooltip":         i18n.WebServerPortTooltip,
+
+				"Language":       i18n.Language,
+				"Languages":      i18n.Languages,
+				"SelectLanguage": i18n.SelectLanguage,
 
 				"Close":   i18n.Close,
 				"Confirm": i18n.Confirm,

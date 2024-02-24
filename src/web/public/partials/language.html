@@ -1,10 +1,14 @@
 <form class="card mb-4">
-  <div class="card-header">Language</div>
+  <div class="card-header">{{.i18n.Language}}</div>
 
   <div class="card-body">
-    <select class="form-select" aria-label="Select Language" id="language">
-      {{range .CONFIG.LANGUAGES}}
-      <option value="{{.CODE}}">{{.NAME}}</option>
+    <select
+      class="form-select"
+      aria-label="{{.i18n.SelectLanguage}}"
+      id="language"
+    >
+      {{range .i18n.Languages}}
+      <option value="{{.code}}">{{.name}}</option>
       {{end}}
     </select>
   </div>
