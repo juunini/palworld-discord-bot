@@ -181,6 +181,64 @@
       </div>
     </form>
 
+    <div class="mb-4">
+      <button type="button" class="btn btn-primary">Save</button>
+    </div>
+
+    <form class="card mb-4">
+      <div class="card-header">Discord Command Aliases</div>
+      <div class="card-body">
+        <custom-input
+          id="discordCommandAliasKick"
+          type="text"
+          label="kick"
+          tooltip="The alias for the kick command."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordCommandAliasBan"
+          type="text"
+          label="ban"
+          tooltip="The alias for the ban command."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordCommandAliasBroadcast"
+          type="text"
+          label="broadcast"
+          tooltip="The alias for the broadcast command."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordCommandAliasShutdown"
+          type="text"
+          label="shutdown"
+          tooltip="The alias for the shutdown command."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordCommandAliasDoExit"
+          type="text"
+          label="doExit"
+          tooltip="The alias for the doExit command."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordCommandAliasSave"
+          type="text"
+          label="save"
+          tooltip="The alias for the save command."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordCommandAliasStartServer"
+          type="text"
+          label="startServer"
+          tooltip="The alias for the startServer command."
+        ></custom-input>
+      </div>
+    </form>
+
     <div>
       <button type="button" class="btn btn-primary">Save</button>
     </div>
@@ -268,5 +326,13 @@
     discordDashboardOnlinePlayersMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID}}");
     discordDashboardPalworldConfigMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID}}");
     discordDashboardBotConfigMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID}}");
+
+    const discordCommandAliasKickEl = document.getElementById("discordCommandAliasKick");
+    const discordCommandAliasBanEl = document.getElementById("discordCommandAliasBan");
+    const discordCommandAliasBroadcastEl = document.getElementById("discordCommandAliasBroadcast");
+    const discordCommandAliasShutdownEl = document.getElementById("discordCommandAliasShutdown");
+    const discordCommandAliasDoExitEl = document.getElementById("discordCommandAliasDoExit");
+    const discordCommandAliasSaveEl = document.getElementById("discordCommandAliasSave");
+    const discordCommandAliasStartServerEl = document.getElementById("discordCommandAliasStartServer");
   </script>
 </html>
