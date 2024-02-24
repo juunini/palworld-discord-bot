@@ -1,5 +1,10 @@
 package i18n
 
+var Languages = []map[string]string{
+	{"CODE": "ko", "NAME": "한국어"},
+	{"CODE": "en", "NAME": "English"},
+}
+
 func SetLanguage(language string) {
 	en()
 

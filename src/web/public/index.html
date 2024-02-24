@@ -18,8 +18,9 @@
 
       <div class="card-body">
         <select class="form-select" aria-label="Select Language" id="language">
-          <option value="ko">한국어</option>
-          <option value="en">English</option>
+          {{range .CONFIG.LANGUAGES}}
+          <option value="{{.CODE}}">{{.NAME}}</option>
+          {{end}}
         </select>
       </div>
     </form>
@@ -106,6 +107,46 @@
         ></custom-input>
       </div>
     </form>
+
+    <form class="card">
+      <div class="card-header">Discord Channel Config</div>
+      <div class="card-body">
+        <custom-input
+          id="discordDashboardChannelId"
+          type="text"
+          label="Dashboard Channel ID"
+          tooltip="The channel ID for the dashboard."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordLogChannelId"
+          type="text"
+          label="Log Channel ID"
+          tooltip="The channel ID for the bot logs."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordDashboardOnlinePlayersMessageId"
+          type="text"
+          label="Online Players Message ID"
+          tooltip="The message ID for the online players message."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordDashboardPalworldConfigMessageId"
+          type="text"
+          label="Palworld Config Message ID"
+          tooltip="The message ID for the Palworld config message."
+          class="mb-2"
+        ></custom-input>
+        <custom-input
+          id="discordDashboardBotConfigMessageId"
+          type="text"
+          label="Bot Config Message ID"
+          tooltip="The message ID for the bot config message."
+        ></custom-input>
+      </div>
+    </form>
   </body>
 
   <script
@@ -172,5 +213,17 @@
     palworldAdminPasswordEl.setAttribute("value", "{{.CONFIG.PALWORLD_ADMIN_PASSWORD}}");
     palworldServerFilePathEl.setAttribute("value", "{{.CONFIG.PALWORLD_SERVER_FILE_PATH}}");
     palworldServerExecuteFlagsEl.setAttribute("value", "{{.CONFIG.PALWORLD_SERVER_EXECUTE_FLAGS}}");
+
+    const discordDashboardChannelIdEl = document.getElementById("discordDashboardChannelId");
+    const discordLogChannelIdEl = document.getElementById("discordLogChannelId");
+    const discordDashboardOnlinePlayersMessageIdEl = document.getElementById("discordDashboardOnlinePlayersMessageId");
+    const discordDashboardPalworldConfigMessageIdEl = document.getElementById("discordDashboardPalworldConfigMessageId");
+    const discordDashboardBotConfigMessageIdEl = document.getElementById("discordDashboardBotConfigMessageId");
+
+    discordDashboardChannelIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_CHANNEL_ID}}");
+    discordLogChannelIdEl.setAttribute("value", "{{.CONFIG.DISCORD_LOG_CHANNEL_ID}}");
+    discordDashboardOnlinePlayersMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID}}");
+    discordDashboardPalworldConfigMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID}}");
+    discordDashboardBotConfigMessageIdEl.setAttribute("value", "{{.CONFIG.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID}}");
   </script>
 </html>

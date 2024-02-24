@@ -10,6 +10,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/template/html/v2"
 	"github.com/juunini/palworld-discord-bot/src/config"
+	"github.com/juunini/palworld-discord-bot/src/i18n"
 )
 
 //go:embed public/*
@@ -25,6 +26,9 @@ func Listen(port int) error {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("public/index", fiber.Map{
 			"CONFIG": fiber.Map{
+				"LANGUAGE":  config.LANGUAGE,
+				"LANGUAGES": i18n.Languages,
+
 				"DISCORD_BOT_ENABLED":         config.DISCORD_BOT_ENABLED,
 				"DISCORD_BOT_TOKEN":           config.DISCORD_BOT_TOKEN,
 				"DISCORD_ADMIN_USERNAMES":     strings.Join(config.DISCORD_ADMIN_USERNAMES, ", "),
@@ -38,7 +42,11 @@ func Listen(port int) error {
 				"PALWORLD_SERVER_FILE_PATH":     config.PALWORLD_SERVER_FILE_PATH,
 				"PALWORLD_SERVER_EXECUTE_FLAGS": strings.Join(config.PALWORLD_SERVER_EXECUTE_FLAGS, " "),
 
-				"LANGUAGE": config.LANGUAGE,
+				"DISCORD_DASHBOARD_CHANNEL_ID":                 config.DISCORD_DASHBOARD_CHANNEL_ID,
+				"DISCORD_LOG_CHANNEL_ID":                       config.DISCORD_LOG_CHANNEL_ID,
+				"DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID":  config.DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID,
+				"DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID": config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID,
+				"DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID":      config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID,
 			},
 		})
 	})
