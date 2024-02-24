@@ -26,6 +26,9 @@ func Listen(port int) error {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("public/index", fiber.Map{
 			"CONFIG": fiber.Map{
+				"WEB_SERVER_ENABLED": config.WEB_SERVER_ENABLED,
+				"WEB_SERVER_PORT":    config.WEB_SERVER_PORT,
+
 				"LANGUAGE":  config.LANGUAGE,
 				"LANGUAGES": i18n.Languages,
 

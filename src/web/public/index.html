@@ -14,6 +14,23 @@
 
   <body class="container py-5">
     <form class="card mb-4">
+      <div class="card-header">Web Config</div>
+      <div class="card-body">
+        <custom-switch
+          id="webServerEnabled"
+          label="Enable Web Server"
+          class="mb-2"
+        ></custom-switch>
+        <custom-input
+          id="webServerPort"
+          type="number"
+          label="Web Server Port"
+          tooltip="The port that the web server will listen on."
+        ></custom-input>
+      </div>
+    </form>
+
+    <form class="card mb-4">
       <div class="card-header">Language</div>
 
       <div class="card-body">
@@ -178,6 +195,12 @@
   </script>
 
   <script>
+    const webServerEnabledEl = document.getElementById("webServerEnabled");
+    const webServerPortEl = document.getElementById("webServerPort");
+
+    webServerEnabledEl.setAttribute("checked", {{.CONFIG.WEB_SERVER_ENABLED}});
+    webServerPortEl.setAttribute("value", {{.CONFIG.WEB_SERVER_PORT}});
+
     /** @type {HTMLSelectElement} */
     const languageEl = document.getElementById("language");
     languageEl.value = "{{.CONFIG.LANGUAGE}}";
