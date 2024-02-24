@@ -53,6 +53,19 @@ var (
 	DiscordCommandPrefix               string
 	DiscordCommandPrefixTooltip        string
 
+	PalworldConfig                    string
+	EnablePalworldRcon                string
+	PalworldRconHost                  string
+	PalworldRconHostTooltip           string
+	PalworldRconPort                  string
+	PalworldRconPortTooltip           string
+	PalworldAdminPassword             string
+	PalworldAdminPasswordTooltip      string
+	PalworldServerFilePath            string
+	PalworldServerFilePathTooltip     string
+	PalworldServerExecuteFlags        string
+	PalworldServerExecuteFlagsTooltip string
+
 	Close   string
 	Confirm string
 	Save    string
