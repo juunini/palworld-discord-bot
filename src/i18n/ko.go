@@ -98,4 +98,7 @@ func ko() {
 	Close = "닫기"
 	Confirm = "확인"
 	Save = "저장"
+
+	ConfigUpdateSuccess = "설정이 업데이트되었습니다."
+	ConfigUpdateFailed = "설정 업데이트에 실패했습니다."
 }

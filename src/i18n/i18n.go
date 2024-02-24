@@ -96,4 +96,7 @@ var (
 	Close   string
 	Confirm string
 	Save    string
+
+	ConfigUpdateSuccess string
+	ConfigUpdateFailed  string
 )

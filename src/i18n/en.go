@@ -98,4 +98,7 @@ func en() {
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"
+
+	ConfigUpdateSuccess = "Config update success"
+	ConfigUpdateFailed = "Config update failed"
 }
