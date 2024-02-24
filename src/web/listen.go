@@ -97,6 +97,15 @@ func Listen(port int) error {
 				"DiscordDashboardBotConfigMessageID":             i18n.DiscordDashboardBotConfigMessageID,
 				"DiscordDashboardBotConfigMessageIDTooltip":      i18n.DiscordDashboardBotConfigMessageIDTooltip,
 
+				"DiscordCommandAliases":                 i18n.DiscordCommandAliases,
+				"DiscordCommandAliasKickTooltip":        i18n.DiscordCommandAliasKickTooltip,
+				"DiscordCommandAliasBanTooltip":         i18n.DiscordCommandAliasBanTooltip,
+				"DiscordCommandAliasBroadcastTooltip":   i18n.DiscordCommandAliasBroadcastTooltip,
+				"DiscordCommandAliasShutdownTooltip":    i18n.DiscordCommandAliasShutdownTooltip,
+				"DiscordCommandAliasDoExitTooltip":      i18n.DiscordCommandAliasDoExitTooltip,
+				"DiscordCommandAliasSaveTooltip":        i18n.DiscordCommandAliasSaveTooltip,
+				"DiscordCommandAliasStartServerTooltip": i18n.DiscordCommandAliasStartServerTooltip,
+
 				"Close":   i18n.Close,
 				"Confirm": i18n.Confirm,
 				"Save":    i18n.Save,

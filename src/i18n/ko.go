@@ -80,6 +80,15 @@ func ko() {
 	DiscordDashboardBotConfigMessageID = "봇 설정 대시보드 Message ID"
 	DiscordDashboardBotConfigMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
 
+	DiscordCommandAliases = "디스코드 커맨드 커스터마이징"
+	DiscordCommandAliasKickTooltip = "유저를 1회 강퇴하는 커맨드를 커스텀 합니다."
+	DiscordCommandAliasBanTooltip = "유저를 차단하는 커맨드를 커스텀 합니다."
+	DiscordCommandAliasBroadcastTooltip = "모든 유저에게 메시지를 전송하는 커맨드를 커스텀 합니다. (영어만 가능)"
+	DiscordCommandAliasShutdownTooltip = "서버를 일정 시간 후 종료하는 커맨드를 커스텀 합니다."
+	DiscordCommandAliasDoExitTooltip = "서버를 강제 종료하는 커맨드를 커스텀 합니다."
+	DiscordCommandAliasSaveTooltip = "서버를 저장하는 커맨드를 커스텀 합니다."
+	DiscordCommandAliasStartServerTooltip = "서버를 실행하는 커맨드를 커스텀 합니다."
+
 	Close = "닫기"
 	Confirm = "확인"
 	Save = "저장"

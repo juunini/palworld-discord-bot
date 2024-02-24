@@ -80,6 +80,15 @@ func en() {
 	DiscordDashboardBotConfigMessageID = "Discord Dashboard Bot Config Message ID"
 	DiscordDashboardBotConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
 
+	DiscordCommandAliases = "Discord Command Aliases"
+	DiscordCommandAliasKickTooltip = "Kick command customizing"
+	DiscordCommandAliasBanTooltip = "Ban command customizing"
+	DiscordCommandAliasBroadcastTooltip = "Broadcast all users command customizing"
+	DiscordCommandAliasShutdownTooltip = "Shutdown after few seconds command customizing"
+	DiscordCommandAliasDoExitTooltip = "Server force shutdown command customizing"
+	DiscordCommandAliasSaveTooltip = "Save command customizing"
+	DiscordCommandAliasStartServerTooltip = "StartServer command customizing"
+
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"

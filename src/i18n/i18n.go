@@ -78,6 +78,15 @@ var (
 	DiscordDashboardBotConfigMessageID             string
 	DiscordDashboardBotConfigMessageIDTooltip      string
 
+	DiscordCommandAliases                 string
+	DiscordCommandAliasKickTooltip        string
+	DiscordCommandAliasBanTooltip         string
+	DiscordCommandAliasBroadcastTooltip   string
+	DiscordCommandAliasShutdownTooltip    string
+	DiscordCommandAliasDoExitTooltip      string
+	DiscordCommandAliasSaveTooltip        string
+	DiscordCommandAliasStartServerTooltip string
+
 	Close   string
 	Confirm string
 	Save    string
