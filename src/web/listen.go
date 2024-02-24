@@ -90,7 +90,15 @@ func Listen(port int) error {
 
 		config.Save()
 
-		return c.SendStatus(fiber.StatusAccepted)
+		if err := c.SendStatus(fiber.StatusAccepted); err != nil {
+			return err
+		}
+
+		if !config.WEB_SERVER_ENABLED {
+			go Shutdown()
+		}
+
+		return nil
 	})
 
 	app.Get("/", func(c *fiber.Ctx) error {

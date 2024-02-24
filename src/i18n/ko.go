@@ -36,6 +36,7 @@ func ko() {
 	UnknownCommand = "알 수 없는 명령어입니다."
 
 	WebServerOpeningMessage = "웹 서버에 접속하실 수 없는 환경이라면, .env 파일을 수정하신 후 다시 실행해주세요."
+	WebServerShutdownMessage = "웹 서버가 종료되었습니다."
 
 	WebConfig = "웹 설정"
 	EnableWebServer = "웹 서버 사용"

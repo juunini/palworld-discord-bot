@@ -33,7 +33,8 @@ var (
 )
 
 var (
-	WebServerOpeningMessage string
+	WebServerOpeningMessage  string
+	WebServerShutdownMessage string
 
 	WebConfig                    string
 	EnableWebServer              string
