@@ -1,0 +1,41 @@
+<form class="card mb-4">
+  <div class="card-header">Discord Bot Config</div>
+  <div class="card-body">
+    <custom-switch
+      id="discordBotEnabled"
+      label="Enable Discord bot"
+      class="mb-2"
+    ></custom-switch>
+    <custom-input
+      id="discordBotToken"
+      type="text"
+      label="Bot token"
+      tooltip="Get your bot token from the Discord Developer Portal."
+      class="mb-2"
+    ></custom-input>
+    <custom-input
+      id="discordAdminUsernames"
+      type="text"
+      label="Admin Usernames"
+      tooltip="Comma separated list of Discord usernames that will have admin access to the bot."
+      class="mb-4"
+    ></custom-input>
+
+    <custom-switch
+      id="discordCommandIgnoreCase"
+      label="Command case sensitive"
+      tooltip="If enabled, commands will be case sensitive."
+      class="mb-2"
+    ></custom-switch>
+    <custom-input
+      id="discordCommandPrefix"
+      type="text"
+      label="Command Prefix"
+      tooltip="The prefix that the bot will listen for commands."
+    ></custom-input>
+  </div>
+</form>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary">Save</button>
+</div>

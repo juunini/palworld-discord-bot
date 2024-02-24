@@ -9,15 +9,18 @@ var (
 	WEB_SERVER_ENABLED = true
 	WEB_SERVER_PORT    = 60000
 
-	DISCORD_BOT_TOKEN       = ""
-	DISCORD_ADMIN_USERNAMES = []string{}
-	DISCORD_COMMAND_PREFIX  = "!palbot"
+	DISCORD_BOT_ENABLED         = false
+	DISCORD_BOT_TOKEN           = ""
+	DISCORD_ADMIN_USERNAMES     = []string{}
+	DISCORD_COMMAND_IGNORE_CASE = false
+	DISCORD_COMMAND_PREFIX      = "!palbot"
 
-	PALWORLD_RCON_ENABLED        = false
-	PALWORLD_RCON_HOST           = "127.0.0.1"
-	PALWORLD_RCON_PORT      uint = 25575
-	PALWORLD_ADMIN_PASSWORD      = ""
-	PALWORLD_SERVER_PATH         = ""
+	PALWORLD_RCON_ENABLED              = false
+	PALWORLD_RCON_HOST                 = "127.0.0.1"
+	PALWORLD_RCON_PORT            uint = 25575
+	PALWORLD_ADMIN_PASSWORD            = ""
+	PALWORLD_SERVER_FILE_PATH          = ""
+	PALWORLD_SERVER_EXECUTE_FLAGS      = []string{"-useperfthreads", "-NoAsyncLoadingThread", "-UseMultithreadForDS"}
 
 	DISCORD_DASHBOARD_CHANNEL_ID                 = ""
 	DISCORD_LOG_CHANNEL_ID                       = ""

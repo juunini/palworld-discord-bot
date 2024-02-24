@@ -1,11 +1,16 @@
 package main
 
 import (
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	"github.com/juunini/palworld-discord-bot/src/bot"
 	"github.com/juunini/palworld-discord-bot/src/config"
+	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/web"
 )
 
 func init() {
@@ -14,16 +19,29 @@ func init() {
 }
 
 func main() {
-	session := bot.New(config.DISCORD_BOT_TOKEN)
+	if config.WEB_SERVER_ENABLED {
+		go web.Listen(config.WEB_SERVER_PORT)
+	}
 
-	session.AddHandler(bot.Handler)
+	if config.DISCORD_BOT_ENABLED {
+		session := bot.New(config.DISCORD_BOT_TOKEN)
 
-	go func() {
-		for {
-			bot.Watch(session)
-			time.Sleep(10 * time.Second)
-		}
-	}()
+		session.AddHandler(bot.Handler)
 
-	bot.Connect(session)
+		go func() {
+			for {
+				bot.Watch(session)
+				time.Sleep(10 * time.Second)
+			}
+		}()
+
+		bot.Connect(session)
+	}
+
+	console_decoration.PrintSuccess(i18n.BotRunningStart)
+	sc := make(chan os.Signal, 1)
+	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
+	<-sc
+
+	web.Shutdown()
 }
