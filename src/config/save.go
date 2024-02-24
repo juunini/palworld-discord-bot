@@ -14,7 +14,7 @@ func Save() error {
 	env += "WEB_SERVER_PORT=" + strconv.Itoa(WEB_SERVER_PORT) + "\n\n"
 
 	env += "DISCORD_BOT_ENABLED=" + strconv.FormatBool(DISCORD_BOT_ENABLED) + "\n"
-	env += "# " + i18n.DiscordBotTokenTooltip + "\n"
+	env += "# " + i18n.DiscordBotTokenDescription + "\n"
 	env += "DISCORD_BOT_TOKEN=" + DISCORD_BOT_TOKEN + "\n"
 	env += "# " + i18n.DiscordAdminUsernamesTooltip + "\n"
 	env += "DISCORD_ADMIN_USERNAMES=" + strings.Join(DISCORD_ADMIN_USERNAMES, ",") + "\n"
@@ -36,9 +36,9 @@ func Save() error {
 	env += "# " + i18n.PalworldServerExecuteFlagsTooltip + "\n"
 	env += "PALWORLD_SERVER_EXECUTE_FLAGS=" + strings.Join(PALWORLD_SERVER_EXECUTE_FLAGS, " ") + "\n\n"
 
-	env += "# " + i18n.DiscordDashboardChannelIDTooltip + "\n"
+	env += "# " + i18n.DiscordDashboardChannelIDDescription + "\n"
 	env += "DISCORD_DASHBOARD_CHANNEL_ID=" + DISCORD_DASHBOARD_CHANNEL_ID + "\n"
-	env += "# " + i18n.DiscordLogChannelIDTooltip + "\n"
+	env += "# " + i18n.DiscordLogChannelIDDescription + "\n"
 	env += "DISCORD_LOG_CHANNEL_ID=" + DISCORD_LOG_CHANNEL_ID + "\n"
 	env += "# " + i18n.DiscordDashboardPalworldConfigMessageIDTooltip + "\n"
 	env += "DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID + "\n"
