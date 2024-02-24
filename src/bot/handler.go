@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/juunini/palworld-discord-bot/src/bot/commands"
+	"github.com/juunini/palworld-discord-bot/src/commands"
 	"github.com/juunini/palworld-discord-bot/src/config"
 )
 
