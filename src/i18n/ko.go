@@ -40,4 +40,8 @@ func ko() {
 	EnableWebServerDisablePrompt = "웹 서버를 사용하지 않으시겠습니까? 이후 다시 설정하시려면 .env 파일을 수정하셔야 합니다."
 	WebServerPort = "웹 서버 포트"
 	WebServerPortTooltip = "웹 서버의 포트를 설정합니다. 되도록 60000 이상의 숫자를 사용하시길 권장합니다."
+
+	Close = "닫기"
+	Confirm = "확인"
+	Save = "저장"
 }

@@ -40,4 +40,8 @@ func en() {
 	EnableWebServerDisablePrompt = "Do you want to disable web server? You need to modify .env file to enable it again."
 	WebServerPort = "Web Server Port"
 	WebServerPortTooltip = "Set the port of web server. It is recommended to use a number above 60000."
+
+	Close = "Close"
+	Confirm = "Confirm"
+	Save = "Save"
 }

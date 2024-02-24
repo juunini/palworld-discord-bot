@@ -14,6 +14,8 @@ class Switch extends HTMLElement {
 
   turnOffPrompt = '';
   modalOpenButton = document.createElement('button');
+  close = 'Close';
+  confirm = 'Confirm';
 
   constructor() { super(); }
 
@@ -122,12 +124,12 @@ class Switch extends HTMLElement {
     modalClose.type = 'button';
     modalClose.className = 'btn btn-secondary';
     modalClose.setAttribute('data-bs-dismiss', 'modal');
-    modalClose.textContent = 'Close';
+    modalClose.textContent = this.getAttribute('close') || 'Close';
 
     const modalConfirm = document.createElement('button');
     modalConfirm.type = 'button';
     modalConfirm.className = 'btn btn-primary';
-    modalConfirm.textContent = 'Confirm';
+    modalConfirm.textContent = this.getAttribute('confirm') || 'Confirm';
     modalConfirm.addEventListener('click', () => {
       this.checked = false;
       this.checkbox.checked = false;

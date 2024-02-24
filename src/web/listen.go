@@ -57,6 +57,10 @@ func Listen(port int) error {
 				"EnableWebServerDisablePrompt": i18n.EnableWebServerDisablePrompt,
 				"WebServerPort":                i18n.WebServerPort,
 				"WebServerPortTooltip":         i18n.WebServerPortTooltip,
+
+				"Close":   i18n.Close,
+				"Confirm": i18n.Confirm,
+				"Save":    i18n.Save,
 			},
 		})
 	})

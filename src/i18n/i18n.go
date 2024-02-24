@@ -38,4 +38,8 @@ var (
 	EnableWebServerDisablePrompt string
 	WebServerPort                string
 	WebServerPortTooltip         string
+
+	Close   string
+	Confirm string
+	Save    string
 )
