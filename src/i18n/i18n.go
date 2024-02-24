@@ -57,6 +57,7 @@ var (
 
 	PalworldConfig                    string
 	EnablePalworldRcon                string
+	EnablePalworldRconTooltip         string
 	PalworldRconHost                  string
 	PalworldRconHostTooltip           string
 	PalworldRconPort                  string

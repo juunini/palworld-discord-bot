@@ -33,6 +33,8 @@ func init() {
 		}
 	}
 
+	i18n.SetLanguage(config.LANGUAGE)
+
 	if err := config.Save(); err != nil {
 		panic(err)
 	}
