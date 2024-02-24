@@ -15,11 +15,12 @@ var (
 	DISCORD_COMMAND_IGNORE_CASE = false
 	DISCORD_COMMAND_PREFIX      = "!palbot"
 
-	PALWORLD_RCON_ENABLED        = false
-	PALWORLD_RCON_HOST           = "127.0.0.1"
-	PALWORLD_RCON_PORT      uint = 25575
-	PALWORLD_ADMIN_PASSWORD      = ""
-	PALWORLD_SERVER_PATH         = ""
+	PALWORLD_RCON_ENABLED              = false
+	PALWORLD_RCON_HOST                 = "127.0.0.1"
+	PALWORLD_RCON_PORT            uint = 25575
+	PALWORLD_ADMIN_PASSWORD            = ""
+	PALWORLD_SERVER_FILE_PATH          = ""
+	PALWORLD_SERVER_EXECUTE_FLAGS      = []string{"-useperfthreads", "-NoAsyncLoadingThread", "-UseMultithreadForDS"}
 
 	DISCORD_DASHBOARD_CHANNEL_ID                 = ""
 	DISCORD_LOG_CHANNEL_ID                       = ""
