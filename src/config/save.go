@@ -47,6 +47,21 @@ func Save() error {
 	env += "# " + i18n.DiscordDashboardBotConfigMessageIDTooltip + "\n"
 	env += "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID + "\n\n"
 
+	env += "# " + i18n.DiscordCommandAliasKickTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_KICK=" + DISCORD_COMMAND_ALIAS_KICK + "\n"
+	env += "# " + i18n.DiscordCommandAliasBanTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_BAN=" + DISCORD_COMMAND_ALIAS_BAN + "\n"
+	env += "# " + i18n.DiscordCommandAliasBroadcastTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_BROADCAST=" + DISCORD_COMMAND_ALIAS_BROADCAST + "\n"
+	env += "# " + i18n.DiscordCommandAliasShutdownTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_SHUTDOWN=" + DISCORD_COMMAND_ALIAS_SHUTDOWN + "\n"
+	env += "# " + i18n.DiscordCommandAliasDoExitTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_DO_EXIT=" + DISCORD_COMMAND_ALIAS_DO_EXIT + "\n"
+	env += "# " + i18n.DiscordCommandAliasSaveTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_SAVE=" + DISCORD_COMMAND_ALIAS_SAVE + "\n"
+	env += "# " + i18n.DiscordCommandAliasStartServerTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_START_SERVER=" + DISCORD_COMMAND_ALIAS_START_SERVER + "\n\n"
+
 	env += "LANGUAGE=" + LANGUAGE + "\n"
 
 	return os.WriteFile(".env", []byte(env), 0644)
