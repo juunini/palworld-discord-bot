@@ -15,17 +15,27 @@ func SetLanguage(language string) {
 	}
 }
 
-var BotRunningStart string
-var FailedToConnectRconServer string
-var FailedToSaveCommand string
-var FailedToDoExitCommand string
-var FailedToShutdownCommand string
-var FailedToBroadcastCommand string
-var FailedToKickCommand string
-var FailedToBanCommand string
-var FailedToShowPlayerCommand string
-var FailedToStartServerCommand string
-var SuccessToStartServerCommand string
-var WrongParameters string
-var Help func(commandPrefix string, isAdmin bool) string
-var UnknownCommand string
+var (
+	BotRunningStart             string
+	FailedToConnectRconServer   string
+	FailedToSaveCommand         string
+	FailedToDoExitCommand       string
+	FailedToShutdownCommand     string
+	FailedToBroadcastCommand    string
+	FailedToKickCommand         string
+	FailedToBanCommand          string
+	FailedToShowPlayerCommand   string
+	FailedToStartServerCommand  string
+	SuccessToStartServerCommand string
+	WrongParameters             string
+	UnknownCommand              string
+	Help                        func(commandPrefix string, isAdmin bool) string
+)
+
+var (
+	WebConfig                    string
+	EnableWebServer              string
+	EnableWebServerDisablePrompt string
+	WebServerPort                string
+	WebServerPortTooltip         string
+)

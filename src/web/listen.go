@@ -51,6 +51,13 @@ func Listen(port int) error {
 				"DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID": config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID,
 				"DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID":      config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID,
 			},
+			"i18n": fiber.Map{
+				"WebConfig":                    i18n.WebConfig,
+				"EnableWebServer":              i18n.EnableWebServer,
+				"EnableWebServerDisablePrompt": i18n.EnableWebServerDisablePrompt,
+				"WebServerPort":                i18n.WebServerPort,
+				"WebServerPortTooltip":         i18n.WebServerPortTooltip,
+			},
 		})
 	})
 
