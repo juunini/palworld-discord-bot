@@ -33,6 +33,8 @@ var (
 )
 
 var (
+	WebServerOpeningMessage string
+
 	WebConfig                    string
 	EnableWebServer              string
 	EnableWebServerDisablePrompt string

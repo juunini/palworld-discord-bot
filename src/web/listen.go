@@ -121,6 +121,8 @@ func Listen(port int) error {
 		Browse:     true,
 	}))
 
+	console_decoration.PrintError(i18n.WebServerOpeningMessage + "\n")
+
 	privateIPs, err := utils.PrivateIPs()
 	if err != nil {
 		return err

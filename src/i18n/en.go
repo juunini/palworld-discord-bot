@@ -35,6 +35,8 @@ func en() {
 	}
 	UnknownCommand = "Unknown command"
 
+	WebServerOpeningMessage = "If you cannot access the web server, please modify the .env file and run it again."
+
 	WebConfig = "Web Config"
 	EnableWebServer = "Enable Web Server"
 	EnableWebServerDisablePrompt = "Do you want to disable web server? You need to modify .env file to enable it again."
