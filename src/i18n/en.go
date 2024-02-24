@@ -36,6 +36,7 @@ func en() {
 	UnknownCommand = "Unknown command"
 
 	WebServerOpeningMessage = "If you cannot access the web server, please modify the .env file and run it again."
+	WebServerShutdownMessage = "Web server has been shut down."
 
 	WebConfig = "Web Config"
 	EnableWebServer = "Enable Web Server"
@@ -98,4 +99,7 @@ func en() {
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"
+
+	ConfigUpdateSuccess = "Config update success"
+	ConfigUpdateFailed = "Config update failed"
 }

@@ -33,7 +33,8 @@ var (
 )
 
 var (
-	WebServerOpeningMessage string
+	WebServerOpeningMessage  string
+	WebServerShutdownMessage string
 
 	WebConfig                    string
 	EnableWebServer              string
@@ -96,4 +97,7 @@ var (
 	Close   string
 	Confirm string
 	Save    string
+
+	ConfigUpdateSuccess string
+	ConfigUpdateFailed  string
 )
