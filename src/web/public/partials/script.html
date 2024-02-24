@@ -13,17 +13,21 @@
 </script>
 
 <script type="module">
-  import * as bootstrap from "bootstrap";
-
   import "/components/switch.js";
   import "/components/input.js";
+  import '/lib/tooltip.js';
 
-  const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-  const tooltipList = [...tooltipTriggerList].map(
-    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-  );
+  const elements = {
+    webServerEnabled: document.getElementById("webServerEnabled"),
+    webServerPort: document.getElementById("webServerPort"),
+
+    language: document.getElementById("language"),
+
+    discordBotEnabled: document.getElementById("discordBotEnabled"),
+    discordBotToken: document.getElementById("discordBotToken"),
+    discordAdminUsernames: document.getElementById("discordAdminUsernames"),
+    discordCommandCaseSensitive: document.getElementById("discordCommandCaseSensitive"),
+  }
 
   const webServerEnabledEl = document.getElementById("webServerEnabled");
   const webServerPortEl = document.getElementById("webServerPort");
@@ -40,8 +44,8 @@
   const discordAdminUsernamesEl = document.getElementById(
     "discordAdminUsernames"
   );
-  const discordCommandIgnoreCaseEl = document.getElementById(
-    "discordCommandIgnoreCase"
+  const discordCommandCaseSensitiveEl = document.getElementById(
+    "discordCommandCaseSensitive"
   );
   const discordCommandPrefixEl = document.getElementById(
     "discordCommandPrefix"
@@ -50,7 +54,7 @@
   discordBotEnabledEl.setAttribute("checked", {{.CONFIG.DISCORD_BOT_ENABLED}});
   discordBotTokenEl.setAttribute("value", "{{.CONFIG.DISCORD_BOT_TOKEN}}");
   discordAdminUsernamesEl.setAttribute("value", "{{.CONFIG.DISCORD_ADMIN_USERNAMES}}");
-  discordCommandIgnoreCaseEl.setAttribute("checked", {{.CONFIG.DISCORD_COMMAND_IGNORE_CASE}});
+  discordCommandCaseSensitiveEl.setAttribute("checked", {{.CONFIG.DISCORD_COMMAND_CASE_SENSITIVE}});
   discordCommandPrefixEl.setAttribute("value", "{{.CONFIG.DISCORD_COMMAND_PREFIX}}");
 
   const palworldRconEnabledEl = document.getElementById("palworldRconEnabled");
