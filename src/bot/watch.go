@@ -43,11 +43,12 @@ func sendOnlinePlayerDashboard(session *discordgo.Session) {
 	content := ""
 
 	for _, player := range watchers.OnlinePlayers {
-		content += fmt.Sprintf("- %s\n", player.Username)
+		content += fmt.Sprintf("- %s\n", player.Username+" ("+player.SteamID+")")
 	}
 
 	embed := &discordgo.MessageEmbed{
-		Title: fmt.Sprintf("Online Players (%d)", len(watchers.OnlinePlayers)),
+		Title:       fmt.Sprintf("Online Players (%d)", len(watchers.OnlinePlayers)),
+		Description: "0.1.4.1 기준, 영어가 아닌 문자로 닉네임이 설정된 유저가 있을 시 SteamID등의 정보가 제대로 표시되지 않을 수 있고, kick, ban 등의 명령어가 제대로 작동하지 않을 수도 있습니다.",
 		Fields: []*discordgo.MessageEmbedField{
 			{
 				Value:  content,

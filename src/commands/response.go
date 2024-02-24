@@ -23,6 +23,10 @@ func Response(message string, username string) string {
 		return i18n.UnknownCommand
 	}
 
+	if command == "startServer" {
+		return startServer()
+	}
+
 	client, err := palworldrcon.Connect(
 		config.PALWORLD_RCON_HOST,
 		config.PALWORLD_RCON_PORT,
@@ -46,8 +50,6 @@ func Response(message string, username string) string {
 		return doExit(client)
 	} else if command == "save" {
 		return save(client)
-	} else if command == "startServer" {
-		return startServer()
 	}
 
 	return i18n.UnknownCommand
