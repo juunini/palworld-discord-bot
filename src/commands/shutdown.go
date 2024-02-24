@@ -30,7 +30,7 @@ func shutdown(command string) string {
 	return response
 }
 
-func shutdownParameters(command string) (uint, string, string) {
+func shutdownParameters(command string) (int, string, string) {
 	paramString, _ := strings.CutPrefix(command, "shutdown ")
 	params := strings.Split(paramString, " ")
 
@@ -39,7 +39,7 @@ func shutdownParameters(command string) (uint, string, string) {
 		return 0, "", i18n.WrongParameters
 	}
 
-	seconds, err := utils.ToUint(params[0])
+	seconds, err := utils.ToInt(params[0])
 	if err != nil {
 		console_decoration.PrintError(i18n.WrongParameters + ": " + err.Error())
 		return 0, "", i18n.WrongParameters

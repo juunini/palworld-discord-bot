@@ -10,7 +10,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.52.1
 	github.com/gofiber/template/html/v2 v2.1.1
 	github.com/joho/godotenv v1.5.1
-	github.com/juunini/palworld-rcon v1.1.1
+	github.com/juunini/palworld-rcon v1.2.0
 )
 
 require (
