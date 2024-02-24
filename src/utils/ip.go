@@ -47,6 +47,12 @@ func PrivateIPs() ([]string, error) {
 		return nil, err
 	}
 
+	for i, ip := range privateIPs {
+		if ip == "" {
+			privateIPs = append(privateIPs[:i], privateIPs[i+1:]...)
+		}
+	}
+
 	return append([]string{"localhost", "127.0.0.1"}, privateIPs...), nil
 }
 

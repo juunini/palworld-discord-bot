@@ -38,7 +38,7 @@ func main() {
 		bot.Connect(session)
 	}
 
-	console_decoration.PrintSuccess(i18n.BotRunningStart)
+	console_decoration.PrintSuccess(i18n.BotRunningStart + "\n")
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc

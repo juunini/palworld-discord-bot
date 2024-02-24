@@ -10,7 +10,9 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/template/html/v2"
 	"github.com/juunini/palworld-discord-bot/src/config"
+	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/utils"
 )
 
 //go:embed public/*
@@ -118,6 +120,15 @@ func Listen(port int) error {
 		PathPrefix: "public",
 		Browse:     true,
 	}))
+
+	privateIPs, err := utils.PrivateIPs()
+	if err != nil {
+		return err
+	}
+
+	for _, ip := range privateIPs {
+		console_decoration.PrintSuccess(fmt.Sprintf("- http://%s:%d", ip, port))
+	}
 
 	return app.Listen(fmt.Sprintf(":%d", port))
 }
