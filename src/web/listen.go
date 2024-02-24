@@ -4,10 +4,12 @@ import (
 	"embed"
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/template/html/v2"
+	"github.com/juunini/palworld-discord-bot/src/config"
 )
 
 //go:embed public/*
@@ -22,7 +24,12 @@ func Listen(port int) error {
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("public/index", fiber.Map{
-			"Language": "ko",
+			"LANGUAGE":                    config.LANGUAGE,
+			"DISCORD_BOT_ENABLED":         config.DISCORD_BOT_ENABLED,
+			"DISCORD_BOT_TOKEN":           config.DISCORD_BOT_TOKEN,
+			"DISCORD_ADMIN_USERNAMES":     strings.Join(config.DISCORD_ADMIN_USERNAMES, ", "),
+			"DISCORD_COMMAND_IGNORE_CASE": config.DISCORD_COMMAND_IGNORE_CASE,
+			"DISCORD_COMMAND_PREFIX":      config.DISCORD_COMMAND_PREFIX,
 		})
 	})
 
