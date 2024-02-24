@@ -44,6 +44,17 @@ func en() {
 	Language = "Language"
 	SelectLanguage = "Select Language"
 
+	DiscordBotConfig = "Discord Bot Config"
+	EnableDiscordBot = "Enable Discord Bot"
+	DiscordBotToken = "Discord Bot Token"
+	DiscordBotTokenTooltip = "Enter the token of the Discord bot. You can find out how to get the token by clicking the ? button you are currently hovering over."
+	DiscordAdminUsernames = "Discord Admin Usernames"
+	DiscordAdminUsernamesTooltip = "Enter the nicknames of Discord admins. If there are multiple, separate them with a comma."
+	DiscordCommandCaseSensitive = "Discord Command Case Sensitive"
+	DiscordCommandCaseSensitiveTooltip = "Set whether to distinguish the case of Discord commands."
+	DiscordCommandPrefix = "Discord Bot Call Command"
+	DiscordCommandPrefixTooltip = "Set the command to call the Discord bot."
+
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"

@@ -42,6 +42,17 @@ var (
 	Language       string
 	SelectLanguage string
 
+	DiscordBotConfig                   string
+	EnableDiscordBot                   string
+	DiscordBotToken                    string
+	DiscordBotTokenTooltip             string
+	DiscordAdminUsernames              string
+	DiscordAdminUsernamesTooltip       string
+	DiscordCommandCaseSensitive        string
+	DiscordCommandCaseSensitiveTooltip string
+	DiscordCommandPrefix               string
+	DiscordCommandPrefixTooltip        string
+
 	Close   string
 	Confirm string
 	Save    string

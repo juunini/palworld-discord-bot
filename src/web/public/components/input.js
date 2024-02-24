@@ -10,6 +10,7 @@ class Input extends HTMLElement {
   input = document.createElement('input');
   label = document.createElement('label');
   tooltip = document.createElement('button');
+  tooltipClickHref = '';
   value = false;
 
   constructor() { super(); }
@@ -73,6 +74,14 @@ class Input extends HTMLElement {
     this.tooltip.setAttribute('title', this.getAttribute('tooltip'));
     this.tooltip.style.border = 'none';
     this.tooltip.style.borderRadius = '50%';
+
+    if (!this.getAttribute('tooltip-click-href')) {
+      return;
+    }
+
+    this.tooltip.addEventListener('click', () => {
+      window.open(this.getAttribute('tooltip-click-href'), '_blank');
+    })
   }
 }
 

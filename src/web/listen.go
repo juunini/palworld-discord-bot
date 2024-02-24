@@ -61,6 +61,17 @@ func Listen(port int) error {
 				"Languages":      i18n.Languages,
 				"SelectLanguage": i18n.SelectLanguage,
 
+				"DiscordBotConfig":                   i18n.DiscordBotConfig,
+				"EnableDiscordBot":                   i18n.EnableDiscordBot,
+				"DiscordBotToken":                    i18n.DiscordBotToken,
+				"DiscordBotTokenTooltip":             i18n.DiscordBotTokenTooltip,
+				"DiscordAdminUsernames":              i18n.DiscordAdminUsernames,
+				"DiscordAdminUsernamesTooltip":       i18n.DiscordAdminUsernamesTooltip,
+				"DiscordCommandCaseSensitive":        i18n.DiscordCommandCaseSensitive,
+				"DiscordCommandCaseSensitiveTooltip": i18n.DiscordCommandCaseSensitiveTooltip,
+				"DiscordCommandPrefix":               i18n.DiscordCommandPrefix,
+				"DiscordCommandPrefixTooltip":        i18n.DiscordCommandPrefixTooltip,
+
 				"Close":   i18n.Close,
 				"Confirm": i18n.Confirm,
 				"Save":    i18n.Save,

@@ -44,6 +44,17 @@ func ko() {
 	Language = "언어"
 	SelectLanguage = "언어 선택"
 
+	DiscordBotConfig = "디스코드 봇 설정"
+	EnableDiscordBot = "디스코드 봇 사용"
+	DiscordBotToken = "디스코드 봇 토큰"
+	DiscordBotTokenTooltip = "디스코드 봇의 토큰을 입력하세요. 토큰을 얻는 방법은 현재 마우스를 올리고 있는 ? 버튼을 클릭하시면 확인하실 수 있습니다."
+	DiscordAdminUsernames = "디스코드 관리자 닉네임"
+	DiscordAdminUsernamesTooltip = "디스코드 관리자의 닉네임을 입력하세요. 여러명일 경우 쉼표로 구분합니다."
+	DiscordCommandCaseSensitive = "디스코드 커맨드 대소문자 구분"
+	DiscordCommandCaseSensitiveTooltip = "디스코드 커맨드의 대소문자를 구분할지 설정합니다."
+	DiscordCommandPrefix = "디스코드 봇 호출 명령어"
+	DiscordCommandPrefixTooltip = "디스코드 봇 호출 명령어를 설정합니다."
+
 	Close = "닫기"
 	Confirm = "확인"
 	Save = "저장"
