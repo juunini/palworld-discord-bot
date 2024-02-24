@@ -12,6 +12,9 @@ class Switch extends HTMLElement {
   tooltip = document.createElement('button');
   checked = false;
 
+  turnOffPrompt = '';
+  modalOpenButton = document.createElement('button');
+
   constructor() { super(); }
 
   connectedCallback() {
@@ -24,8 +27,21 @@ class Switch extends HTMLElement {
     this._decorateLabel();
 
     this.checkbox.addEventListener('change', (e) => {
+      if (!e.target.checked && this.turnOffPrompt) {
+        this.checkbox.checked = true;
+        this.modalOpenButton.click();
+        return;
+      }
+
       this.checked = e.target.checked;
+      this.checkbox.checked = this.checked;
     });
+
+    this.turnOffPrompt = this.getAttribute('turn-off-prompt') || '';
+
+    if (this.turnOffPrompt) {
+      this._addModal();
+    }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -74,6 +90,58 @@ class Switch extends HTMLElement {
     this.tooltip.setAttribute('title', this.getAttribute('tooltip'));
     this.tooltip.style.border = 'none';
     this.tooltip.style.borderRadius = '50%';
+  }
+
+  _addModal() {
+    this.modalOpenButton.type = 'button';
+    this.modalOpenButton.style.display = 'none';
+    this.modalOpenButton.setAttribute('data-bs-toggle', 'modal');
+    this.modalOpenButton.setAttribute('data-bs-target', '#' + this.inputID + '-modal');
+    
+    const modal = document.createElement('div');
+    modal.className = 'modal fade';
+    modal.id = this.inputID + '-modal';
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('aria-labelledby', this.inputID + '-modal-label');
+    modal.setAttribute('aria-hidden', 'true');
+    
+    const modalDialog = document.createElement('div');
+    modalDialog.className = 'modal-dialog';
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    const modalBody = document.createElement('div');
+    modalBody.className = 'modal-body';
+    modalBody.textContent = this.turnOffPrompt;
+
+    const modalFooter = document.createElement('div');
+    modalFooter.className = 'modal-footer';
+
+    const modalClose = document.createElement('button');
+    modalClose.type = 'button';
+    modalClose.className = 'btn btn-secondary';
+    modalClose.setAttribute('data-bs-dismiss', 'modal');
+    modalClose.textContent = 'Close';
+
+    const modalConfirm = document.createElement('button');
+    modalConfirm.type = 'button';
+    modalConfirm.className = 'btn btn-primary';
+    modalConfirm.textContent = 'Confirm';
+    modalConfirm.addEventListener('click', () => {
+      this.checked = false;
+      this.checkbox.checked = false;
+      modalClose.click();
+    });
+
+    modalFooter.appendChild(modalClose);
+    modalFooter.appendChild(modalConfirm);
+    modalContent.appendChild(modalBody);
+    modalContent.appendChild(modalFooter);
+    modalDialog.appendChild(modalContent);
+    modal.appendChild(modalDialog);
+    this.appendChild(modal);
+    this.appendChild(this.modalOpenButton);
   }
 }
 
