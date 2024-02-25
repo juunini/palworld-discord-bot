@@ -29,7 +29,7 @@ func en() {
 		message += fmt.Sprintf("`%s %s <message>` - Send <message> to all users as SYSTEM message.\n", params.CommandPrefix, params.BroadcastAlias)
 		message += fmt.Sprintf("`%s %s <seconds> <message>` - Shutdown server after <seconds> with <message>.\n", params.CommandPrefix, params.ShutdownAlias)
 		message += fmt.Sprintf("`%s %s` - Force exit server.\n", params.CommandPrefix, params.DoExitAlias)
-		message += fmt.Sprintf("`%s %s` - Save server.", params.CommandPrefix, params.SaveAlias)
+		message += fmt.Sprintf("`%s %s` - Save server.\n", params.CommandPrefix, params.SaveAlias)
 		message += fmt.Sprintf("`%s %s` - Start server.", params.CommandPrefix, params.StartServerAlias)
 		return message
 	}

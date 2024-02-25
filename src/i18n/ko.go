@@ -29,7 +29,7 @@ func ko() {
 		message += fmt.Sprintf("`%s %s <메시지>` - SYSTEM 메시지로 모든 유저에게 <메시지>를 전송합니다.\n", params.CommandPrefix, params.BroadcastAlias)
 		message += fmt.Sprintf("`%s %s <초> <메시지>` - <메시지>를 전송한 후 <초> 후에 서버를 종료합니다.\n", params.CommandPrefix, params.ShutdownAlias)
 		message += fmt.Sprintf("`%s %s` - 서버를 강제 종료합니다.\n", params.CommandPrefix, params.DoExitAlias)
-		message += fmt.Sprintf("`%s %s` - 서버를 저장합니다.", params.CommandPrefix, params.SaveAlias)
+		message += fmt.Sprintf("`%s %s` - 서버를 저장합니다.\n", params.CommandPrefix, params.SaveAlias)
 		message += fmt.Sprintf("`%s %s` - 서버를 실행합니다.", params.CommandPrefix, params.StartServerAlias)
 		return message
 	}
