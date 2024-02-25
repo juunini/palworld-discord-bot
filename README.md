@@ -17,11 +17,14 @@
 
 ## Install
 
-1. Go to the [Release](https://github.com/juunini/palworld-discord-bot/releases) page and download the file that matches your operating system.
+1. Go to the [Release](https://github.com/juunini/palworld-discord-bot/releases) page and download the file for your operating system.
 2. Run the downloaded file.
-    - When you run it, you will be prompted to enter the required values in the terminal.
-    - If you prefer to set the values directly instead of entering them in the terminal, copy the `.env.sample` file and create a `.env` file, then fill in the necessary values.
-    - Refer to the [Environment Variables](#environment-variables) section below for the required values.
+    - When you run it, you will see the following screen. Select your language.  
+        ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5950ee92-6e7b-4491-86fe-490ea4039cb0)  
+    - After selecting the language, you will see the following screen. Enter the highlighted address in your browser.  
+        ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/33a776f2-b95a-4d3d-9814-2023705796c5)  
+3. When you enter the address in your browser, you will see the following screen. Configure it and restart.  
+    ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/d17c1e13-01d4-4d76-babc-1fee74f2f5be)  
 
 ## Features
 
@@ -43,17 +46,3 @@
 
 - Currently, Palworld does not support Non-ASCII characters when sending messages via RCON. You can only use languages other than English. [Reference](https://github.com/juunini/palworld-rcon/issues/1)
 - When sending messages with spaces, Palworld's RCON cuts off the message. Therefore, spaces are replaced with underscores when transmitted. (broadcast, shutdown commands)
-
-## Environment Variables
-
-| Name | Description | Default |
-|------|-------------|---------|
-| DISCORD_BOT_TOKEN | | |
-| DISCORD_ADMIN_USERNAMES | seperated by comma, example: "admin1, admin2, admin3" | |
-| DISCORD_COMMAND_PREFIX | | !palbot |
-| PALWORLD_RCON_HOST | | 127.0.0.1 |
-| PALWORLD_RCON_PORT | | 25575 |
-| PALWORLD_RCON_PASSWORD | | |
-| DISCORD_DASHBOARD_CHANNEL_ID | Bot displays the status of the server, the connection user, and so on in this channel. | |
-| DISCORD_LOG_CHANNEL_ID | Bot sends a log to this channel, e.g. user connection, user connection termination, etc... | |
-| LANGUAGE | Currently supports Korean(ko), English(en) | en |
