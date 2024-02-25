@@ -23,7 +23,7 @@ func Response(message string, username string) string {
 		return i18n.UnknownCommand
 	}
 
-	if command == "startServer" {
+	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_START_SERVER) {
 		return startServer()
 	}
 
@@ -38,17 +38,17 @@ func Response(message string, username string) string {
 	}
 	defer client.Disconnect()
 
-	if strings.HasPrefix(command, "kick") {
+	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_KICK) {
 		return kick(client, command)
-	} else if strings.HasPrefix(command, "ban") {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_BAN) {
 		return ban(client, command)
-	} else if strings.HasPrefix(command, "broadcast") {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_BROADCAST) {
 		return broadcast(client, command)
-	} else if strings.HasPrefix(command, "shutdown") {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_SHUTDOWN) {
 		return shutdown(client, command)
-	} else if command == "doExit" {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_DO_EXIT) {
 		return doExit(client)
-	} else if command == "save" {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_SAVE) {
 		return save(client)
 	}
 
