@@ -6,6 +6,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/juunini/palworld-discord-bot/src/bot/watchers"
 	"github.com/juunini/palworld-discord-bot/src/config"
+	"github.com/juunini/palworld-discord-bot/src/i18n"
 )
 
 func Watch(session *discordgo.Session) {
@@ -47,8 +48,8 @@ func sendOnlinePlayerDashboard(session *discordgo.Session) {
 	}
 
 	embed := &discordgo.MessageEmbed{
-		Title:       fmt.Sprintf("Online Players (%d)", len(watchers.OnlinePlayers)),
-		Description: "0.1.4.1 기준, 영어가 아닌 문자로 닉네임이 설정된 유저가 있을 시 SteamID등의 정보가 제대로 표시되지 않을 수 있고, kick, ban 등의 명령어가 제대로 작동하지 않을 수도 있습니다.",
+		Title:       fmt.Sprintf("%s (%d)", i18n.OnlinePlayers, len(watchers.OnlinePlayers)),
+		Description: i18n.NoticeNonEnglishNickname,
 		Fields: []*discordgo.MessageEmbedField{
 			{
 				Value:  content,

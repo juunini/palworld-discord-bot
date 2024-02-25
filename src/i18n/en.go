@@ -102,4 +102,7 @@ func en() {
 
 	ConfigUpdateSuccess = "Config update success"
 	ConfigUpdateFailed = "Config update failed"
+
+	OnlinePlayers = "Online Players"
+	NoticeNonEnglishNickname = "As of version 0.1.4.1, if a user has a nickname set in a language other than English, their SteamID information may not be displayed correctly, and commands such as kick and ban may not work properly."
 }
