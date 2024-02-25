@@ -19,7 +19,7 @@ var (
 	PALWORLD_RCON_HOST            = "127.0.0.1"
 	PALWORLD_RCON_PORT            = 25575
 	PALWORLD_ADMIN_PASSWORD       = ""
-	PALWORLD_SERVER_FILE_PATH     = ""
+	PALWORLD_SERVER_FILE_PATH     = palworldServerPathFromEnv()
 	PALWORLD_SERVER_EXECUTE_FLAGS = []string{"-useperfthreads", "-NoAsyncLoadingThread", "-UseMultithreadForDS"}
 
 	DISCORD_DASHBOARD_CHANNEL_ID                 = ""
