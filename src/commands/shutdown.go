@@ -6,16 +6,10 @@ import (
 	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
 	"github.com/juunini/palworld-discord-bot/src/utils"
+	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func shutdown(command string) string {
-	client, err := utils.RconClient()
-	if err != nil {
-		return i18n.FailedToConnectRconServer
-	}
-
-	defer client.Disconnect()
-
+func shutdown(client *palworldrcon.Client, command string) string {
 	seconds, message, errorMessage := shutdownParameters(command)
 	if errorMessage != "" {
 		return errorMessage

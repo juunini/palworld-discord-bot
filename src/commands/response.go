@@ -2,10 +2,12 @@ package commands
 
 import (
 	"strings"
+	"time"
 
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
 	"github.com/juunini/palworld-discord-bot/src/utils"
+	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
 func Response(message string, username string) string {
@@ -21,18 +23,29 @@ func Response(message string, username string) string {
 		return i18n.UnknownCommand
 	}
 
+	client, err := palworldrcon.Connect(
+		config.PALWORLD_RCON_HOST,
+		config.PALWORLD_RCON_PORT,
+		config.PALWORLD_ADMIN_PASSWORD,
+		5*time.Second,
+	)
+	if err != nil {
+		return i18n.FailedToConnectRconServer
+	}
+	defer client.Disconnect()
+
 	if strings.HasPrefix(command, "kick") {
-		return kick(command)
+		return kick(client, command)
 	} else if strings.HasPrefix(command, "ban") {
-		return ban(command)
+		return ban(client, command)
 	} else if strings.HasPrefix(command, "broadcast") {
-		return broadcast(command)
+		return broadcast(client, command)
 	} else if strings.HasPrefix(command, "shutdown") {
-		return shutdown(command)
+		return shutdown(client, command)
 	} else if command == "doExit" {
-		return doExit()
+		return doExit(client)
 	} else if command == "save" {
-		return save()
+		return save(client)
 	} else if command == "startServer" {
 		return startServer()
 	}

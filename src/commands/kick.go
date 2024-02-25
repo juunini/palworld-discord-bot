@@ -4,22 +4,15 @@ import (
 	"strings"
 
 	"github.com/juunini/palworld-discord-bot/src/i18n"
-	"github.com/juunini/palworld-discord-bot/src/utils"
+	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func kick(command string) string {
+func kick(client *palworldrcon.Client, command string) string {
 	steamID, found := strings.CutPrefix(command, "kick ")
 
 	if !found {
 		return i18n.WrongParameters
 	}
-
-	client, err := utils.RconClient()
-	if err != nil {
-		return i18n.FailedToConnectRconServer
-	}
-
-	defer client.Disconnect()
 
 	response, err := client.KickPlayer(steamID)
 	if err != nil {

@@ -4,22 +4,15 @@ import (
 	"strings"
 
 	"github.com/juunini/palworld-discord-bot/src/i18n"
-	"github.com/juunini/palworld-discord-bot/src/utils"
+	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func broadcast(command string) string {
+func broadcast(client *palworldrcon.Client, command string) string {
 	message, found := strings.CutPrefix(command, "broadcast ")
 
 	if !found {
 		return i18n.WrongParameters
 	}
-
-	client, err := utils.RconClient()
-	if err != nil {
-		return i18n.FailedToConnectRconServer
-	}
-
-	defer client.Disconnect()
 
 	response, err := client.Broadcast(strings.ReplaceAll(message, " ", "_"))
 	if err != nil {
