@@ -102,4 +102,7 @@ func ko() {
 
 	ConfigUpdateSuccess = "설정이 업데이트되었습니다."
 	ConfigUpdateFailed = "설정 업데이트에 실패했습니다."
+
+	OnlinePlayers = "접속중인 유저"
+	NoticeNonEnglishNickname = "0.1.4.1 기준, 영어가 아닌 문자로 닉네임이 설정된 유저가 있을 시 SteamID등의 정보가 제대로 표시되지 않을 수 있고, kick, ban 등의 명령어가 제대로 작동하지 않을 수도 있습니다."
 }

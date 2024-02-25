@@ -10,7 +10,7 @@ import (
 func RconClient() (palworldrcon.Client, error) {
 	client := palworldrcon.Client{
 		Host:          config.PALWORLD_RCON_HOST,
-		Port:          uint(config.PALWORLD_RCON_PORT),
+		Port:          config.PALWORLD_RCON_PORT,
 		AdminPassword: config.PALWORLD_ADMIN_PASSWORD,
 	}
 

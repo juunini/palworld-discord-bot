@@ -30,9 +30,7 @@ var (
 	WrongParameters             string
 	UnknownCommand              string
 	Help                        func(commandPrefix string, isAdmin bool) string
-)
 
-var (
 	WebServerOpeningMessage  string
 	WebServerShutdownMessage string
 
@@ -100,4 +98,7 @@ var (
 
 	ConfigUpdateSuccess string
 	ConfigUpdateFailed  string
+
+	OnlinePlayers            string
+	NoticeNonEnglishNickname string
 )

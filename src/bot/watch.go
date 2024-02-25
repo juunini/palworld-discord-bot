@@ -6,6 +6,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/juunini/palworld-discord-bot/src/bot/watchers"
 	"github.com/juunini/palworld-discord-bot/src/config"
+	"github.com/juunini/palworld-discord-bot/src/i18n"
 )
 
 func Watch(session *discordgo.Session) {
@@ -43,11 +44,12 @@ func sendOnlinePlayerDashboard(session *discordgo.Session) {
 	content := ""
 
 	for _, player := range watchers.OnlinePlayers {
-		content += fmt.Sprintf("- %s\n", player.Username)
+		content += fmt.Sprintf("- %s\n", player.Username+" ("+player.SteamID+")")
 	}
 
 	embed := &discordgo.MessageEmbed{
-		Title: fmt.Sprintf("Online Players (%d)", len(watchers.OnlinePlayers)),
+		Title:       fmt.Sprintf("%s (%d)", i18n.OnlinePlayers, len(watchers.OnlinePlayers)),
+		Description: i18n.NoticeNonEnglishNickname,
 		Fields: []*discordgo.MessageEmbedField{
 			{
 				Value:  content,

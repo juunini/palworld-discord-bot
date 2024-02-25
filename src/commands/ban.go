@@ -4,22 +4,15 @@ import (
 	"strings"
 
 	"github.com/juunini/palworld-discord-bot/src/i18n"
-	"github.com/juunini/palworld-discord-bot/src/utils"
+	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func ban(command string) string {
+func ban(client *palworldrcon.Client, command string) string {
 	steamID, found := strings.CutPrefix(command, "ban ")
 
 	if !found {
 		return i18n.WrongParameters
 	}
-
-	client, err := utils.RconClient()
-	if err != nil {
-		return i18n.FailedToConnectRconServer
-	}
-
-	defer client.Disconnect()
 
 	response, err := client.BanPlayer(steamID)
 	if err != nil {

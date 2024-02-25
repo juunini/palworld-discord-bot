@@ -37,7 +37,7 @@ func PatchConfig(shutdownServer func() error) func(c *fiber.Ctx) error {
 			case "PALWORLD_RCON_HOST":
 				config.PALWORLD_RCON_HOST = value.(string)
 			case "PALWORLD_RCON_PORT":
-				config.PALWORLD_RCON_PORT = uint(value.(float64))
+				config.PALWORLD_RCON_PORT = int(value.(float64))
 			case "PALWORLD_ADMIN_PASSWORD":
 				config.PALWORLD_ADMIN_PASSWORD = value.(string)
 			case "PALWORLD_SERVER_FILE_PATH":

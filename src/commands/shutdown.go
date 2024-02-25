@@ -6,16 +6,10 @@ import (
 	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
 	"github.com/juunini/palworld-discord-bot/src/utils"
+	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func shutdown(command string) string {
-	client, err := utils.RconClient()
-	if err != nil {
-		return i18n.FailedToConnectRconServer
-	}
-
-	defer client.Disconnect()
-
+func shutdown(client *palworldrcon.Client, command string) string {
 	seconds, message, errorMessage := shutdownParameters(command)
 	if errorMessage != "" {
 		return errorMessage
@@ -30,7 +24,7 @@ func shutdown(command string) string {
 	return response
 }
 
-func shutdownParameters(command string) (uint, string, string) {
+func shutdownParameters(command string) (int, string, string) {
 	paramString, _ := strings.CutPrefix(command, "shutdown ")
 	params := strings.Split(paramString, " ")
 
@@ -39,7 +33,7 @@ func shutdownParameters(command string) (uint, string, string) {
 		return 0, "", i18n.WrongParameters
 	}
 
-	seconds, err := utils.ToUint(params[0])
+	seconds, err := utils.ToInt(params[0])
 	if err != nil {
 		console_decoration.PrintError(i18n.WrongParameters + ": " + err.Error())
 		return 0, "", i18n.WrongParameters
