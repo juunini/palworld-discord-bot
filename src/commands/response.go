@@ -14,8 +14,18 @@ func Response(message string, username string) string {
 	isAdmin := utils.IsAdmin(username)
 
 	command, found := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
-	if command == "help" || !found {
-		return i18n.Help(config.DISCORD_COMMAND_PREFIX, isAdmin)
+	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_HELP) || !found {
+		return i18n.Help(i18n.HelpParams{
+			CommandPrefix:    config.DISCORD_COMMAND_PREFIX,
+			HelpAlias:        config.DISCORD_COMMAND_ALIAS_HELP,
+			KickAlias:        config.DISCORD_COMMAND_ALIAS_KICK,
+			BanAlias:         config.DISCORD_COMMAND_ALIAS_BAN,
+			BroadcastAlias:   config.DISCORD_COMMAND_ALIAS_BROADCAST,
+			ShutdownAlias:    config.DISCORD_COMMAND_ALIAS_SHUTDOWN,
+			DoExitAlias:      config.DISCORD_COMMAND_ALIAS_DO_EXIT,
+			SaveAlias:        config.DISCORD_COMMAND_ALIAS_SAVE,
+			StartServerAlias: config.DISCORD_COMMAND_ALIAS_START_SERVER,
+		}, isAdmin)
 	}
 
 	// Under commands, only admins can execute
@@ -23,7 +33,7 @@ func Response(message string, username string) string {
 		return i18n.UnknownCommand
 	}
 
-	if command == "startServer" {
+	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_START_SERVER) {
 		return startServer()
 	}
 
@@ -38,17 +48,17 @@ func Response(message string, username string) string {
 	}
 	defer client.Disconnect()
 
-	if strings.HasPrefix(command, "kick") {
+	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_KICK) {
 		return kick(client, command)
-	} else if strings.HasPrefix(command, "ban") {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_BAN) {
 		return ban(client, command)
-	} else if strings.HasPrefix(command, "broadcast") {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_BROADCAST) {
 		return broadcast(client, command)
-	} else if strings.HasPrefix(command, "shutdown") {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_SHUTDOWN) {
 		return shutdown(client, command)
-	} else if command == "doExit" {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_DO_EXIT) {
 		return doExit(client)
-	} else if command == "save" {
+	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_SAVE) {
 		return save(client)
 	}
 

@@ -47,6 +47,8 @@ func Save() error {
 	env += "# " + i18n.DiscordDashboardBotConfigMessageIDTooltip + "\n"
 	env += "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID + "\n\n"
 
+	env += "# " + i18n.DiscordCommandAliasHelpTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_HELP=" + DISCORD_COMMAND_ALIAS_HELP + "\n"
 	env += "# " + i18n.DiscordCommandAliasKickTooltip + "\n"
 	env += "DISCORD_COMMAND_ALIAS_KICK=" + DISCORD_COMMAND_ALIAS_KICK + "\n"
 	env += "# " + i18n.DiscordCommandAliasBanTooltip + "\n"

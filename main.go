@@ -16,27 +16,14 @@ import (
 
 func init() {
 	if err := config.Load(); err != nil {
-		languages := make([]string, len(i18n.Languages))
-		for i, language := range i18n.Languages {
-			languages[i] = language["name"]
-		}
-		language, err := cli.Choose("Choose your language", languages)
-		if err != nil {
+		config.LANGUAGE = askLanguage()
+		i18n.SetLanguage(config.LANGUAGE)
+
+		if err := config.Save(); err != nil {
 			panic(err)
 		}
 
-		for _, l := range i18n.Languages {
-			if l["name"] == language {
-				config.LANGUAGE = l["code"]
-				break
-			}
-		}
-	}
-
-	i18n.SetLanguage(config.LANGUAGE)
-
-	if err := config.Save(); err != nil {
-		panic(err)
+		return
 	}
 
 	i18n.SetLanguage(config.LANGUAGE)
@@ -49,23 +36,42 @@ func main() {
 
 	if config.DISCORD_BOT_ENABLED {
 		session := bot.New(config.DISCORD_BOT_TOKEN)
-
 		session.AddHandler(bot.Handler)
-
-		go func() {
-			for {
-				bot.Watch(session)
-				time.Sleep(10 * time.Second)
-			}
-		}()
-
 		bot.Connect(session)
+		console_decoration.PrintSuccess(i18n.BotRunningStart + "\n")
+
+		if config.DISCORD_LOG_CHANNEL_ID != "" || config.DISCORD_DASHBOARD_CHANNEL_ID != "" {
+			go func() {
+				for {
+					bot.Watch(session)
+					time.Sleep(10 * time.Second)
+				}
+			}()
+		}
 	}
 
-	console_decoration.PrintSuccess(i18n.BotRunningStart + "\n")
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 
 	web.Shutdown()
+}
+
+func askLanguage() string {
+	languages := make([]string, len(i18n.Languages))
+	for i, language := range i18n.Languages {
+		languages[i] = language["name"]
+	}
+	language, err := cli.Choose("Choose your language", languages)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, l := range i18n.Languages {
+		if l["name"] == language {
+			return l["code"]
+		}
+	}
+
+	return "en"
 }

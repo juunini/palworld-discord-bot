@@ -3,6 +3,7 @@ package commands
 import (
 	"strings"
 
+	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
 	"github.com/juunini/palworld-discord-bot/src/utils"
@@ -25,7 +26,7 @@ func shutdown(client *palworldrcon.Client, command string) string {
 }
 
 func shutdownParameters(command string) (int, string, string) {
-	paramString, _ := strings.CutPrefix(command, "shutdown ")
+	paramString, _ := strings.CutPrefix(command, config.DISCORD_COMMAND_ALIAS_SHUTDOWN+" ")
 	params := strings.Split(paramString, " ")
 
 	if len(params) < 2 {
