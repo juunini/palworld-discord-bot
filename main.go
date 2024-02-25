@@ -36,20 +36,20 @@ func main() {
 
 	if config.DISCORD_BOT_ENABLED {
 		session := bot.New(config.DISCORD_BOT_TOKEN)
-
 		session.AddHandler(bot.Handler)
-
-		go func() {
-			for {
-				bot.Watch(session)
-				time.Sleep(10 * time.Second)
-			}
-		}()
-
 		bot.Connect(session)
+		console_decoration.PrintSuccess(i18n.BotRunningStart + "\n")
+
+		if config.DISCORD_LOG_CHANNEL_ID != "" || config.DISCORD_DASHBOARD_CHANNEL_ID != "" {
+			go func() {
+				for {
+					bot.Watch(session)
+					time.Sleep(10 * time.Second)
+				}
+			}()
+		}
 	}
 
-	console_decoration.PrintSuccess(i18n.BotRunningStart + "\n")
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
