@@ -35,6 +35,7 @@ func Index(c *fiber.Ctx) error {
 			"DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID": config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID,
 			"DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID":      config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID,
 
+			"DISCORD_COMMAND_ALIAS_HELP":         config.DISCORD_COMMAND_ALIAS_HELP,
 			"DISCORD_COMMAND_ALIAS_KICK":         config.DISCORD_COMMAND_ALIAS_KICK,
 			"DISCORD_COMMAND_ALIAS_BAN":          config.DISCORD_COMMAND_ALIAS_BAN,
 			"DISCORD_COMMAND_ALIAS_BROADCAST":    config.DISCORD_COMMAND_ALIAS_BROADCAST,
@@ -92,6 +93,7 @@ func Index(c *fiber.Ctx) error {
 			"DiscordDashboardBotConfigMessageIDTooltip":      i18n.DiscordDashboardBotConfigMessageIDTooltip,
 
 			"DiscordCommandAliases":                 i18n.DiscordCommandAliases,
+			"DiscordCommandAliasHelpTooltip":        i18n.DiscordCommandAliasHelpTooltip,
 			"DiscordCommandAliasKickTooltip":        i18n.DiscordCommandAliasKickTooltip,
 			"DiscordCommandAliasBanTooltip":         i18n.DiscordCommandAliasBanTooltip,
 			"DiscordCommandAliasBroadcastTooltip":   i18n.DiscordCommandAliasBroadcastTooltip,

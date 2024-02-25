@@ -54,6 +54,8 @@ func PatchConfig(shutdownServer func() error) func(c *fiber.Ctx) error {
 				config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID = value.(string)
 			case "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID":
 				config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID = value.(string)
+			case "DISCORD_COMMAND_ALIAS_HELP":
+				config.DISCORD_COMMAND_ALIAS_HELP = value.(string)
 			case "DISCORD_COMMAND_ALIAS_KICK":
 				config.DISCORD_COMMAND_ALIAS_KICK = value.(string)
 			case "DISCORD_COMMAND_ALIAS_BAN":

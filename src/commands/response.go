@@ -14,8 +14,18 @@ func Response(message string, username string) string {
 	isAdmin := utils.IsAdmin(username)
 
 	command, found := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
-	if command == "help" || !found {
-		return i18n.Help(config.DISCORD_COMMAND_PREFIX, isAdmin)
+	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_HELP) || !found {
+		return i18n.Help(i18n.HelpParams{
+			CommandPrefix:    config.DISCORD_COMMAND_PREFIX,
+			HelpAlias:        config.DISCORD_COMMAND_ALIAS_HELP,
+			KickAlias:        config.DISCORD_COMMAND_ALIAS_KICK,
+			BanAlias:         config.DISCORD_COMMAND_ALIAS_BAN,
+			BroadcastAlias:   config.DISCORD_COMMAND_ALIAS_BROADCAST,
+			ShutdownAlias:    config.DISCORD_COMMAND_ALIAS_SHUTDOWN,
+			DoExitAlias:      config.DISCORD_COMMAND_ALIAS_DO_EXIT,
+			SaveAlias:        config.DISCORD_COMMAND_ALIAS_SAVE,
+			StartServerAlias: config.DISCORD_COMMAND_ALIAS_START_SERVER,
+		}, isAdmin)
 	}
 
 	// Under commands, only admins can execute

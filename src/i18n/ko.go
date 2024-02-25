@@ -17,20 +17,20 @@ func ko() {
 	FailedToStartServerCommand = "서버를 시작하는데 실패했습니다."
 	SuccessToStartServerCommand = "서버를 실행했습니다."
 	WrongParameters = "잘못된 파라미터를 입력하셨습니다. 다시 확인해주세요."
-	Help = func(commandPrefix string, isAdmin bool) string {
-		message := fmt.Sprintf("`%s help` - 도움말을 표시합니다.\n", commandPrefix)
+	Help = func(params HelpParams, isAdmin bool) string {
+		message := fmt.Sprintf("`%s %s` - 도움말을 표시합니다.\n", params.CommandPrefix, params.HelpAlias)
 
 		if !isAdmin {
 			return message
 		}
 
-		message += fmt.Sprintf("`%s kick <SteamID>` - <SteamID> 를 1회 추방합니다. 다시 접속이 가능합니다.\n", commandPrefix)
-		message += fmt.Sprintf("`%s ban <SteamID>` - <SteamID> 를 다시 접속할 수 없게 블락시킵니다.\n", commandPrefix)
-		message += fmt.Sprintf("`%s broadcast <메시지>` - SYSTEM 메시지로 모든 유저에게 <메시지>를 전송합니다.\n", commandPrefix)
-		message += fmt.Sprintf("`%s shutdown <초> <메시지>` - <메시지>를 전송한 후 <초> 후에 서버를 종료합니다.\n", commandPrefix)
-		message += fmt.Sprintf("`%s doExit` - 서버를 강제 종료합니다.\n", commandPrefix)
-		message += fmt.Sprintf("`%s save` - 서버를 저장합니다.", commandPrefix)
-		message += fmt.Sprintf("`%s startServer` - 서버를 실행합니다.", commandPrefix)
+		message += fmt.Sprintf("`%s %s <SteamID>` - <SteamID> 를 1회 추방합니다. 다시 접속이 가능합니다.\n", params.CommandPrefix, params.KickAlias)
+		message += fmt.Sprintf("`%s %s <SteamID>` - <SteamID> 를 다시 접속할 수 없게 블락시킵니다.\n", params.CommandPrefix, params.BanAlias)
+		message += fmt.Sprintf("`%s %s <메시지>` - SYSTEM 메시지로 모든 유저에게 <메시지>를 전송합니다.\n", params.CommandPrefix, params.BroadcastAlias)
+		message += fmt.Sprintf("`%s %s <초> <메시지>` - <메시지>를 전송한 후 <초> 후에 서버를 종료합니다.\n", params.CommandPrefix, params.ShutdownAlias)
+		message += fmt.Sprintf("`%s %s` - 서버를 강제 종료합니다.\n", params.CommandPrefix, params.DoExitAlias)
+		message += fmt.Sprintf("`%s %s` - 서버를 저장합니다.", params.CommandPrefix, params.SaveAlias)
+		message += fmt.Sprintf("`%s %s` - 서버를 실행합니다.", params.CommandPrefix, params.StartServerAlias)
 		return message
 	}
 	UnknownCommand = "알 수 없는 명령어입니다."
@@ -88,6 +88,7 @@ func ko() {
 	DiscordDashboardBotConfigMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
 
 	DiscordCommandAliases = "디스코드 커맨드 커스터마이징"
+	DiscordCommandAliasHelpTooltip = "도움말을 표시하는 커맨드를 커스텀 합니다."
 	DiscordCommandAliasKickTooltip = "유저를 1회 강퇴하는 커맨드를 커스텀 합니다."
 	DiscordCommandAliasBanTooltip = "유저를 차단하는 커맨드를 커스텀 합니다."
 	DiscordCommandAliasBroadcastTooltip = "모든 유저에게 메시지를 전송하는 커맨드를 커스텀 합니다. (영어만 가능)"

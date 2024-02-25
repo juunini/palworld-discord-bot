@@ -15,6 +15,18 @@ func SetLanguage(language string) {
 	}
 }
 
+type HelpParams struct {
+	CommandPrefix    string
+	HelpAlias        string
+	KickAlias        string
+	BanAlias         string
+	BroadcastAlias   string
+	ShutdownAlias    string
+	DoExitAlias      string
+	SaveAlias        string
+	StartServerAlias string
+}
+
 var (
 	BotRunningStart             string
 	FailedToConnectRconServer   string
@@ -29,7 +41,7 @@ var (
 	SuccessToStartServerCommand string
 	WrongParameters             string
 	UnknownCommand              string
-	Help                        func(commandPrefix string, isAdmin bool) string
+	Help                        func(params HelpParams, isAdmin bool) string
 
 	WebServerOpeningMessage  string
 	WebServerShutdownMessage string
@@ -84,6 +96,7 @@ var (
 	DiscordDashboardBotConfigMessageIDTooltip      string
 
 	DiscordCommandAliases                 string
+	DiscordCommandAliasHelpTooltip        string
 	DiscordCommandAliasKickTooltip        string
 	DiscordCommandAliasBanTooltip         string
 	DiscordCommandAliasBroadcastTooltip   string

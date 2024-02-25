@@ -23,6 +23,7 @@ export const elements = {
   discordDashboardPalworldConfigMessageId: document.getElementById("discordDashboardPalworldConfigMessageId"),
   discordDashboardBotConfigMessageId: document.getElementById("discordDashboardBotConfigMessageId"),
 
+  discordCommandAliasHelp: document.getElementById("discordCommandAliasHelp"),
   discordCommandAliasKick: document.getElementById("discordCommandAliasKick"),
   discordCommandAliasBan: document.getElementById("discordCommandAliasBan"),
   discordCommandAliasBroadcast: document.getElementById("discordCommandAliasBroadcast"),
@@ -57,6 +58,7 @@ export function setValueInElements(config) {
   elements.discordDashboardPalworldConfigMessageId.setAttribute("value", config.DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID);
   elements.discordDashboardBotConfigMessageId.setAttribute("value", config.DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID);
 
+  elements.discordCommandAliasHelp.setAttribute("value", config.DISCORD_COMMAND_ALIAS_HELP);
   elements.discordCommandAliasKick.setAttribute("value", config.DISCORD_COMMAND_ALIAS_KICK);
   elements.discordCommandAliasBan.setAttribute("value", config.DISCORD_COMMAND_ALIAS_BAN);
   elements.discordCommandAliasBroadcast.setAttribute("value", config.DISCORD_COMMAND_ALIAS_BROADCAST);
@@ -92,6 +94,7 @@ export function configFromElements() {
     DISCORD_DASHBOARD_PALWORLD_CONFIG_MESSAGE_ID: elements.discordDashboardPalworldConfigMessageId.value,
     DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID: elements.discordDashboardBotConfigMessageId.value,
 
+    DISCORD_COMMAND_ALIAS_HELP: elements.discordCommandAliasHelp.value,
     DISCORD_COMMAND_ALIAS_KICK: elements.discordCommandAliasKick.value,
     DISCORD_COMMAND_ALIAS_BAN: elements.discordCommandAliasBan.value,
     DISCORD_COMMAND_ALIAS_BROADCAST: elements.discordCommandAliasBroadcast.value,
