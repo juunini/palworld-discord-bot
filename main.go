@@ -16,27 +16,14 @@ import (
 
 func init() {
 	if err := config.Load(); err != nil {
-		languages := make([]string, len(i18n.Languages))
-		for i, language := range i18n.Languages {
-			languages[i] = language["name"]
-		}
-		language, err := cli.Choose("Choose your language", languages)
-		if err != nil {
+		config.LANGUAGE = askLanguage()
+		i18n.SetLanguage(config.LANGUAGE)
+
+		if err := config.Save(); err != nil {
 			panic(err)
 		}
 
-		for _, l := range i18n.Languages {
-			if l["name"] == language {
-				config.LANGUAGE = l["code"]
-				break
-			}
-		}
-	}
-
-	i18n.SetLanguage(config.LANGUAGE)
-
-	if err := config.Save(); err != nil {
-		panic(err)
+		return
 	}
 
 	i18n.SetLanguage(config.LANGUAGE)
@@ -68,4 +55,23 @@ func main() {
 	<-sc
 
 	web.Shutdown()
+}
+
+func askLanguage() string {
+	languages := make([]string, len(i18n.Languages))
+	for i, language := range i18n.Languages {
+		languages[i] = language["name"]
+	}
+	language, err := cli.Choose("Choose your language", languages)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, l := range i18n.Languages {
+		if l["name"] == language {
+			return l["code"]
+		}
+	}
+
+	return "en"
 }
