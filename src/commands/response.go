@@ -14,7 +14,9 @@ func Response(message string, username string) string {
 	isAdmin := utils.IsAdmin(username)
 
 	command, found := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
-	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_HELP) || !found {
+	processedCommand := commandForCheck(command)
+
+	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_HELP) || !found {
 		return i18n.Help(i18n.HelpParams{
 			CommandPrefix:    config.DISCORD_COMMAND_PREFIX,
 			HelpAlias:        config.DISCORD_COMMAND_ALIAS_HELP,
@@ -33,7 +35,7 @@ func Response(message string, username string) string {
 		return i18n.UnknownCommand
 	}
 
-	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_START_SERVER) {
+	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_START_SERVER) {
 		return startServer()
 	}
 
@@ -48,19 +50,26 @@ func Response(message string, username string) string {
 	}
 	defer client.Disconnect()
 
-	if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_KICK) {
+	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_KICK) {
 		return kick(client, command)
-	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_BAN) {
+	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_BAN) {
 		return ban(client, command)
-	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_BROADCAST) {
+	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_BROADCAST) {
 		return broadcast(client, command)
-	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_SHUTDOWN) {
+	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SHUTDOWN) {
 		return shutdown(client, command)
-	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_DO_EXIT) {
+	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_DO_EXIT) {
 		return doExit(client)
-	} else if strings.HasPrefix(command, config.DISCORD_COMMAND_ALIAS_SAVE) {
+	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SAVE) {
 		return save(client)
 	}
 
 	return i18n.UnknownCommand
+}
+
+func commandForCheck(command string) string {
+	if !config.DISCORD_COMMAND_CASE_SENSITIVE {
+		return strings.ToLower(command)
+	}
+	return command
 }
