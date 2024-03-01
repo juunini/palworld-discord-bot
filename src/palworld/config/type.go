@@ -64,3 +64,15 @@ type Config struct {
 	UseAuth                             bool
 	BanListURL                          string
 }
+
+const (
+	DIFFICULTY_CUSTOM = "None"
+	DIFFICULTY_CASUAL = "Casual"
+	DIFFICULTY_NORMAL = "Normal"
+	DIFFICULTY_HARD   = "Hard"
+
+	DEATH_PENALTY_DROP_ALL                = "All"
+	DEATH_PENALTY_DROP_ITEM_AND_EQUIPMENT = "ItemAndEquipment"
+	DEATH_PENALTY_DROP_ITEM               = "Item"
+	DEATH_PENALTY_NONE                    = "None"
+)
