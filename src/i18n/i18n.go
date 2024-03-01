@@ -185,4 +185,9 @@ var (
 	Region                                        string
 	UseAuth                                       string
 	BanListURL                                    string
+
+	DEATH_PENALTY_DROP_ALL                string
+	DEATH_PENALTY_DROP_ITEM_AND_EQUIPMENT string
+	DEATH_PENALTY_DROP_ITEM               string
+	DEATH_PENALTY_NONE                    string
 )

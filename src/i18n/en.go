@@ -175,4 +175,9 @@ func en() {
 	Region = "Region"
 	UseAuth = "Use Authentication"
 	BanListURL = "URL of Banned Users List"
+
+	DEATH_PENALTY_DROP_ALL = "Drop all items, equipment, and pals"
+	DEATH_PENALTY_DROP_ITEM_AND_EQUIPMENT = "Drop items and equipment"
+	DEATH_PENALTY_DROP_ITEM = "Drop items only"
+	DEATH_PENALTY_NONE = "No death penalty"
 }

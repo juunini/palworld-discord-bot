@@ -175,4 +175,9 @@ func ko() {
 	Region = "지역"
 	UseAuth = "인증 사용"
 	BanListURL = "서버에서 추방한 유저 목록 URL"
+
+	DEATH_PENALTY_DROP_ALL = "아이템, 장비, 팰 모두 드랍"
+	DEATH_PENALTY_DROP_ITEM_AND_EQUIPMENT = "아이템과 장비를 드랍"
+	DEATH_PENALTY_DROP_ITEM = "아이템만 드랍"
+	DEATH_PENALTY_NONE = "데스 패널티 없음"
 }
