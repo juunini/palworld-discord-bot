@@ -115,3 +115,74 @@ var (
 	OnlinePlayers            string
 	NoticeNonEnglishNickname string
 )
+
+var (
+	Difficulty                                    string
+	DifficultyDescription                         string
+	DayTimeSpeedRate                              string
+	NightTimeSpeedRate                            string
+	ExpRate                                       string
+	PalCaptureRate                                string
+	PalSpawnNumRate                               string
+	PalDamageRateAttack                           string
+	PalDamageRateDefense                          string
+	PlayerDamageRateAttack                        string
+	PlayerDamageRateDefense                       string
+	PlayerStomachDecreaceRate                     string
+	PlayerStaminaDecreaceRate                     string
+	PlayerAutoHPRegeneRate                        string
+	PlayerAutoHpRegeneRateInSleep                 string
+	PalStomachDecreaceRate                        string
+	PalStaminaDecreaceRate                        string
+	PalAutoHPRegeneRate                           string
+	PalAutoHpRegeneRateInSleep                    string
+	BuildObjectDamageRate                         string
+	BuildObjectDeteriorationDamageRate            string
+	BuildObjectDeteriorationDamageRateDescription string
+	CollectionDropRate                            string
+	CollectionDropRateDescription                 string
+	CollectionObjectHpRate                        string
+	CollectionObjectHpRateDescription             string
+	CollectionObjectRespawnSpeedRate              string
+	EnemyDropItemRate                             string
+	DeathPenalty                                  string
+	EnablePlayerToPlayerDamage                    string
+	EnableFriendlyFire                            string
+	EnableInvaderEnemy                            string
+	ActiveUNKO                                    string
+	EnableAimAssistPad                            string
+	EnableAimAssistKeyboard                       string
+	DropItemMaxNum                                string
+	DropItemMaxNumDescription                     string
+	DropItemMaxNum_UNKO                           string
+	BaseCampMaxNum                                string
+	BaseCampWorkerMaxNum                          string
+	DropItemAliveMaxHours                         string
+	AutoResetGuildNoOnlinePlayers                 string
+	AutoResetGuildTimeNoOnlinePlayers             string
+	GuildPlayerMaxNum                             string
+	PalEggDefaultHatchingTime                     string
+	WorkSpeedRate                                 string
+	IsMultiplay                                   string
+	IsPvP                                         string
+	CanPickupOtherGuildDeathPenaltyDrop           string
+	EnableNonLoginPenalty                         string
+	EnableFastTravel                              string
+	IsStartLocationSelectByMap                    string
+	ExistPlayerAfterLogout                        string
+	EnableDefenseOtherGuildPlayer                 string
+	CoopPlayerMaxNum                              string
+	CoopPlayerMaxNumDescription                   string
+	ServerPlayerMaxNum                            string
+	ServerName                                    string
+	ServerDescription                             string
+	AdminPassword                                 string
+	ServerPassword                                string
+	PublicPort                                    string
+	PublicIP                                      string
+	RCONEnabled                                   string
+	RCONPort                                      string
+	Region                                        string
+	UseAuth                                       string
+	BanListURL                                    string
+)
