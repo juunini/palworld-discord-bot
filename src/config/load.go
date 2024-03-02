@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/joho/godotenv"
+	palworld_settings "github.com/juunini/palworld-settings"
 )
 
 func Load() error {
@@ -93,6 +94,16 @@ func palworldServerSettingsFromEnv() string {
 		}
 
 		return DEFAULT_PALWORLD_LINUX_SETTINGS_PATH
+	}
+
+	settingsByte, err := os.ReadFile(path)
+	if err != nil {
+		return path
+	}
+
+	PALWORLD_SERVER_SETTINGS, err = palworld_settings.Parse(string(settingsByte))
+	if err != nil {
+		return path
 	}
 
 	return path

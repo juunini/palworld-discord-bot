@@ -1,5 +1,7 @@
 package config
 
+import palworld_settings "github.com/juunini/palworld-settings"
+
 const (
 	DEFAULT_PALWORLD_WINDOWS_SERVER_PATH = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\PalServer\\PalServer.exe"
 	DEFAULT_PALWORLD_LINUX_SERVER_PATH   = "~/Steam/steamapps/common/PalServer/PalServer.sh"
@@ -43,4 +45,6 @@ var (
 	DISCORD_COMMAND_ALIAS_SERVER_SETTINGS = "serverSettings"
 
 	LANGUAGE = ""
+
+	PALWORLD_SERVER_SETTINGS = palworld_settings.DEFAULT
 )
