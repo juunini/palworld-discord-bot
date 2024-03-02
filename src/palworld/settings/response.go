@@ -3,200 +3,267 @@ package settings
 import (
 	"strings"
 
+	"github.com/bwmarrin/discordgo"
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
 )
 
-func Response(command string) []string {
+func Response(s *discordgo.Session, channelID, command string) {
 	after, found := strings.CutPrefix(command, config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS+" ")
 	if !found || strings.TrimSpace(after) == "" {
-		return i18n.SettingsHelp(config.DISCORD_COMMAND_PREFIX, config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS)
+		messages := i18n.SettingsHelp(config.DISCORD_COMMAND_PREFIX, config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS)
+
+		for _, message := range messages {
+			s.ChannelMessageSend(channelID, message)
+		}
+		return
 	}
 
 	if strings.HasPrefix(after, "DayTimeSpeedRate ") {
 		value, _ := strings.CutPrefix(after, "DayTimeSpeedRate ")
-		return []string{setDayTimeSpeedRate(value)}
+		s.ChannelMessageSend(channelID, setDayTimeSpeedRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "NightTimeSpeedRate ") {
 		value, _ := strings.CutPrefix(after, "NightTimeSpeedRate ")
-		return []string{setNightTimeSpeedRate(value)}
+		s.ChannelMessageSend(channelID, setNightTimeSpeedRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "ExpRate ") {
 		value, _ := strings.CutPrefix(after, "ExpRate ")
-		return []string{setExpRate(value)}
+		s.ChannelMessageSend(channelID, setExpRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalCaptureRate ") {
 		value, _ := strings.CutPrefix(after, "PalCaptureRate ")
-		return []string{setPalCaptureRate(value)}
+		s.ChannelMessageSend(channelID, setPalCaptureRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalSpawnNumRate ") {
 		value, _ := strings.CutPrefix(after, "PalSpawnNumRate ")
-		return []string{setPalSpawnNumRate(value)}
+		s.ChannelMessageSend(channelID, setPalSpawnNumRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalDamageRateAttack ") {
 		value, _ := strings.CutPrefix(after, "PalDamageRateAttack ")
-		return []string{setPalDamageRateAttack(value)}
+		s.ChannelMessageSend(channelID, setPalDamageRateAttack(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalDamageRateDefense ") {
 		value, _ := strings.CutPrefix(after, "PalDamageRateDefense ")
-		return []string{setPalDamageRateDefense(value)}
+		s.ChannelMessageSend(channelID, setPalDamageRateDefense(s, value))
+		return
 	} else if strings.HasPrefix(after, "PlayerDamageRateAttack ") {
 		value, _ := strings.CutPrefix(after, "PlayerDamageRateAttack ")
-		return []string{setPlayerDamageRateAttack(value)}
+		s.ChannelMessageSend(channelID, setPlayerDamageRateAttack(s, value))
+		return
 	} else if strings.HasPrefix(after, "PlayerDamageRateDefense ") {
 		value, _ := strings.CutPrefix(after, "PlayerDamageRateDefense ")
-		return []string{setPlayerDamageRateDefense(value)}
+		s.ChannelMessageSend(channelID, setPlayerDamageRateDefense(s, value))
+		return
 	} else if strings.HasPrefix(after, "PlayerStomachDecreaceRate ") {
 		value, _ := strings.CutPrefix(after, "PlayerStomachDecreaceRate ")
-		return []string{setPlayerStomachDecreaceRate(value)}
+		s.ChannelMessageSend(channelID, setPlayerStomachDecreaceRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PlayerStaminaDecreaceRate ") {
 		value, _ := strings.CutPrefix(after, "PlayerStaminaDecreaceRate ")
-		return []string{setPlayerStaminaDecreaceRate(value)}
+		s.ChannelMessageSend(channelID, setPlayerStaminaDecreaceRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PlayerAutoHPRegeneRate ") {
 		value, _ := strings.CutPrefix(after, "PlayerAutoHPRegeneRate ")
-		return []string{setPlayerAutoHPRegeneRate(value)}
+		s.ChannelMessageSend(channelID, setPlayerAutoHPRegeneRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PlayerAutoHpRegeneRateInSleep ") {
 		value, _ := strings.CutPrefix(after, "PlayerAutoHpRegeneRateInSleep ")
-		return []string{setPlayerAutoHpRegeneRateInSleep(value)}
+		s.ChannelMessageSend(channelID, setPlayerAutoHpRegeneRateInSleep(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalStomachDecreaceRate ") {
 		value, _ := strings.CutPrefix(after, "PalStomachDecreaceRate ")
-		return []string{setPalStomachDecreaceRate(value)}
+		s.ChannelMessageSend(channelID, setPalStomachDecreaceRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalStaminaDecreaceRate ") {
 		value, _ := strings.CutPrefix(after, "PalStaminaDecreaceRate ")
-		return []string{setPalStaminaDecreaceRate(value)}
+		s.ChannelMessageSend(channelID, setPalStaminaDecreaceRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalAutoHPRegeneRate ") {
 		value, _ := strings.CutPrefix(after, "PalAutoHPRegeneRate ")
-		return []string{setPalAutoHPRegeneRate(value)}
+		s.ChannelMessageSend(channelID, setPalAutoHPRegeneRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalAutoHpRegeneRateInSleep ") {
 		value, _ := strings.CutPrefix(after, "PalAutoHpRegeneRateInSleep ")
-		return []string{setPalAutoHpRegeneRateInSleep(value)}
+		s.ChannelMessageSend(channelID, setPalAutoHpRegeneRateInSleep(s, value))
+		return
 	} else if strings.HasPrefix(after, "BuildObjectDamageRate ") {
 		value, _ := strings.CutPrefix(after, "BuildObjectDamageRate ")
-		return []string{setBuildObjectDamageRate(value)}
+		s.ChannelMessageSend(channelID, setBuildObjectDamageRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "BuildObjectDeteriorationDamageRate ") {
 		value, _ := strings.CutPrefix(after, "BuildObjectDeteriorationDamageRate ")
-		return []string{setBuildObjectDeteriorationDamageRate(value)}
+		s.ChannelMessageSend(channelID, setBuildObjectDeteriorationDamageRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "CollectionDropRate ") {
 		value, _ := strings.CutPrefix(after, "CollectionDropRate ")
-		return []string{setCollectionDropRate(value)}
+		s.ChannelMessageSend(channelID, setCollectionDropRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "CollectionObjectHpRate ") {
 		value, _ := strings.CutPrefix(after, "CollectionObjectHpRate ")
-		return []string{setCollectionObjectHpRate(value)}
+		s.ChannelMessageSend(channelID, setCollectionObjectHpRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "CollectionObjectRespawnSpeedRate ") {
 		value, _ := strings.CutPrefix(after, "CollectionObjectRespawnSpeedRate ")
-		return []string{setCollectionObjectRespawnSpeedRate(value)}
+		s.ChannelMessageSend(channelID, setCollectionObjectRespawnSpeedRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnemyDropItemRate ") {
 		value, _ := strings.CutPrefix(after, "EnemyDropItemRate ")
-		return []string{setEnemyDropItemRate(value)}
+		s.ChannelMessageSend(channelID, setEnemyDropItemRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "DeathPenalty ") {
 		value, _ := strings.CutPrefix(after, "DeathPenalty ")
-		return []string{setDeathPenalty(value)}
+		s.ChannelMessageSend(channelID, setDeathPenalty(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnablePlayerToPlayerDamage ") {
 		value, _ := strings.CutPrefix(after, "EnablePlayerToPlayerDamage ")
-		return []string{setEnablePlayerToPlayerDamage(value)}
+		s.ChannelMessageSend(channelID, setEnablePlayerToPlayerDamage(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableFriendlyFire ") {
 		value, _ := strings.CutPrefix(after, "EnableFriendlyFire ")
-		return []string{setEnableFriendlyFire(value)}
+		s.ChannelMessageSend(channelID, setEnableFriendlyFire(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableInvaderEnemy ") {
 		value, _ := strings.CutPrefix(after, "EnableInvaderEnemy ")
-		return []string{setEnableInvaderEnemy(value)}
+		s.ChannelMessageSend(channelID, setEnableInvaderEnemy(s, value))
+		return
 	} else if strings.HasPrefix(after, "ActiveUNKO ") {
 		value, _ := strings.CutPrefix(after, "ActiveUNKO ")
-		return []string{setActiveUNKO(value)}
+		s.ChannelMessageSend(channelID, setActiveUNKO(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableAimAssistPad ") {
 		value, _ := strings.CutPrefix(after, "EnableAimAssistPad ")
-		return []string{setEnableAimAssistPad(value)}
+		s.ChannelMessageSend(channelID, setEnableAimAssistPad(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableAimAssistKeyboard ") {
 		value, _ := strings.CutPrefix(after, "EnableAimAssistKeyboard ")
-		return []string{setEnableAimAssistKeyboard(value)}
+		s.ChannelMessageSend(channelID, setEnableAimAssistKeyboard(s, value))
+		return
 	} else if strings.HasPrefix(after, "DropItemMaxNum ") {
 		value, _ := strings.CutPrefix(after, "DropItemMaxNum ")
-		return []string{setDropItemMaxNum(value)}
+		s.ChannelMessageSend(channelID, setDropItemMaxNum(s, value))
+		return
 	} else if strings.HasPrefix(after, "DropItemMaxNum_UNKO ") {
 		value, _ := strings.CutPrefix(after, "DropItemMaxNum_UNKO ")
-		return []string{setDropItemMaxNum_UNKO(value)}
+		s.ChannelMessageSend(channelID, setDropItemMaxNum_UNKO(s, value))
+		return
 	} else if strings.HasPrefix(after, "BaseCampMaxNum ") {
 		value, _ := strings.CutPrefix(after, "BaseCampMaxNum ")
-		return []string{setBaseCampMaxNum(value)}
+		s.ChannelMessageSend(channelID, setBaseCampMaxNum(s, value))
+		return
 	} else if strings.HasPrefix(after, "BaseCampWorkerMaxNum ") {
 		value, _ := strings.CutPrefix(after, "BaseCampWorkerMaxNum ")
-		return []string{setBaseCampWorkerMaxNum(value)}
+		s.ChannelMessageSend(channelID, setBaseCampWorkerMaxNum(s, value))
+		return
 	} else if strings.HasPrefix(after, "DropItemAliveMaxHours ") {
 		value, _ := strings.CutPrefix(after, "DropItemAliveMaxHours ")
-		return []string{setDropItemAliveMaxHours(value)}
+		s.ChannelMessageSend(channelID, setDropItemAliveMaxHours(s, value))
+		return
 	} else if strings.HasPrefix(after, "AutoResetGuildNoOnlinePlayers ") {
 		value, _ := strings.CutPrefix(after, "AutoResetGuildNoOnlinePlayers ")
-		return []string{setAutoResetGuildNoOnlinePlayers(value)}
+		s.ChannelMessageSend(channelID, setAutoResetGuildNoOnlinePlayers(s, value))
+		return
 	} else if strings.HasPrefix(after, "AutoResetGuildTimeNoOnlinePlayers ") {
 		value, _ := strings.CutPrefix(after, "AutoResetGuildTimeNoOnlinePlayers ")
-		return []string{setAutoResetGuildTimeNoOnlinePlayers(value)}
+		s.ChannelMessageSend(channelID, setAutoResetGuildTimeNoOnlinePlayers(s, value))
+		return
 	} else if strings.HasPrefix(after, "GuildPlayerMaxNum ") {
 		value, _ := strings.CutPrefix(after, "GuildPlayerMaxNum ")
-		return []string{setGuildPlayerMaxNum(value)}
+		s.ChannelMessageSend(channelID, setGuildPlayerMaxNum(s, value))
+		return
 	} else if strings.HasPrefix(after, "PalEggDefaultHatchingTime ") {
 		value, _ := strings.CutPrefix(after, "PalEggDefaultHatchingTime ")
-		return []string{setPalEggDefaultHatchingTime(value)}
+		s.ChannelMessageSend(channelID, setPalEggDefaultHatchingTime(s, value))
+		return
 	} else if strings.HasPrefix(after, "WorkSpeedRate ") {
 		value, _ := strings.CutPrefix(after, "WorkSpeedRate ")
-		return []string{setWorkSpeedRate(value)}
+		s.ChannelMessageSend(channelID, setWorkSpeedRate(s, value))
+		return
 	} else if strings.HasPrefix(after, "IsMultiplay ") {
 		value, _ := strings.CutPrefix(after, "IsMultiplay ")
-		return []string{setIsMultiplay(value)}
+		s.ChannelMessageSend(channelID, setIsMultiplay(s, value))
+		return
 	} else if strings.HasPrefix(after, "IsPvP ") {
 		value, _ := strings.CutPrefix(after, "IsPvP ")
-		return []string{setIsPvP(value)}
+		s.ChannelMessageSend(channelID, setIsPvP(s, value))
+		return
 	} else if strings.HasPrefix(after, "CanPickupOtherGuildDeathPenaltyDrop ") {
 		value, _ := strings.CutPrefix(after, "CanPickupOtherGuildDeathPenaltyDrop ")
-		return []string{setCanPickupOtherGuildDeathPenaltyDrop(value)}
+		s.ChannelMessageSend(channelID, setCanPickupOtherGuildDeathPenaltyDrop(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableNonLoginPenalty ") {
 		value, _ := strings.CutPrefix(after, "EnableNonLoginPenalty ")
-		return []string{setEnableNonLoginPenalty(value)}
+		s.ChannelMessageSend(channelID, setEnableNonLoginPenalty(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableFastTravel ") {
 		value, _ := strings.CutPrefix(after, "EnableFastTravel ")
-		return []string{setEnableFastTravel(value)}
+		s.ChannelMessageSend(channelID, setEnableFastTravel(s, value))
+		return
 	} else if strings.HasPrefix(after, "IsStartLocationSelectByMap ") {
 		value, _ := strings.CutPrefix(after, "IsStartLocationSelectByMap ")
-		return []string{setIsStartLocationSelectByMap(value)}
+		s.ChannelMessageSend(channelID, setIsStartLocationSelectByMap(s, value))
+		return
 	} else if strings.HasPrefix(after, "ExistPlayerAfterLogout ") {
 		value, _ := strings.CutPrefix(after, "ExistPlayerAfterLogout ")
-		return []string{setExistPlayerAfterLogout(value)}
+		s.ChannelMessageSend(channelID, setExistPlayerAfterLogout(s, value))
+		return
 	} else if strings.HasPrefix(after, "EnableDefenseOtherGuildPlayer ") {
 		value, _ := strings.CutPrefix(after, "EnableDefenseOtherGuildPlayer ")
-		return []string{setEnableDefenseOtherGuildPlayer(value)}
+		s.ChannelMessageSend(channelID, setEnableDefenseOtherGuildPlayer(s, value))
+		return
 	} else if strings.HasPrefix(after, "CoopPlayerMaxNum ") {
 		value, _ := strings.CutPrefix(after, "CoopPlayerMaxNum ")
-		return []string{setCoopPlayerMaxNum(value)}
+		s.ChannelMessageSend(channelID, setCoopPlayerMaxNum(s, value))
+		return
 	} else if strings.HasPrefix(after, "ServerPlayerMaxNum ") {
 		value, _ := strings.CutPrefix(after, "ServerPlayerMaxNum ")
-		return []string{setServerPlayerMaxNum(value)}
+		s.ChannelMessageSend(channelID, setServerPlayerMaxNum(s, value))
+		return
 	} else if strings.HasPrefix(after, "ServerName ") {
 		value, _ := strings.CutPrefix(after, "ServerName ")
-		return []string{setServerName(value)}
+		s.ChannelMessageSend(channelID, setServerName(s, value))
+		return
 	} else if strings.HasPrefix(after, "ServerDescription ") {
 		value, _ := strings.CutPrefix(after, "ServerDescription ")
-		return []string{setServerDescription(value)}
+		s.ChannelMessageSend(channelID, setServerDescription(s, value))
+		return
 	} else if strings.HasPrefix(after, "AdminPassword ") {
 		value, _ := strings.CutPrefix(after, "AdminPassword ")
-		return []string{setAdminPassword(value)}
+		s.ChannelMessageSend(channelID, setAdminPassword(s, value))
+		return
 	} else if strings.HasPrefix(after, "ServerPassword ") {
 		value, _ := strings.CutPrefix(after, "ServerPassword ")
-		return []string{setServerPassword(value)}
+		s.ChannelMessageSend(channelID, setServerPassword(s, value))
+		return
 	} else if strings.HasPrefix(after, "PublicPort ") {
 		value, _ := strings.CutPrefix(after, "PublicPort ")
-		return []string{setPublicPort(value)}
+		s.ChannelMessageSend(channelID, setPublicPort(s, value))
+		return
 	} else if strings.HasPrefix(after, "PublicIP ") {
 		value, _ := strings.CutPrefix(after, "PublicIP ")
-		return []string{setPublicIP(value)}
+		s.ChannelMessageSend(channelID, setPublicIP(s, value))
+		return
 	} else if strings.HasPrefix(after, "RCONEnabled ") {
 		value, _ := strings.CutPrefix(after, "RCONEnabled ")
-		return []string{setRCONEnabled(value)}
+		s.ChannelMessageSend(channelID, setRCONEnabled(s, value))
+		return
 	} else if strings.HasPrefix(after, "RCONPort ") {
 		value, _ := strings.CutPrefix(after, "RCONPort ")
-		return []string{setRCONPort(value)}
+		s.ChannelMessageSend(channelID, setRCONPort(s, value))
+		return
 	} else if strings.HasPrefix(after, "Region ") {
 		value, _ := strings.CutPrefix(after, "Region ")
-		return []string{setRegion(value)}
+		s.ChannelMessageSend(channelID, setRegion(s, value))
+		return
 	} else if strings.HasPrefix(after, "UseAuth ") {
 		value, _ := strings.CutPrefix(after, "UseAuth ")
-		return []string{setUseAuth(value)}
+		s.ChannelMessageSend(channelID, setUseAuth(s, value))
+		return
 	} else if strings.HasPrefix(after, "BanListURL ") {
 		value, _ := strings.CutPrefix(after, "BanListURL ")
-		return []string{setBanListURL(value)}
+		s.ChannelMessageSend(channelID, setBanListURL(s, value))
+		return
 	}
 
-	return []string{"Unknown setting command"}
+	s.ChannelMessageSend(channelID, "Unknown settings command")
 }

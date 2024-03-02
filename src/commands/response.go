@@ -6,19 +6,15 @@ import (
 
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
-	"github.com/juunini/palworld-discord-bot/src/palworld/settings"
-	"github.com/juunini/palworld-discord-bot/src/utils"
 	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func Response(message string, username string) []string {
-	isAdmin := utils.IsAdmin(username)
-
+func Response(message string, username string) string {
 	command, found := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
 	processedCommand := commandForCheck(command)
 
 	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_HELP) || !found {
-		return []string{i18n.Help(i18n.HelpParams{
+		return i18n.Help(i18n.HelpParams{
 			CommandPrefix:       config.DISCORD_COMMAND_PREFIX,
 			HelpAlias:           config.DISCORD_COMMAND_ALIAS_HELP,
 			KickAlias:           config.DISCORD_COMMAND_ALIAS_KICK,
@@ -29,20 +25,11 @@ func Response(message string, username string) []string {
 			SaveAlias:           config.DISCORD_COMMAND_ALIAS_SAVE,
 			StartServerAlias:    config.DISCORD_COMMAND_ALIAS_START_SERVER,
 			ServerSettingsAlias: config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS,
-		}, isAdmin)}
-	}
-
-	// Under commands, only admins can execute
-	if !isAdmin {
-		return []string{i18n.UnknownCommand}
+		})
 	}
 
 	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_START_SERVER) {
-		return []string{startServer()}
-	}
-
-	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS) {
-		return settings.Response(command)
+		return startServer()
 	}
 
 	client, err := palworldrcon.Connect(
@@ -52,25 +39,25 @@ func Response(message string, username string) []string {
 		5*time.Second,
 	)
 	if err != nil {
-		return []string{i18n.FailedToConnectRconServer}
+		return i18n.FailedToConnectRconServer
 	}
 	defer client.Disconnect()
 
 	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_KICK) {
-		return []string{kick(client, command)}
+		return kick(client, command)
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_BAN) {
-		return []string{ban(client, command)}
+		return ban(client, command)
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_BROADCAST) {
-		return []string{broadcast(client, command)}
+		return broadcast(client, command)
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SHUTDOWN) {
-		return []string{shutdown(client, command)}
+		return shutdown(client, command)
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_DO_EXIT) {
-		return []string{doExit(client)}
+		return doExit(client)
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SAVE) {
-		return []string{save(client)}
+		return save(client)
 	}
 
-	return []string{i18n.UnknownCommand}
+	return i18n.UnknownCommand
 }
 
 func commandForCheck(command string) string {
