@@ -47,7 +47,9 @@ func Save() error {
 	env += "# " + i18n.DiscordDashboardOnlinePlayersMessageIDTooltip + "\n"
 	env += "DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID=" + DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID + "\n"
 	env += "# " + i18n.DiscordDashboardBotConfigMessageIDTooltip + "\n"
-	env += "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID + "\n\n"
+	env += "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID + "\n"
+	env += "# " + i18n.DiscordDashboardPalworldSettingsMessageIDTooltip + "\n"
+	env += "DISCORD_DASHBOARD_PALWORLD_SETTINGS_MESSAGE_ID=" + DISCORD_DASHBOARD_PALWORLD_SETTINGS_MESSAGE_ID + "\n\n"
 
 	env += "# " + i18n.DiscordCommandAliasHelpTooltip + "\n"
 	env += "DISCORD_COMMAND_ALIAS_HELP=" + DISCORD_COMMAND_ALIAS_HELP + "\n"
