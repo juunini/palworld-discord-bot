@@ -72,6 +72,8 @@ func ko() {
 	PalworldServerFilePathTooltip = "팰월드 서버가 실행된 파일의 경로를 입력하세요."
 	PalworldServerExecuteFlags = "팰월드 서버 실행 플래그"
 	PalworldServerExecuteFlagsTooltip = "팰월드 서버가 실행될 때 사용할 플래그를 입력하세요."
+	PalworldServerSettingsFilePath = "PalWorldSettings.ini 파일 경로"
+	PalworldServerSettingsFilePathTooltip = "PalWorldSettings.ini 파일의 경로를 입력하세요."
 
 	DiscordChannelConfig = "디스코드 채널 설정"
 	DiscordDashboardChannelID = "대시보드 채널 ID"

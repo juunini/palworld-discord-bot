@@ -67,19 +67,21 @@ var (
 	DiscordCommandPrefix               string
 	DiscordCommandPrefixTooltip        string
 
-	PalworldConfig                    string
-	EnablePalworldRcon                string
-	EnablePalworldRconTooltip         string
-	PalworldRconHost                  string
-	PalworldRconHostTooltip           string
-	PalworldRconPort                  string
-	PalworldRconPortTooltip           string
-	PalworldAdminPassword             string
-	PalworldAdminPasswordTooltip      string
-	PalworldServerFilePath            string
-	PalworldServerFilePathTooltip     string
-	PalworldServerExecuteFlags        string
-	PalworldServerExecuteFlagsTooltip string
+	PalworldConfig                        string
+	EnablePalworldRcon                    string
+	EnablePalworldRconTooltip             string
+	PalworldRconHost                      string
+	PalworldRconHostTooltip               string
+	PalworldRconPort                      string
+	PalworldRconPortTooltip               string
+	PalworldAdminPassword                 string
+	PalworldAdminPasswordTooltip          string
+	PalworldServerFilePath                string
+	PalworldServerFilePathTooltip         string
+	PalworldServerExecuteFlags            string
+	PalworldServerExecuteFlagsTooltip     string
+	PalworldServerSettingsFilePath        string
+	PalworldServerSettingsFilePathTooltip string
 
 	DiscordChannelConfig                           string
 	DiscordDashboardChannelID                      string

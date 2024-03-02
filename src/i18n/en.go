@@ -72,6 +72,8 @@ func en() {
 	PalworldServerFilePathTooltip = "Enter the path of the Palworld server file."
 	PalworldServerExecuteFlags = "Palworld Server Execute Flags"
 	PalworldServerExecuteFlagsTooltip = "Enter the flags of the Palworld server."
+	PalworldServerSettingsFilePath = "PalWorldSettings.ini File Path"
+	PalworldServerSettingsFilePathTooltip = "Enter the path of the PalWorldSettings.ini file."
 
 	DiscordChannelConfig = "Discord Channel Config"
 	DiscordDashboardChannelID = "Discord Dashboard Channel ID"
