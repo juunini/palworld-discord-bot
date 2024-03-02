@@ -29,6 +29,7 @@ func Load() error {
 	PALWORLD_ADMIN_PASSWORD = os.Getenv("PALWORLD_ADMIN_PASSWORD")
 	PALWORLD_SERVER_FILE_PATH = palworldServerPathFromEnv()
 	PALWORLD_SERVER_EXECUTE_FLAGS = palworldServerExecuteFlagsFromEnv()
+	PALWORLD_SERVER_SETTINGS_FILE_PATH = palworldServerSettingsFromEnv()
 
 	DISCORD_DASHBOARD_CHANNEL_ID = os.Getenv("DISCORD_DASHBOARD_CHANNEL_ID")
 	DISCORD_LOG_CHANNEL_ID = os.Getenv("DISCORD_LOG_CHANNEL_ID")
@@ -80,4 +81,18 @@ func palworldServerExecuteFlagsFromEnv() []string {
 	}
 
 	return strings.Split(flags, " ")
+}
+
+func palworldServerSettingsFromEnv() string {
+	path := os.Getenv("PALWORLD_SERVER_SETTINGS_FILE_PATH")
+
+	if path == "" {
+		if runtime.GOOS == "windows" {
+			return DEFAULT_PALWORLD_WINDOWS_SETTINGS_PATH
+		}
+
+		return DEFAULT_PALWORLD_LINUX_SETTINGS_PATH
+	}
+
+	return path
 }

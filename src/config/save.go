@@ -34,7 +34,9 @@ func Save() error {
 	env += "# " + i18n.PalworldServerFilePathTooltip + "\n"
 	env += "PALWORLD_SERVER_FILE_PATH=" + PALWORLD_SERVER_FILE_PATH + "\n"
 	env += "# " + i18n.PalworldServerExecuteFlagsTooltip + "\n"
-	env += "PALWORLD_SERVER_EXECUTE_FLAGS=" + strings.Join(PALWORLD_SERVER_EXECUTE_FLAGS, " ") + "\n\n"
+	env += "PALWORLD_SERVER_EXECUTE_FLAGS=" + strings.Join(PALWORLD_SERVER_EXECUTE_FLAGS, " ") + "\n"
+	env += "# " + i18n.PalworldServerSettingsFilePathTooltip + "\n"
+	env += "PALWORLD_SERVER_SETTINGS_FILE_PATH=" + PALWORLD_SERVER_SETTINGS_FILE_PATH + "\n\n"
 
 	env += "# " + i18n.DiscordDashboardChannelIDDescription + "\n"
 	env += "DISCORD_DASHBOARD_CHANNEL_ID=" + DISCORD_DASHBOARD_CHANNEL_ID + "\n"
