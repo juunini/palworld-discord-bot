@@ -17,20 +17,16 @@ func en() {
 	FailedToStartServerCommand = "Failed to start server"
 	SuccessToStartServerCommand = "Server started"
 	WrongParameters = "Wrong parameters"
-	Help = func(params HelpParams, isAdmin bool) string {
+	Help = func(params HelpParams) string {
 		message := fmt.Sprintf("`%s %s` - Show help\n", params.CommandPrefix, params.HelpAlias)
-
-		if !isAdmin {
-			return message
-		}
-
 		message += fmt.Sprintf("`%s %s <SteamID>` - Kick <SteamID> from server. Can connect again.\n", params.CommandPrefix, params.KickAlias)
 		message += fmt.Sprintf("`%s %s <SteamID>` - Ban <SteamID> from server. Can't connect again.\n", params.CommandPrefix, params.BanAlias)
 		message += fmt.Sprintf("`%s %s <message>` - Send <message> to all users as SYSTEM message.\n", params.CommandPrefix, params.BroadcastAlias)
 		message += fmt.Sprintf("`%s %s <seconds> <message>` - Shutdown server after <seconds> with <message>.\n", params.CommandPrefix, params.ShutdownAlias)
 		message += fmt.Sprintf("`%s %s` - Force exit server.\n", params.CommandPrefix, params.DoExitAlias)
 		message += fmt.Sprintf("`%s %s` - Save server.\n", params.CommandPrefix, params.SaveAlias)
-		message += fmt.Sprintf("`%s %s` - Start server.", params.CommandPrefix, params.StartServerAlias)
+		message += fmt.Sprintf("`%s %s` - Start server.\n", params.CommandPrefix, params.StartServerAlias)
+		message += fmt.Sprintf("`%s %s` - Set `PalWorldSettings.ini` (game server settings).", params.CommandPrefix, params.ServerSettingsAlias)
 		return message
 	}
 	UnknownCommand = "Unknown command"
@@ -72,6 +68,8 @@ func en() {
 	PalworldServerFilePathTooltip = "Enter the path of the Palworld server file."
 	PalworldServerExecuteFlags = "Palworld Server Execute Flags"
 	PalworldServerExecuteFlagsTooltip = "Enter the flags of the Palworld server."
+	PalworldServerSettingsFilePath = "PalWorldSettings.ini File Path"
+	PalworldServerSettingsFilePathTooltip = "Enter the path of the PalWorldSettings.ini file."
 
 	DiscordChannelConfig = "Discord Channel Config"
 	DiscordDashboardChannelID = "Discord Dashboard Channel ID"
@@ -86,6 +84,8 @@ func en() {
 	DiscordDashboardPalworldConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
 	DiscordDashboardBotConfigMessageID = "Discord Dashboard Bot Config Message ID"
 	DiscordDashboardBotConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
+	DiscordDashboardPalworldSettingsMessageID = "PalWorldSettings.ini Dashboard Message ID"
+	DiscordDashboardPalworldSettingsMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
 
 	DiscordCommandAliases = "Discord Command Aliases"
 	DiscordCommandAliasHelpTooltip = "Help command customizing"
@@ -96,14 +96,90 @@ func en() {
 	DiscordCommandAliasDoExitTooltip = "Server force shutdown command customizing"
 	DiscordCommandAliasSaveTooltip = "Save command customizing"
 	DiscordCommandAliasStartServerTooltip = "StartServer command customizing"
+	DiscordCommandAliasServerSettingsTooltip = "ServerSettings command customizing"
 
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"
+	DefaultValue = "Default"
 
 	ConfigUpdateSuccess = "Config update success"
 	ConfigUpdateFailed = "Config update failed"
 
 	OnlinePlayers = "Online Players"
 	NoticeNonEnglishNickname = "As of version 0.1.4.1, if a user has a nickname set in a language other than English, their SteamID information may not be displayed correctly, and commands such as kick and ban may not work properly."
+
+	Difficulty = "Difficulty"
+	DifficultyDescription = "The difficulty of the dedicated server is fixed as custom (None)."
+	DayTimeSpeedRate = "Daytime Speed Rate"
+	NightTimeSpeedRate = "Nighttime Speed Rate"
+	ExpRate = "Experience Rate"
+	PalCaptureRate = "Pal Capture Rate"
+	PalSpawnNumRate = "Pal Spawn Rate"
+	PalDamageRateAttack = "Pal Damage Rate (Attack)"
+	PalDamageRateDefense = "Pal Damage Rate (Defense)"
+	PlayerDamageRateAttack = "Player Damage Rate (Attack)"
+	PlayerDamageRateDefense = "Player Damage Rate (Defense)"
+	PlayerStomachDecreaceRate = "Player Stomach Decrease Rate"
+	PlayerStaminaDecreaceRate = "Player Stamina Decrease Rate"
+	PlayerAutoHPRegeneRate = "Player Auto HP Regeneration Rate"
+	PlayerAutoHpRegeneRateInSleep = "Player Auto HP Regeneration Rate (Sleep)"
+	PalStomachDecreaceRate = "Pal Stomach Decrease Rate"
+	PalStaminaDecreaceRate = "Pal Stamina Decrease Rate"
+	PalAutoHPRegeneRate = "Pal Auto HP Regeneration Rate"
+	PalAutoHpRegeneRateInSleep = "Pal Auto HP Regeneration Rate (Sleep)"
+	BuildObjectDamageRate = "Build Object Damage Rate"
+	BuildObjectDeteriorationDamageRate = "Build Object Deterioration Damage Rate"
+	BuildObjectDeteriorationDamageRateDescription = "Set the rate at which external build objects deteriorate and get destroyed over time."
+	CollectionDropRate = "Collection Item Drop Rate"
+	CollectionDropRateDescription = "Set the drop rate of collection items such as stones and wood."
+	CollectionObjectHpRate = "Collection Object HP Rate"
+	CollectionObjectHpRateDescription = "Set the HP rate of collection objects such as stones and wood."
+	CollectionObjectRespawnSpeedRate = "Collection Object Respawn Speed Rate"
+	EnemyDropItemRate = "Enemy Drop Item Rate"
+	DeathPenalty = "Death Penalty"
+	EnablePlayerToPlayerDamage = "Enable Player-to-Player Damage"
+	EnableFriendlyFire = "Enable Friendly Fire"
+	EnableInvaderEnemy = "Enable Invader Enemy Event"
+	ActiveUNKO = "Generate Pal Excrement"
+	EnableAimAssistPad = "Enable Aim Assist for Gamepad"
+	EnableAimAssistKeyboard = "Enable Aim Assist for Keyboard"
+	DropItemMaxNum = "Maximum Number of Dropped Items"
+	DropItemMaxNumDescription = "Set the maximum number of items that can be dropped on the ground. If there are more items than this number, the excess items will disappear."
+	DropItemMaxNum_UNKO = "Maximum Number of Pal Excrement"
+	BaseCampMaxNum = "Maximum Number of Base Camps in the Server"
+	BaseCampWorkerMaxNum = "Maximum Number of Pals Placed in a Base Camp"
+	DropItemAliveMaxHours = "Time for Dropped Items to Disappear"
+	AutoResetGuildNoOnlinePlayers = "Enable Automatic Guild Dissolution when No Online Players"
+	AutoResetGuildTimeNoOnlinePlayers = "Set the time for automatic dissolution of guilds when there are no online players."
+	GuildPlayerMaxNum = "Maximum Number of Guild Members"
+	PalEggDefaultHatchingTime = "Pal Egg Default Hatching Time Multiplier"
+	WorkSpeedRate = "Work Speed Rate"
+	IsMultiplay = "Enable Multiplayer"
+	IsPvP = "Enable PvP"
+	CanPickupOtherGuildDeathPenaltyDrop = "Can Pickup Death Penalty Items from Other Guilds"
+	EnableNonLoginPenalty = "Enable Non-Login Penalty"
+	EnableFastTravel = "Enable Fast Travel"
+	IsStartLocationSelectByMap = "Enable Start Location Selection"
+	ExistPlayerAfterLogout = "Keep Character After Logout"
+	EnableDefenseOtherGuildPlayer = "Enable Defense Against Other Guild Players"
+	CoopPlayerMaxNum = "Maximum Number of Co-op Players"
+	CoopPlayerMaxNumDescription = "Set the maximum number of players for co-op, such as top boss battles."
+	ServerPlayerMaxNum = "Server Maximum Number of Players"
+	ServerName = "Server Name"
+	ServerDescription = "Server Description"
+	AdminPassword = "Server Admin Password"
+	ServerPassword = "Server Connection Password"
+	PublicPort = "Palworld Server Port"
+	PublicIP = "Palworld Server IP"
+	RCONEnabled = "Enable RCON"
+	RCONPort = "RCON Port"
+	Region = "Region"
+	UseAuth = "Use Authentication"
+	BanListURL = "URL of Banned Users List"
+
+	DEATH_PENALTY_DROP_ALL = "Drop all items, equipment, and pals"
+	DEATH_PENALTY_DROP_ITEM_AND_EQUIPMENT = "Drop items and equipment"
+	DEATH_PENALTY_DROP_ITEM = "Drop items only"
+	DEATH_PENALTY_NONE = "No death penalty"
 }

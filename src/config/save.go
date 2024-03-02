@@ -34,7 +34,9 @@ func Save() error {
 	env += "# " + i18n.PalworldServerFilePathTooltip + "\n"
 	env += "PALWORLD_SERVER_FILE_PATH=" + PALWORLD_SERVER_FILE_PATH + "\n"
 	env += "# " + i18n.PalworldServerExecuteFlagsTooltip + "\n"
-	env += "PALWORLD_SERVER_EXECUTE_FLAGS=" + strings.Join(PALWORLD_SERVER_EXECUTE_FLAGS, " ") + "\n\n"
+	env += "PALWORLD_SERVER_EXECUTE_FLAGS=" + strings.Join(PALWORLD_SERVER_EXECUTE_FLAGS, " ") + "\n"
+	env += "# " + i18n.PalworldServerSettingsFilePathTooltip + "\n"
+	env += "PALWORLD_SERVER_SETTINGS_FILE_PATH=" + PALWORLD_SERVER_SETTINGS_FILE_PATH + "\n\n"
 
 	env += "# " + i18n.DiscordDashboardChannelIDDescription + "\n"
 	env += "DISCORD_DASHBOARD_CHANNEL_ID=" + DISCORD_DASHBOARD_CHANNEL_ID + "\n"
@@ -45,7 +47,9 @@ func Save() error {
 	env += "# " + i18n.DiscordDashboardOnlinePlayersMessageIDTooltip + "\n"
 	env += "DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID=" + DISCORD_DASHBOARD_ONLINE_PLAYERS_MESSAGE_ID + "\n"
 	env += "# " + i18n.DiscordDashboardBotConfigMessageIDTooltip + "\n"
-	env += "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID + "\n\n"
+	env += "DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID=" + DISCORD_DASHBOARD_BOT_CONFIG_MESSAGE_ID + "\n"
+	env += "# " + i18n.DiscordDashboardPalworldSettingsMessageIDTooltip + "\n"
+	env += "DISCORD_DASHBOARD_PALWORLD_SETTINGS_MESSAGE_ID=" + DISCORD_DASHBOARD_PALWORLD_SETTINGS_MESSAGE_ID + "\n\n"
 
 	env += "# " + i18n.DiscordCommandAliasHelpTooltip + "\n"
 	env += "DISCORD_COMMAND_ALIAS_HELP=" + DISCORD_COMMAND_ALIAS_HELP + "\n"
@@ -62,7 +66,9 @@ func Save() error {
 	env += "# " + i18n.DiscordCommandAliasSaveTooltip + "\n"
 	env += "DISCORD_COMMAND_ALIAS_SAVE=" + DISCORD_COMMAND_ALIAS_SAVE + "\n"
 	env += "# " + i18n.DiscordCommandAliasStartServerTooltip + "\n"
-	env += "DISCORD_COMMAND_ALIAS_START_SERVER=" + DISCORD_COMMAND_ALIAS_START_SERVER + "\n\n"
+	env += "DISCORD_COMMAND_ALIAS_START_SERVER=" + DISCORD_COMMAND_ALIAS_START_SERVER + "\n"
+	env += "# " + i18n.DiscordCommandAliasServerSettingsTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_SERVER_SETTINGS=" + DISCORD_COMMAND_ALIAS_SERVER_SETTINGS + "\n\n"
 
 	env += "LANGUAGE=" + LANGUAGE + "\n"
 

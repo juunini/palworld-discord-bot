@@ -34,6 +34,10 @@ github.com/juunini/palworld-rcon v1.1.1 h1:AgQW5E9Ky+z7TUCEP7hfab82j28jhykg7q6pe
 github.com/juunini/palworld-rcon v1.1.1/go.mod h1:W4SPtcjBCqNsTFQKjuObHAavhOUaQFN3nSqIcMiaOwI=
 github.com/juunini/palworld-rcon v1.2.0 h1:wob2YqXhvAhCVw4qHdmqwCiKD4iMRvnxTkHVu2Odw3Q=
 github.com/juunini/palworld-rcon v1.2.0/go.mod h1:W4SPtcjBCqNsTFQKjuObHAavhOUaQFN3nSqIcMiaOwI=
+github.com/juunini/palworld-settings v1.0.0 h1:bNdaI/SWvP5Rop7gF1iwVFu5xc6BTIHg4zMd358spS0=
+github.com/juunini/palworld-settings v1.0.0/go.mod h1:sDXtSLMAoqt/kqWTxh0PYqfC6bbrMGR8fyR+/q5Z9nY=
+github.com/juunini/palworld-settings v1.0.1 h1:PwQvmNfNsFrtbHB8LVGUjIuOS7CNAqJaFPt30aB+4qs=
+github.com/juunini/palworld-settings v1.0.1/go.mod h1:sDXtSLMAoqt/kqWTxh0PYqfC6bbrMGR8fyR+/q5Z9nY=
 github.com/klauspost/compress v1.17.0 h1:Rnbp4K9EjcDuVuHtd0dgA4qNuv9yKDYKK1ulpJwgrqM=
 github.com/klauspost/compress v1.17.0/go.mod h1:ntbaceVETuRiXiv4DpjP66DpAtAGkEQskQzEyD//IeE=
 github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=

@@ -2,7 +2,7 @@ import { randomID } from '../lib/randomID.js';
 
 class Input extends HTMLElement {
   static get observedAttributes() {
-    return ['value'];
+    return ['value', 'disabled'];
   }
 
   inputID = 'input-' + randomID();
@@ -33,6 +33,10 @@ class Input extends HTMLElement {
     if (name === 'value') {
       this.value = newValue;
       this.input.value = this.value;
+    }
+
+    if (name === 'disabled') {
+      this.input.disabled = this.getAttribute('disabled') === 'true';
     }
   }
 

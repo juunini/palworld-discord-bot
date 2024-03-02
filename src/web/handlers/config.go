@@ -44,6 +44,8 @@ func PatchConfig(shutdownServer func() error) func(c *fiber.Ctx) error {
 				config.PALWORLD_SERVER_FILE_PATH = value.(string)
 			case "PALWORLD_SERVER_EXECUTE_FLAGS":
 				config.PALWORLD_SERVER_EXECUTE_FLAGS = strings.Split(value.(string), " ")
+			case "PALWORLD_SERVER_SETTINGS_FILE_PATH":
+				config.PALWORLD_SERVER_SETTINGS_FILE_PATH = value.(string)
 			case "DISCORD_DASHBOARD_CHANNEL_ID":
 				config.DISCORD_DASHBOARD_CHANNEL_ID = value.(string)
 			case "DISCORD_LOG_CHANNEL_ID":
@@ -70,6 +72,8 @@ func PatchConfig(shutdownServer func() error) func(c *fiber.Ctx) error {
 				config.DISCORD_COMMAND_ALIAS_SAVE = value.(string)
 			case "DISCORD_COMMAND_ALIAS_START_SERVER":
 				config.DISCORD_COMMAND_ALIAS_START_SERVER = value.(string)
+			case "DISCORD_COMMAND_ALIAS_SERVER_SETTINGS":
+				config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS = value.(string)
 			}
 		}
 

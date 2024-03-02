@@ -16,6 +16,7 @@ export const elements = {
   palworldAdminPassword: document.getElementById("palworldAdminPassword"),
   palworldServerFilePath: document.getElementById("palworldServerFilePath"),
   palworldServerExecuteFlags: document.getElementById("palworldServerExecuteFlags"),
+  palworldServerSettingsFilePath: document.getElementById("palworldServerSettingsFilePath"),
 
   discordDashboardChannelId: document.getElementById("discordDashboardChannelId"),
   discordLogChannelId: document.getElementById("discordLogChannelId"),
@@ -31,6 +32,7 @@ export const elements = {
   discordCommandAliasDoExit: document.getElementById("discordCommandAliasDoExit"),
   discordCommandAliasSave: document.getElementById("discordCommandAliasSave"),
   discordCommandAliasStartServer: document.getElementById("discordCommandAliasStartServer"),
+  discordCommandAliasServerSettings: document.getElementById("discordCommandAliasServerSettings"),
 };
 
 export function setValueInElements(config) {
@@ -51,6 +53,7 @@ export function setValueInElements(config) {
   elements.palworldAdminPassword.setAttribute("value", config.PALWORLD_ADMIN_PASSWORD);
   elements.palworldServerFilePath.setAttribute("value", config.PALWORLD_SERVER_FILE_PATH);
   elements.palworldServerExecuteFlags.setAttribute("value", config.PALWORLD_SERVER_EXECUTE_FLAGS);
+  elements.palworldServerSettingsFilePath.setAttribute("value", config.PALWORLD_SERVER_SETTINGS_FILE_PATH);
 
   elements.discordDashboardChannelId.setAttribute("value", config.DISCORD_DASHBOARD_CHANNEL_ID);
   elements.discordLogChannelId.setAttribute("value", config.DISCORD_LOG_CHANNEL_ID);
@@ -66,6 +69,7 @@ export function setValueInElements(config) {
   elements.discordCommandAliasDoExit.setAttribute("value", config.DISCORD_COMMAND_ALIAS_DO_EXIT);
   elements.discordCommandAliasSave.setAttribute("value", config.DISCORD_COMMAND_ALIAS_SAVE);
   elements.discordCommandAliasStartServer.setAttribute("value", config.DISCORD_COMMAND_ALIAS_START_SERVER);
+  elements.discordCommandAliasServerSettings.setAttribute("value", config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS);
 }
 
 export function configFromElements() {
@@ -87,6 +91,7 @@ export function configFromElements() {
     PALWORLD_ADMIN_PASSWORD: elements.palworldAdminPassword.value,
     PALWORLD_SERVER_FILE_PATH: elements.palworldServerFilePath.value,
     PALWORLD_SERVER_EXECUTE_FLAGS: elements.palworldServerExecuteFlags.value,
+    PALWORLD_SERVER_SETTINGS_FILE_PATH: elements.palworldServerSettingsFilePath.value,
 
     DISCORD_DASHBOARD_CHANNEL_ID: elements.discordDashboardChannelId.value,
     DISCORD_LOG_CHANNEL_ID: elements.discordLogChannelId.value,
@@ -102,5 +107,6 @@ export function configFromElements() {
     DISCORD_COMMAND_ALIAS_DO_EXIT: elements.discordCommandAliasDoExit.value,
     DISCORD_COMMAND_ALIAS_SAVE: elements.discordCommandAliasSave.value,
     DISCORD_COMMAND_ALIAS_START_SERVER: elements.discordCommandAliasStartServer.value,
+    DISCORD_COMMAND_ALIAS_SERVER_SETTINGS: elements.discordCommandAliasServerSettings.value,
   }
 }

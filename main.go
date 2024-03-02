@@ -11,6 +11,7 @@ import (
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/console_decoration"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/palworld/settings"
 	"github.com/juunini/palworld-discord-bot/src/web"
 )
 
@@ -41,6 +42,8 @@ func main() {
 		console_decoration.PrintSuccess(i18n.BotRunningStart + "\n")
 
 		if config.DISCORD_LOG_CHANNEL_ID != "" || config.DISCORD_DASHBOARD_CHANNEL_ID != "" {
+			settings.RenewDashboard(session)
+
 			go func() {
 				for {
 					bot.Watch(session)
