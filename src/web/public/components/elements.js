@@ -32,6 +32,7 @@ export const elements = {
   discordCommandAliasDoExit: document.getElementById("discordCommandAliasDoExit"),
   discordCommandAliasSave: document.getElementById("discordCommandAliasSave"),
   discordCommandAliasStartServer: document.getElementById("discordCommandAliasStartServer"),
+  discordCommandAliasServerSettings: document.getElementById("discordCommandAliasServerSettings"),
 };
 
 export function setValueInElements(config) {
@@ -68,6 +69,7 @@ export function setValueInElements(config) {
   elements.discordCommandAliasDoExit.setAttribute("value", config.DISCORD_COMMAND_ALIAS_DO_EXIT);
   elements.discordCommandAliasSave.setAttribute("value", config.DISCORD_COMMAND_ALIAS_SAVE);
   elements.discordCommandAliasStartServer.setAttribute("value", config.DISCORD_COMMAND_ALIAS_START_SERVER);
+  elements.discordCommandAliasServerSettings.setAttribute("value", config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS);
 }
 
 export function configFromElements() {
@@ -105,5 +107,6 @@ export function configFromElements() {
     DISCORD_COMMAND_ALIAS_DO_EXIT: elements.discordCommandAliasDoExit.value,
     DISCORD_COMMAND_ALIAS_SAVE: elements.discordCommandAliasSave.value,
     DISCORD_COMMAND_ALIAS_START_SERVER: elements.discordCommandAliasStartServer.value,
+    DISCORD_COMMAND_ALIAS_SERVER_SETTINGS: elements.discordCommandAliasServerSettings.value,
   }
 }

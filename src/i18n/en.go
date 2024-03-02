@@ -98,6 +98,7 @@ func en() {
 	DiscordCommandAliasDoExitTooltip = "Server force shutdown command customizing"
 	DiscordCommandAliasSaveTooltip = "Save command customizing"
 	DiscordCommandAliasStartServerTooltip = "StartServer command customizing"
+	DiscordCommandAliasServerSettingsTooltip = "ServerSettings command customizing"
 
 	Close = "Close"
 	Confirm = "Confirm"

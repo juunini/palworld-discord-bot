@@ -72,6 +72,8 @@ func PatchConfig(shutdownServer func() error) func(c *fiber.Ctx) error {
 				config.DISCORD_COMMAND_ALIAS_SAVE = value.(string)
 			case "DISCORD_COMMAND_ALIAS_START_SERVER":
 				config.DISCORD_COMMAND_ALIAS_START_SERVER = value.(string)
+			case "DISCORD_COMMAND_ALIAS_SERVER_SETTINGS":
+				config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS = value.(string)
 			}
 		}
 

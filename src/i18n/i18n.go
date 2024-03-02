@@ -97,15 +97,16 @@ var (
 	DiscordDashboardBotConfigMessageID             string
 	DiscordDashboardBotConfigMessageIDTooltip      string
 
-	DiscordCommandAliases                 string
-	DiscordCommandAliasHelpTooltip        string
-	DiscordCommandAliasKickTooltip        string
-	DiscordCommandAliasBanTooltip         string
-	DiscordCommandAliasBroadcastTooltip   string
-	DiscordCommandAliasShutdownTooltip    string
-	DiscordCommandAliasDoExitTooltip      string
-	DiscordCommandAliasSaveTooltip        string
-	DiscordCommandAliasStartServerTooltip string
+	DiscordCommandAliases                    string
+	DiscordCommandAliasHelpTooltip           string
+	DiscordCommandAliasKickTooltip           string
+	DiscordCommandAliasBanTooltip            string
+	DiscordCommandAliasBroadcastTooltip      string
+	DiscordCommandAliasShutdownTooltip       string
+	DiscordCommandAliasDoExitTooltip         string
+	DiscordCommandAliasSaveTooltip           string
+	DiscordCommandAliasStartServerTooltip    string
+	DiscordCommandAliasServerSettingsTooltip string
 
 	Close   string
 	Confirm string

@@ -64,7 +64,9 @@ func Save() error {
 	env += "# " + i18n.DiscordCommandAliasSaveTooltip + "\n"
 	env += "DISCORD_COMMAND_ALIAS_SAVE=" + DISCORD_COMMAND_ALIAS_SAVE + "\n"
 	env += "# " + i18n.DiscordCommandAliasStartServerTooltip + "\n"
-	env += "DISCORD_COMMAND_ALIAS_START_SERVER=" + DISCORD_COMMAND_ALIAS_START_SERVER + "\n\n"
+	env += "DISCORD_COMMAND_ALIAS_START_SERVER=" + DISCORD_COMMAND_ALIAS_START_SERVER + "\n"
+	env += "# " + i18n.DiscordCommandAliasServerSettingsTooltip + "\n"
+	env += "DISCORD_COMMAND_ALIAS_SERVER_SETTINGS=" + DISCORD_COMMAND_ALIAS_SERVER_SETTINGS + "\n\n"
 
 	env += "LANGUAGE=" + LANGUAGE + "\n"
 

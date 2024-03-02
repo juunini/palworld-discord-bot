@@ -98,6 +98,7 @@ func ko() {
 	DiscordCommandAliasDoExitTooltip = "서버를 강제 종료하는 커맨드를 커스텀 합니다."
 	DiscordCommandAliasSaveTooltip = "서버를 저장하는 커맨드를 커스텀 합니다."
 	DiscordCommandAliasStartServerTooltip = "서버를 실행하는 커맨드를 커스텀 합니다."
+	DiscordCommandAliasServerSettingsTooltip = "서버 설정 커맨드를 커스텀 합니다."
 
 	Close = "닫기"
 	Confirm = "확인"
