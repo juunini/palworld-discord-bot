@@ -18,13 +18,25 @@
 ## 설치 방법
 
 1. [Release](https://github.com/juunini/palworld-discord-bot/releases) 페이지에 가서 운영체제에 맞는 파일을 다운로드 받으세요.
-2. 다운로드 받은 파일을 실행하세요.
+2. 봇의 기능을 온전하게 쓰려면 팰월드 서버를 실행한 곳에서 같이 실행해야 합니다.
+3. 다운로드 받은 파일을 실행하세요.
     - 실행하면 아래와 같은 화면이 나옵니다. 언어를 선택하세요.  
         ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5950ee92-6e7b-4491-86fe-490ea4039cb0)  
     - 언어를 선택하면 아래와 같은 화면이 나옵니다. 녹색으로 표시된 주소를 브라우저에 입력하세요.  
         ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/33a776f2-b95a-4d3d-9814-2023705796c5)  
-3. 브라우저에 주소를 입력하면 아래와 같은 화면이 나옵니다. 설정하신 후 재실행 하세요.  
+4. 브라우저에 주소를 입력하면 아래와 같은 화면이 나옵니다. 설정하신 후 재실행 하세요.  
     ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/d17c1e13-01d4-4d76-babc-1fee74f2f5be)  
+
+## 세팅 방법
+
+1. `PalworldSettings.ini` 파일의 `RCONEnabled` 값을 `True`로 변경하세요.  
+    - 봇을 실행 후 디스코드에서 `!palbot serverSettings RCONEnabled true` 를 입력하셔도 됩니다.
+2. `PalworldSettings.ini` 파일의 `AdminPassword` 값을 변경하세요.  
+    - 봇을 실행 후 디스코드에서 `!palbot serverSettings AdminPassword <변경할 비밀번호>` 를 입력하셔도 됩니다.
+3. 팰월드 서버를 재시작 하세요.
+4. `http://localhost:60000` 에서 `팰월드 RCON 호출 기능을 사용합니다.` 부분을 체크하거나, `.env` 파일의 `PALWORLD_RCON_ENABLED` 값을 `true`로 변경하세요.
+5. `http://localhost:60000` 에서 `팰월드 관리자 비밀번호` 부분을 변경하거나, `.env` 파일의 `PALWORLD_ADMIN_PASSWORD` 값을 변경하세요.
+
 
 ## 기능
 
@@ -41,6 +53,7 @@
 | doExit(관리자 전용) | 서버를 강제 종료합니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/299174d4-a749-4f14-a7c5-ceb5bc6cdccb) |
 | save(관리자 전용) | 서버를 저장합니다. | |
 | startServer(관리자 전용) | 서버를 실행합니다. (윈도우: `C:\Program Files (x86)\Steam\steamapps\common\PalServer\PalServer.exe`, 리눅스: `~/Steam/steamapps/common/PalServer/PalServer.sh`) | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/1a7ebb68-eb78-41ac-86a0-1cc89c404ce1) |
+| serverSettings(관리자 전용) | 서버 설정을 변경합니다. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/a383b0cb-98d1-4945-b4cb-7a559601e073) |
 
 ## 주의사항
 

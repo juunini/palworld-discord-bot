@@ -17,14 +17,25 @@
 
 ## Install
 
-1. Go to the [Release](https://github.com/juunini/palworld-discord-bot/releases) page and download the file for your operating system.
-2. Run the downloaded file.
+1. Go to the [Release](https://github.com/juunini/palworld-discord-bot/releases) page and download the file that matches your operating system.
+2. To fully utilize the bot's features, you need to run it in the same location as your Palworld server.
+3. Run the downloaded file.  
     - When you run it, you will see the following screen. Select your language.  
         ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/5950ee92-6e7b-4491-86fe-490ea4039cb0)  
     - After selecting the language, you will see the following screen. Enter the highlighted address in your browser.  
         ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/33a776f2-b95a-4d3d-9814-2023705796c5)  
-3. When you enter the address in your browser, you will see the following screen. Configure it and restart.  
-    ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/d17c1e13-01d4-4d76-babc-1fee74f2f5be)  
+4. When you enter the address in your browser, you will see the following screen. Configure it and restart.  
+    ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/d17c1e13-01d4-4d76-babc-1fee74f2f5be)
+
+## Setup Instructions
+
+1. Change the value of `RCONEnabled` to `True` in the `PalworldSettings.ini` file.  
+    - You can also run `!palbot serverSettings RCONEnabled true` in Discord after running the bot.  
+2. Change the value of `AdminPassword` in the `PalworldSettings.ini` file.  
+    - You can also run `!palbot serverSettings AdminPassword <new password>` in Discord after running the bot.  
+3. Restart the Palworld server.
+4. Check the "Enable Palworld RCON" section on `http://localhost:60000` or change the value of `PALWORLD_RCON_ENABLED` to `true` in the `.env` file.
+5. Change the "Palworld Admin Password" section on `http://localhost:60000` or change the value of `PALWORLD_ADMIN_PASSWORD` in the `.env` file.
 
 ## Features
 
@@ -41,6 +52,7 @@
 | doExit (Admin Only) | Forces the server to exit. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/299174d4-a749-4f14-a7c5-ceb5bc6cdccb) |
 | save (Admin Only) | Saves the server. | |
 | startServer (Admin Only) | Starts the server. (Windows: `C:\Program Files (x86)\Steam\steamapps\common\PalServer\PalServer.exe`, Linux: `~/Steam/steamapps/common/PalServer/PalServer.sh`) | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/1a7ebb68-eb78-41ac-86a0-1cc89c404ce1) |
+| serverSettings (Admin Only) | Changes the server settings. | ![image](https://github.com/juunini/palworld-discord-bot/assets/41536271/a383b0cb-98d1-4945-b4cb-7a559601e073) |
 
 ## Caution
 
