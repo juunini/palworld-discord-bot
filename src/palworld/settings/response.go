@@ -13,9 +13,21 @@ func Response(s *discordgo.Session, channelID, command string) {
 	if !found || strings.TrimSpace(after) == "" {
 		messages := i18n.SettingsHelp(config.DISCORD_COMMAND_PREFIX, config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS)
 
+		fields := []*discordgo.MessageEmbedField{}
+
 		for _, message := range messages {
-			s.ChannelMessageSend(channelID, message)
+			fields = append(fields, &discordgo.MessageEmbedField{
+				Value:  message,
+				Inline: false,
+			})
 		}
+
+		embed := &discordgo.MessageEmbed{
+			Fields: fields,
+		}
+
+		s.ChannelMessageSendEmbed(channelID, embed)
+
 		return
 	}
 
