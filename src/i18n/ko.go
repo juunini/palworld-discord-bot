@@ -30,7 +30,8 @@ func ko() {
 		message += fmt.Sprintf("`%s %s <초> <메시지>` - <메시지>를 전송한 후 <초> 후에 서버를 종료합니다.\n", params.CommandPrefix, params.ShutdownAlias)
 		message += fmt.Sprintf("`%s %s` - 서버를 강제 종료합니다.\n", params.CommandPrefix, params.DoExitAlias)
 		message += fmt.Sprintf("`%s %s` - 서버를 저장합니다.\n", params.CommandPrefix, params.SaveAlias)
-		message += fmt.Sprintf("`%s %s` - 서버를 실행합니다.", params.CommandPrefix, params.StartServerAlias)
+		message += fmt.Sprintf("`%s %s` - 서버를 실행합니다.\n", params.CommandPrefix, params.StartServerAlias)
+		message += fmt.Sprintf("`%s %s` - `PalWorldSettings.ini`(게임 서버 설정)를 설정합니다.", params.CommandPrefix, params.ServerSettingsAlias)
 		return message
 	}
 	UnknownCommand = "알 수 없는 명령어입니다."
@@ -103,6 +104,7 @@ func ko() {
 	Close = "닫기"
 	Confirm = "확인"
 	Save = "저장"
+	DefaultValue = "기본값"
 
 	ConfigUpdateSuccess = "설정이 업데이트되었습니다."
 	ConfigUpdateFailed = "설정 업데이트에 실패했습니다."

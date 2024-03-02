@@ -30,7 +30,8 @@ func en() {
 		message += fmt.Sprintf("`%s %s <seconds> <message>` - Shutdown server after <seconds> with <message>.\n", params.CommandPrefix, params.ShutdownAlias)
 		message += fmt.Sprintf("`%s %s` - Force exit server.\n", params.CommandPrefix, params.DoExitAlias)
 		message += fmt.Sprintf("`%s %s` - Save server.\n", params.CommandPrefix, params.SaveAlias)
-		message += fmt.Sprintf("`%s %s` - Start server.", params.CommandPrefix, params.StartServerAlias)
+		message += fmt.Sprintf("`%s %s` - Start server.\n", params.CommandPrefix, params.StartServerAlias)
+		message += fmt.Sprintf("`%s %s` - Set `PalWorldSettings.ini` (game server settings).", params.CommandPrefix, params.ServerSettingsAlias)
 		return message
 	}
 	UnknownCommand = "Unknown command"
@@ -103,6 +104,7 @@ func en() {
 	Close = "Close"
 	Confirm = "Confirm"
 	Save = "Save"
+	DefaultValue = "Default"
 
 	ConfigUpdateSuccess = "Config update success"
 	ConfigUpdateFailed = "Config update failed"

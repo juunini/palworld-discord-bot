@@ -6,37 +6,43 @@ import (
 
 	"github.com/juunini/palworld-discord-bot/src/config"
 	"github.com/juunini/palworld-discord-bot/src/i18n"
+	"github.com/juunini/palworld-discord-bot/src/palworld/settings"
 	"github.com/juunini/palworld-discord-bot/src/utils"
 	palworldrcon "github.com/juunini/palworld-rcon"
 )
 
-func Response(message string, username string) string {
+func Response(message string, username string) []string {
 	isAdmin := utils.IsAdmin(username)
 
 	command, found := strings.CutPrefix(message, config.DISCORD_COMMAND_PREFIX+" ")
 	processedCommand := commandForCheck(command)
 
 	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_HELP) || !found {
-		return i18n.Help(i18n.HelpParams{
-			CommandPrefix:    config.DISCORD_COMMAND_PREFIX,
-			HelpAlias:        config.DISCORD_COMMAND_ALIAS_HELP,
-			KickAlias:        config.DISCORD_COMMAND_ALIAS_KICK,
-			BanAlias:         config.DISCORD_COMMAND_ALIAS_BAN,
-			BroadcastAlias:   config.DISCORD_COMMAND_ALIAS_BROADCAST,
-			ShutdownAlias:    config.DISCORD_COMMAND_ALIAS_SHUTDOWN,
-			DoExitAlias:      config.DISCORD_COMMAND_ALIAS_DO_EXIT,
-			SaveAlias:        config.DISCORD_COMMAND_ALIAS_SAVE,
-			StartServerAlias: config.DISCORD_COMMAND_ALIAS_START_SERVER,
-		}, isAdmin)
+		return []string{i18n.Help(i18n.HelpParams{
+			CommandPrefix:       config.DISCORD_COMMAND_PREFIX,
+			HelpAlias:           config.DISCORD_COMMAND_ALIAS_HELP,
+			KickAlias:           config.DISCORD_COMMAND_ALIAS_KICK,
+			BanAlias:            config.DISCORD_COMMAND_ALIAS_BAN,
+			BroadcastAlias:      config.DISCORD_COMMAND_ALIAS_BROADCAST,
+			ShutdownAlias:       config.DISCORD_COMMAND_ALIAS_SHUTDOWN,
+			DoExitAlias:         config.DISCORD_COMMAND_ALIAS_DO_EXIT,
+			SaveAlias:           config.DISCORD_COMMAND_ALIAS_SAVE,
+			StartServerAlias:    config.DISCORD_COMMAND_ALIAS_START_SERVER,
+			ServerSettingsAlias: config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS,
+		}, isAdmin)}
 	}
 
 	// Under commands, only admins can execute
 	if !isAdmin {
-		return i18n.UnknownCommand
+		return []string{i18n.UnknownCommand}
 	}
 
 	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_START_SERVER) {
-		return startServer()
+		return []string{startServer()}
+	}
+
+	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SERVER_SETTINGS) {
+		return settings.Response(command)
 	}
 
 	client, err := palworldrcon.Connect(
@@ -46,25 +52,25 @@ func Response(message string, username string) string {
 		5*time.Second,
 	)
 	if err != nil {
-		return i18n.FailedToConnectRconServer
+		return []string{i18n.FailedToConnectRconServer}
 	}
 	defer client.Disconnect()
 
 	if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_KICK) {
-		return kick(client, command)
+		return []string{kick(client, command)}
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_BAN) {
-		return ban(client, command)
+		return []string{ban(client, command)}
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_BROADCAST) {
-		return broadcast(client, command)
+		return []string{broadcast(client, command)}
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SHUTDOWN) {
-		return shutdown(client, command)
+		return []string{shutdown(client, command)}
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_DO_EXIT) {
-		return doExit(client)
+		return []string{doExit(client)}
 	} else if strings.HasPrefix(processedCommand, config.DISCORD_COMMAND_ALIAS_SAVE) {
-		return save(client)
+		return []string{save(client)}
 	}
 
-	return i18n.UnknownCommand
+	return []string{i18n.UnknownCommand}
 }
 
 func commandForCheck(command string) string {

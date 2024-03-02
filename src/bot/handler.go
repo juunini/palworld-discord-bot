@@ -14,7 +14,10 @@ func Handler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if isCommand(m) {
-		s.ChannelMessageSend(m.ChannelID, commands.Response(m.Content, m.Author.Username))
+		contents := commands.Response(m.Content, m.Author.Username)
+		for _, content := range contents {
+			s.ChannelMessageSend(m.ChannelID, content)
+		}
 		return
 	}
 }
