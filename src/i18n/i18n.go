@@ -48,7 +48,7 @@ var (
 	SuccessToStartServerCommand string
 	WrongParameters             string
 	UnknownCommand              string
-	Help                        func(params HelpParams, isAdmin bool) string
+	Help                        func(params HelpParams) string
 
 	WebServerOpeningMessage  string
 	WebServerShutdownMessage string
@@ -90,19 +90,21 @@ var (
 	PalworldServerSettingsFilePath        string
 	PalworldServerSettingsFilePathTooltip string
 
-	DiscordChannelConfig                           string
-	DiscordDashboardChannelID                      string
-	DiscordDashboardChannelIDTooltip               string
-	DiscordDashboardChannelIDDescription           string
-	DiscordLogChannelID                            string
-	DiscordLogChannelIDTooltip                     string
-	DiscordLogChannelIDDescription                 string
-	DiscordDashboardOnlinePlayersMessageID         string
-	DiscordDashboardOnlinePlayersMessageIDTooltip  string
-	DiscordDashboardPalworldConfigMessageID        string
-	DiscordDashboardPalworldConfigMessageIDTooltip string
-	DiscordDashboardBotConfigMessageID             string
-	DiscordDashboardBotConfigMessageIDTooltip      string
+	DiscordChannelConfig                             string
+	DiscordDashboardChannelID                        string
+	DiscordDashboardChannelIDTooltip                 string
+	DiscordDashboardChannelIDDescription             string
+	DiscordLogChannelID                              string
+	DiscordLogChannelIDTooltip                       string
+	DiscordLogChannelIDDescription                   string
+	DiscordDashboardOnlinePlayersMessageID           string
+	DiscordDashboardOnlinePlayersMessageIDTooltip    string
+	DiscordDashboardPalworldConfigMessageID          string
+	DiscordDashboardPalworldConfigMessageIDTooltip   string
+	DiscordDashboardBotConfigMessageID               string
+	DiscordDashboardBotConfigMessageIDTooltip        string
+	DiscordDashboardPalworldSettingsMessageID        string
+	DiscordDashboardPalworldSettingsMessageIDTooltip string
 
 	DiscordCommandAliases                    string
 	DiscordCommandAliasHelpTooltip           string

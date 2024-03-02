@@ -17,13 +17,8 @@ func ko() {
 	FailedToStartServerCommand = "서버를 시작하는데 실패했습니다."
 	SuccessToStartServerCommand = "서버를 실행했습니다."
 	WrongParameters = "잘못된 파라미터를 입력하셨습니다. 다시 확인해주세요."
-	Help = func(params HelpParams, isAdmin bool) string {
+	Help = func(params HelpParams) string {
 		message := fmt.Sprintf("`%s %s` - 도움말을 표시합니다.\n", params.CommandPrefix, params.HelpAlias)
-
-		if !isAdmin {
-			return message
-		}
-
 		message += fmt.Sprintf("`%s %s <SteamID>` - <SteamID> 를 1회 추방합니다. 다시 접속이 가능합니다.\n", params.CommandPrefix, params.KickAlias)
 		message += fmt.Sprintf("`%s %s <SteamID>` - <SteamID> 를 다시 접속할 수 없게 블락시킵니다.\n", params.CommandPrefix, params.BanAlias)
 		message += fmt.Sprintf("`%s %s <메시지>` - SYSTEM 메시지로 모든 유저에게 <메시지>를 전송합니다.\n", params.CommandPrefix, params.BroadcastAlias)
@@ -89,6 +84,8 @@ func ko() {
 	DiscordDashboardPalworldConfigMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
 	DiscordDashboardBotConfigMessageID = "봇 설정 대시보드 Message ID"
 	DiscordDashboardBotConfigMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
+	DiscordDashboardPalworldSettingsMessageID = "PalWorldSettings.ini 대시보드 Message ID"
+	DiscordDashboardPalworldSettingsMessageIDTooltip = "자동으로 설정되는 값입니다. 필요한 경우가 아니라면 수정하지 마세요."
 
 	DiscordCommandAliases = "디스코드 커맨드 커스터마이징"
 	DiscordCommandAliasHelpTooltip = "도움말을 표시하는 커맨드를 커스텀 합니다."

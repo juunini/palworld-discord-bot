@@ -17,13 +17,8 @@ func en() {
 	FailedToStartServerCommand = "Failed to start server"
 	SuccessToStartServerCommand = "Server started"
 	WrongParameters = "Wrong parameters"
-	Help = func(params HelpParams, isAdmin bool) string {
+	Help = func(params HelpParams) string {
 		message := fmt.Sprintf("`%s %s` - Show help\n", params.CommandPrefix, params.HelpAlias)
-
-		if !isAdmin {
-			return message
-		}
-
 		message += fmt.Sprintf("`%s %s <SteamID>` - Kick <SteamID> from server. Can connect again.\n", params.CommandPrefix, params.KickAlias)
 		message += fmt.Sprintf("`%s %s <SteamID>` - Ban <SteamID> from server. Can't connect again.\n", params.CommandPrefix, params.BanAlias)
 		message += fmt.Sprintf("`%s %s <message>` - Send <message> to all users as SYSTEM message.\n", params.CommandPrefix, params.BroadcastAlias)
@@ -89,6 +84,8 @@ func en() {
 	DiscordDashboardPalworldConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
 	DiscordDashboardBotConfigMessageID = "Discord Dashboard Bot Config Message ID"
 	DiscordDashboardBotConfigMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
+	DiscordDashboardPalworldSettingsMessageID = "PalWorldSettings.ini Dashboard Message ID"
+	DiscordDashboardPalworldSettingsMessageIDTooltip = "Automatically set value. If not necessary, do not modify."
 
 	DiscordCommandAliases = "Discord Command Aliases"
 	DiscordCommandAliasHelpTooltip = "Help command customizing"
